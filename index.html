@@ -1,0 +1,31 @@
+<html>
+
+<body>
+    <canvas id="myCanvas" width="1400" height="350">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+    <button onclick="download()">Download</button>
+    <script>
+        window.onload = function () {
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            var image = new Image;
+            image.addEventListener("load", function () {
+                ctx.drawImage(image, 0, 0);
+            });
+            image.src = "images/blue_background.jpeg";
+
+            var vuejs = new Image
+            vuejs.addEventListener("load", function () {
+                ctx.drawImage(vuejs, 1300, 250, 50, 50);
+            });
+            vuejs.src = "images/vuejs.png";
+        }
+
+        function download() {
+            var canvas = document.getElementById("myCanvas");
+        }
+    </script>
+</body>
+
+</html>
