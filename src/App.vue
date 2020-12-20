@@ -6,19 +6,20 @@
         <h2>Skills Banner Generator</h2>
       </div>
       <v-spacer></v-spacer>
-      <a href='https://github.com/boukadam/skills-banner-generator'><v-icon large>mdi-github</v-icon></a>
+      <a href="https://github.com/boukadam/skills-banner-generator"
+        ><v-icon large>mdi-github</v-icon></a
+      >
     </v-app-bar>
 
     <v-main>
       <v-container>
-        <v-card class="mx-lg-auto mt-6 pa-2" :width="canvasWidth + 10">
+        <v-card class="mx-lg-auto mt-6 pa-2">
           <v-card-title>
             <h2>Please select your skills</h2>
           </v-card-title>
           <v-autocomplete
             v-model="selected"
             :items="skills"
-            :search-input.sync="search"
             label="Your skills"
             multiple
             clearable
@@ -44,13 +45,18 @@
           </v-autocomplete>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="primary" text @click="generate"> Generate </v-btn>
+            <v-btn
+              color="primary"
+              :disabled="generationBeingProcessed"
+              @click="generate"
+              large
+            >
+              Generate
+            </v-btn>
           </v-card-actions>
         </v-card>
-        <v-card class="mx-lg-auto mt-6" :width="canvasWidth + 10">
-          <canvas id="myCanvas" :width="canvasWidth" :height="canvasHeight">
-            Your browser does not support the HTML5 canvas tag.
-          </canvas>
+        <v-card v-if="generatedImage" class="mx-lg-auto mt-6">
+          <v-card-text><v-img :src="generatedImage"></v-img></v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn color="primary" text @click="download">
@@ -58,6 +64,14 @@
             </v-btn>
           </v-card-actions>
         </v-card>
+        <canvas
+          id="myCanvas"
+          :width="canvasWidth"
+          :height="canvasHeight"
+          hidden
+        >
+          Your browser does not support the HTML5 canvas tag.
+        </canvas>
       </v-container>
     </v-main>
   </v-app>
@@ -71,11 +85,12 @@ export default {
   data: () => ({
     skills: json,
     selected: [],
-    search: null,
-    canvasWidth: 800,
-    canvasHeight: 200,
-    logoSize: 40,
-    logoMargin: 4,
+    canvasWidth: 800 * 4,
+    canvasHeight: 200 * 4,
+    logoSize: 40 * 4,
+    logoMargin: 4 * 4,
+    generatedImage: null,
+    generationBeingProcessed: false,
   }),
   computed: {
     logoArea() {
@@ -88,33 +103,7 @@ export default {
       return Math.floor(this.canvasHeight / this.logoArea);
     },
   },
-  watch: {
-    selected() {
-      this.search = null;
-    },
-  },
-  mounted() {
-    this.drawCanvasBackground();
-  },
   methods: {
-    drawCanvasBackground() {
-      var canvas = document.getElementById("myCanvas");
-      var ctx = canvas.getContext("2d");
-      // Create gradient
-      var grd = ctx.createRadialGradient(
-        0,
-        this.canvasWidth / 4,
-        5,
-        0,
-        this.canvasWidth / 4,
-        this.canvasHeight / 2
-      );
-      grd.addColorStop(1, "whitesmoke");
-      grd.addColorStop(0, "white");
-      // Fill with gradient
-      ctx.fillStyle = grd;
-      ctx.fillRect(10, 10, this.canvasWidth, this.canvasHeight);
-    },
     onSkillRemoved(data) {
       data.parent.selectItem(data.item);
     },
@@ -127,9 +116,31 @@ export default {
       };
     },
     generate() {
-      var c = document.getElementById("myCanvas");
-      var ctx = c.getContext("2d");
+      this.generationBeingProcessed = true;
+
+      // Init canvas
+      var canvas = document.createElement("canvas");
+      canvas.width = this.canvasWidth;
+      canvas.height = this.canvasHeight;
+      var ctx = canvas.getContext("2d");
+
+      // With gradient background
+      var grd = ctx.createRadialGradient(
+        0,
+        this.canvasWidth / 4,
+        5,
+        0,
+        this.canvasWidth / 4,
+        this.canvasHeight / 2
+      );
+      grd.addColorStop(1, "whitesmoke");
+      grd.addColorStop(0, "white");
+      ctx.fillStyle = grd;
+      ctx.fillRect(10, 10, this.canvasWidth, this.canvasHeight);
+
+      // Append selected logos
       var _this = this;
+      var drawnLogos = 0;
       this.selected.forEach((element, index) => {
         var image = new Image();
         image.addEventListener("load", function () {
@@ -151,12 +162,16 @@ export default {
             width,
             height
           );
+          drawnLogos++;
+          if (drawnLogos === _this.selected.length) {
+            _this.generatedImage = canvas.toDataURL("image/png;base64");
+            _this.generationBeingProcessed = false;
+          }
         });
         image.src = require("./static/logos/" + element);
       });
     },
     download() {
-      var canvas = document.getElementById("myCanvas");
       var lnk = document.createElement("a"),
         e;
 
@@ -166,7 +181,7 @@ export default {
       /// convert canvas content to data-uri for link. When download
       /// attribute is set the content pointed to by link will be
       /// pushed as "download" in HTML5 capable browsers
-      lnk.href = canvas.toDataURL("image/png;base64");
+      lnk.href = this.generatedImage;
 
       /// create a "fake" click-event to trigger the download
       if (document.createEvent) {
