@@ -1,22 +1,22 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <v-icon>mdi-star-circle</v-icon>
-      <div class="ml-2">
-        <h2>Skills Banner Generator</h2>
-      </div>
-      <v-spacer></v-spacer>
-      <a href="https://github.com/boukadam/skills-banner-generator"
-        ><v-icon large>mdi-github</v-icon></a
-      >
-    </v-app-bar>
-
-    <v-main>
+    <v-card color="primary" flat min-height="10%" tile dark>
+      <v-app-bar app dark color="primary" elevation="0">
+        <v-row>
+          <v-icon>mdi-star-circle</v-icon>
+          <div class="ml-2">
+            <h2>Skills Banner Generator</h2>
+          </div>
+          <v-spacer></v-spacer>
+          <a href="https://github.com/boukadam/skills-banner-generator">
+            <v-icon large>mdi-github</v-icon>
+          </a>
+        </v-row>
+      </v-app-bar>
+    </v-card>
+    <v-card color="primary" dark flat tile>
       <v-container>
-        <v-card class="mx-lg-auto mt-6 pa-2">
-          <v-card-title>
-            <h2>Please select your skills</h2>
-          </v-card-title>
+        <v-card-text>
           <v-autocomplete
             v-model="selected"
             :items="skills"
@@ -43,37 +43,44 @@
               </v-chip>
             </template>
           </v-autocomplete>
-          <v-card-actions>
+        </v-card-text>
+        <v-card-actions>
+          <v-row align="center">
+            <v-col cols="4">
+              <v-select
+                v-model="logoSize"
+                :items="logosSizes"
+                label="Logo size"
+                item-text="title"
+                item-value="size"
+              ></v-select>
+            </v-col>
             <v-spacer></v-spacer>
             <v-btn
-              color="primary"
-              :disabled="generationBeingProcessed"
+              color="success"
+              :disabled="generationBeingProcessed || selected.length === 0"
               @click="generate"
               large
             >
               Generate
             </v-btn>
-          </v-card-actions>
-        </v-card>
-        <v-card v-if="generatedImage" class="mx-lg-auto mt-6">
-          <v-card-text><v-img :src="generatedImage"></v-img></v-card-text>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <v-btn color="primary" text @click="download">
-              Download as PNG
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-        <canvas
-          id="myCanvas"
-          :width="canvasWidth"
-          :height="canvasHeight"
-          hidden
-        >
-          Your browser does not support the HTML5 canvas tag.
-        </canvas>
+          </v-row>
+        </v-card-actions>
       </v-container>
-    </v-main>
+    </v-card>
+
+    <v-container class="mt-6">
+      <v-card v-if="generatedImage">
+        <v-card-text><v-img :src="generatedImage"></v-img></v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="success" @click="download"> Download as PNG </v-btn>
+        </v-card-actions>
+      </v-card>
+      <canvas id="myCanvas" :width="canvasWidth" :height="canvasHeight" hidden>
+        Your browser does not support the HTML5 canvas tag.
+      </canvas>
+    </v-container>
   </v-app>
 </template>
 
@@ -84,6 +91,20 @@ export default {
   components: {},
   data: () => ({
     skills: json,
+    logosSizes: [
+      {
+        title: "Small",
+        size: 20 * 4,
+      },
+      {
+        title: "Medium",
+        size: 40 * 4,
+      },
+      {
+        title: "Large",
+        size: 60 * 4,
+      },
+    ],
     selected: [],
     canvasWidth: 800 * 4,
     canvasHeight: 200 * 4,
@@ -137,6 +158,11 @@ export default {
       grd.addColorStop(0, "white");
       ctx.fillStyle = grd;
       ctx.fillRect(10, 10, this.canvasWidth, this.canvasHeight);
+
+      // Append text, is it a good idea ?
+      //ctx.font = "small-caps bold 300px Arial"
+      //ctx.fillStyle = 'black';
+      //ctx.fillText("Skills.", 2 * this.logoMargin, this.canvasHeight - 2 * this.logoMargin);
 
       // Append selected logos
       var _this = this;
