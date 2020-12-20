@@ -36,7 +36,7 @@
     "shortname": "admob",
     "url": "https://www.google.com/admob/",
     "files": [
-      "admob.svg"
+      "_admob.svg"
     ]
   },
   {
@@ -44,7 +44,7 @@
     "shortname": "adroll",
     "url": "https://www.adroll.com/",
     "files": [
-      "adroll.svg"
+      "_adroll.svg"
     ]
   },
   {

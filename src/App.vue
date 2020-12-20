@@ -1,39 +1,37 @@
 <template>
   <v-app>
-    <v-card color="primary" flat min-height="10%" tile dark>
-      <v-app-bar app dark color="primary" elevation="0">
-        <v-row>
+    <v-card color="primary" flat tile dark>
+      <v-card color="primary" flat tile dark max-width="1024px" class="mx-auto mb-6">
+        <v-card-title>
           <v-icon>mdi-star-circle</v-icon>
-          <div class="ml-2">
-            <h2>Skills Banner Generator</h2>
-          </div>
+          <h2 class="ml-2">Skills Banner Generator</h2>
           <v-spacer></v-spacer>
           <a href="https://github.com/boukadam/skills-banner-generator">
-            <v-icon large>mdi-github</v-icon>
+            <v-icon x-large>mdi-github</v-icon>
           </a>
-        </v-row>
-      </v-app-bar>
-    </v-card>
-    <v-card color="primary" dark flat tile>
-      <v-container>
-        <v-card-text>
+        </v-card-title>
+        <v-card-text class="mt-12">
+          <v-row align="center">
+            <span class="ml-2 mb-4 font-weight-light title">
+              With <strong>{{ getLogoSizeLabel(logoSize) }}</strong> size you can select up to {{ nbLogoTotal }} logos.
+              {{ nbLogoTotal - selected.length }} logos left
+            </span>
+          </v-row>
           <v-autocomplete
-            v-model="selected"
-            :items="skills"
-            label="Your skills"
-            multiple
-            clearable
-            chips
-            hide-selected
-            item-value="files[0]"
-            item-text="name"
+              v-model="selected"
+              :items="skills"
+              :search-input.sync="search"
+              label="Select your skills"
+              multiple
+              clearable
+              chips
+              hide-selected
+              item-value="files[0]"
+              item-text="name"
           >
             <template v-slot:item="data">
               <v-row class="ml-2">
-                <img
-                  :src="require('./static/logos/' + data.item.files[0])"
-                  width="24"
-                />
+                <img :src="require('./static/logos/' + data.item.files[0])" width="24"/>
                 <span class="pl-2">{{ data.item.name }}</span>
               </v-row>
             </template>
@@ -44,57 +42,102 @@
             </template>
           </v-autocomplete>
         </v-card-text>
-        <v-card-actions>
+        <v-card-text>
           <v-row align="center">
             <v-col cols="4">
+              <v-text-field v-model="backgroundColor" label="Background color" hide-details readonly class="ma-0 pa-0">
+                <template v-slot:append>
+                  <v-menu v-model="colorPickerMenu" top nudge-bottom="105" nudge-left="16" :close-on-content-click="false">
+                    <template v-slot:activator="{ on }">
+                      <div :style="swatchStyle" v-on="on"/>
+                    </template>
+                    <v-card>
+                      <v-card-text class="pa-0">
+                        <v-color-picker v-model="backgroundColor" show-swatches flat light/>
+                      </v-card-text>
+                    </v-card>
+                  </v-menu>
+                </template>
+              </v-text-field>
+            </v-col>
+            <v-col cols="4">
               <v-select
-                v-model="logoSize"
-                :items="logosSizes"
-                label="Logo size"
-                item-text="title"
-                item-value="size"
+                  v-model="logoSize"
+                  :items="logosSizes"
+                  label="Logo size"
+                  item-text="title"
+                  item-value="size"
               ></v-select>
             </v-col>
-            <v-spacer></v-spacer>
-            <v-btn
-              color="success"
-              :disabled="generationBeingProcessed || selected.length === 0"
-              @click="generate"
-              large
-            >
-              Generate
-            </v-btn>
+            <v-col cols="4">
+              <v-file-input accept="image/*" label="Brand image" chips @change="setBrandImage"></v-file-input>
+            </v-col>
           </v-row>
-        </v-card-actions>
-      </v-container>
+
+          <v-row align="center">
+            <v-spacer></v-spacer>
+            <span v-if="selected.length > nbLogoTotal" class="font-weight-regular title warning--text">Too many logos selected</span>
+            <v-col cols="4">
+              <v-btn
+                  color="success"
+                  :disabled="selected.length === 0 || selected.length > nbLogoTotal"
+                  @click="generate"
+                  x-large
+                  block
+                  :loading="generationBeingProcessed"
+              >
+                Generate
+              </v-btn>
+            </v-col>
+          </v-row>
+        </v-card-text>
+      </v-card>
     </v-card>
 
-    <v-container class="mt-6">
-      <v-card v-if="generatedImage">
-        <v-card-text><v-img :src="generatedImage"></v-img></v-card-text>
+    <v-card tile height="100%">
+      <v-card v-if="generatedImage" max-width="1024px" class="mx-auto my-12">
+        <v-card-text>
+          <v-img :src="generatedImage"></v-img>
+        </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="success" @click="download"> Download as PNG </v-btn>
+          <v-btn color="success" @click="download" x-large> Download as PNG</v-btn>
+          <v-spacer></v-spacer>
         </v-card-actions>
       </v-card>
       <canvas id="myCanvas" :width="canvasWidth" :height="canvasHeight" hidden>
         Your browser does not support the HTML5 canvas tag.
       </canvas>
-    </v-container>
+    </v-card>
+    <v-footer padless>
+      <v-container class="d-flex justify-space-around">
+        <a class="github-button" href="https://github.com/boukadam/skills-banner-generator" data-size="large" data-show-count="true"
+           aria-label="Star boukadam/skills-banner-generator on GitHub">Star</a>
+        <div>
+          {{ new Date().getFullYear() }} —
+          <v-btn class="pa-0" text href="https://github.com/boukadam">
+            <strong>@boukadam</strong>
+          </v-btn>
+        </div>
+        <a class="github-button" href="https://github.com/boukadam" data-size="large" aria-label="Follow @boukadam on GitHub">Follow @boukadam</a>
+      </v-container>
+    </v-footer>
   </v-app>
 </template>
 
 <script>
 import json from "./static/logos.json";
+
 export default {
   name: "App",
   components: {},
   data: () => ({
+    search: null,
     skills: json,
     logosSizes: [
       {
         title: "Small",
-        size: 20 * 4,
+        size: 25 * 4,
       },
       {
         title: "Medium",
@@ -102,7 +145,7 @@ export default {
       },
       {
         title: "Large",
-        size: 60 * 4,
+        size: 55 * 4,
       },
     ],
     selected: [],
@@ -112,10 +155,16 @@ export default {
     logoMargin: 4 * 4,
     generatedImage: null,
     generationBeingProcessed: false,
+    backgroundColor: "#FFFFEFFF",
+    colorPickerMenu: false,
+    brandImage: null
   }),
   computed: {
     logoArea() {
       return this.logoSize + 2 * this.logoMargin;
+    },
+    nbLogoTotal() {
+      return this.nbLogoPerColumn * this.nbLogoPerRow;
     },
     nbLogoPerRow() {
       return Math.floor(this.canvasWidth / this.logoArea);
@@ -123,70 +172,105 @@ export default {
     nbLogoPerColumn() {
       return Math.floor(this.canvasHeight / this.logoArea);
     },
+    swatchStyle() {
+      const {backgroundColor, colorPickerMenu} = this
+      return {
+        backgroundColor: backgroundColor,
+        cursor: 'pointer',
+        height: '30px',
+        width: '60px',
+        borderRadius: colorPickerMenu ? '50%' : '4px',
+        border: 'solid',
+        borderWidth: 'thin',
+        transition: 'border-radius 200ms ease-in-out',
+        marginBottom: '4px'
+      }
+    }
+  },
+  watch: {
+    selected() {
+      this.search = null;
+    },
   },
   methods: {
+    getLogoSizeLabel(size) {
+      for (let element of this.logosSizes) {
+        if (size === element.size) {
+          return element.title;
+        }
+      }
+      return "";
+    },
     onSkillRemoved(data) {
       data.parent.selectItem(data.item);
     },
     computeCoordinate(index) {
-      var x = (index % this.nbLogoPerRow) + 1;
-      var y = Math.floor(index / this.nbLogoPerRow) + 1;
+      let x = (index % this.nbLogoPerRow) + 1;
+      let y = Math.floor(index / this.nbLogoPerRow) + 1;
       return {
         x: this.canvasWidth - x * this.logoArea,
         y: this.canvasHeight - y * this.logoArea,
       };
     },
+    setBrandImage(file) {
+      this.brandImage = URL.createObjectURL(file);
+    },
     generate() {
       this.generationBeingProcessed = true;
 
       // Init canvas
-      var canvas = document.createElement("canvas");
+      let canvas = document.createElement("canvas");
       canvas.width = this.canvasWidth;
       canvas.height = this.canvasHeight;
-      var ctx = canvas.getContext("2d");
 
-      // With gradient background
-      var grd = ctx.createRadialGradient(
-        0,
-        this.canvasWidth / 4,
-        5,
-        0,
-        this.canvasWidth / 4,
-        this.canvasHeight / 2
-      );
-      grd.addColorStop(1, "whitesmoke");
-      grd.addColorStop(0, "white");
-      ctx.fillStyle = grd;
-      ctx.fillRect(10, 10, this.canvasWidth, this.canvasHeight);
+      // Color the canvas
+      let ctx = canvas.getContext("2d");
+      ctx.fillStyle = this.backgroundColor;
+      ctx.fillRect(0, 0, this.canvasWidth, this.canvasHeight);
 
       // Append text, is it a good idea ?
       //ctx.font = "small-caps bold 300px Arial"
       //ctx.fillStyle = 'black';
       //ctx.fillText("Skills.", 2 * this.logoMargin, this.canvasHeight - 2 * this.logoMargin);
 
+      // Append brand image
+      if (this.brandImage) {
+        let brand = new Image;
+        let _this = this;
+        brand.addEventListener("load", function () {
+          ctx.drawImage(brand, 0, 0);
+          _this.generateLogos(canvas);
+        });
+        brand.src = this.brandImage;
+      } else {
+        this.generateLogos(canvas);
+      }
+    },
+    generateLogos(canvas) {
       // Append selected logos
-      var _this = this;
-      var drawnLogos = 0;
+      let _this = this;
+      let drawnLogos = 0;
+      let ctx = canvas.getContext("2d");
       this.selected.forEach((element, index) => {
-        var image = new Image();
+        let image = new Image();
         image.addEventListener("load", function () {
-          var height = _this.logoSize;
-          var width = _this.logoSize * (this.naturalWidth / this.naturalHeight);
+          let height = _this.logoSize;
+          let width = _this.logoSize * (this.naturalWidth / this.naturalHeight);
           if (width > _this.logoSize) {
             width = _this.logoSize;
             height = (_this.logoSize * this.naturalHeight) / this.naturalWidth;
           }
-          var coordinate = _this.computeCoordinate(index);
-          var yShift = 0;
+          let coordinate = _this.computeCoordinate(index);
+          let yShift = 0;
           if (height < _this.logoSize) {
             yShift = (_this.logoSize - height) / 2;
           }
           ctx.drawImage(
-            image,
-            coordinate.x,
-            coordinate.y + yShift,
-            width,
-            height
+              image,
+              coordinate.x,
+              coordinate.y + yShift,
+              width,
+              height
           );
           drawnLogos++;
           if (drawnLogos === _this.selected.length) {
@@ -198,8 +282,8 @@ export default {
       });
     },
     download() {
-      var lnk = document.createElement("a"),
-        e;
+      let lnk = document.createElement("a"),
+          e;
 
       /// the key here is to set the download attribute of the a tag
       lnk.download = "skills-banner.png";
@@ -213,21 +297,21 @@ export default {
       if (document.createEvent) {
         e = document.createEvent("MouseEvents");
         e.initMouseEvent(
-          "click",
-          true,
-          true,
-          window,
-          0,
-          0,
-          0,
-          0,
-          0,
-          false,
-          false,
-          false,
-          false,
-          0,
-          null
+            "click",
+            true,
+            true,
+            window,
+            0,
+            0,
+            0,
+            0,
+            0,
+            false,
+            false,
+            false,
+            false,
+            0,
+            null
         );
 
         lnk.dispatchEvent(e);
