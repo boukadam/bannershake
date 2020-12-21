@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-card color="primary" flat tile dark>
-      <v-card color="primary" flat tile dark max-width="1024px" class="mx-auto mb-6">
+      <v-card color="primary" flat tile dark max-width="1024px" class="mx-auto">
         <v-card-title>
           <v-icon>mdi-star-circle</v-icon>
           <h2 class="ml-2">BannerShake</h2>
@@ -10,11 +10,50 @@
             <v-icon x-large>mdi-github</v-icon>
           </a>
         </v-card-title>
-        <v-card-text class="mt-12">
+        <v-card-text class="mt-6">
           <v-row align="center">
             <span class="ml-2 mb-4 font-weight-light title">
-              With <strong>{{ getLogoSizeLabel(logoSize) }}</strong> size you can select up to {{ nbLogoTotal }} logos.
-              {{ nbLogoTotal - selected.length }} logos left
+              <strong>BannerShake</strong> is a tool that allows you to generate your own banner from your technical skills.
+              <v-dialog v-model="dialog" scrollable max-width="800px">
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn text v-bind="attrs" v-on="on">
+                    How it works?
+                  </v-btn>
+                </template>
+                <v-card max-height="700px">
+                  <v-card-title>
+                    <span>How it works</span>
+                    <v-spacer></v-spacer>
+                    <v-icon @click="dialog = false">mdi-close</v-icon>
+                  </v-card-title>
+                  <v-divider></v-divider>
+                  <v-card-text class="my-4 font-weight-light title">
+                    <p>
+                      First, select the skills you want to highlight.
+                    </p>
+                    <p>
+                      Then, choose the background color and then the size of the skills logos (be careful, the number of skills displayed depends
+                      on the size you choose).
+                    </p>
+                    <p>
+                      You can even add an image of your choice which will be displayed on the left side of the banner.
+                    </p>
+                    <p>
+                      For example, an old project that I did called <strong>Wafood</strong> was done with
+                    </p>
+                    <v-img :src="require('./static/examples/wafood-skills-banner.png')" />
+                  </v-card-text>
+                  <v-divider></v-divider>
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn color="success" text x-large @click="dialog = false">Got it!</v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-dialog>
+            </span>
+            <span class="ml-2 mb-4 font-weight-light title">
+              With <strong>{{ getLogoSizeLabel(logoSize) }}</strong> size you can select up to {{ nbLogoTotal }} skills
+              ({{ nbLogoTotal - selected.length }} left)
             </span>
           </v-row>
           <v-autocomplete
@@ -41,8 +80,6 @@
               </v-chip>
             </template>
           </v-autocomplete>
-        </v-card-text>
-        <v-card-text>
           <v-row align="center">
             <v-col cols="4">
               <v-text-field v-model="backgroundColor" label="Background color" hide-details readonly class="ma-0 pa-0">
@@ -155,7 +192,8 @@ export default {
     colorPickerMenu: false,
     brandImage: null,
     maxBrandImageWidth: 100 * 4,
-    maxBrandImageHeight: 100 * 4
+    maxBrandImageHeight: 100 * 4,
+    dialog: false
   }),
   computed: {
     logoArea() {
@@ -267,7 +305,7 @@ export default {
           let xLine = (2 * x) + width;
           let yLine = _this.canvasHeight / 8;
           ctx.beginPath();
-          ctx.moveTo(xLine,yLine);
+          ctx.moveTo(xLine, yLine);
           ctx.lineTo(xLine, 7 * yLine);
           ctx.lineWidth = 4;
           ctx.strokeStyle = '#616161FF';
