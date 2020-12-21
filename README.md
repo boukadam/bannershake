@@ -1,24 +1,10 @@
-# skills-banner
+# BannerShake
 
-## Project setup
-```
-npm install
-```
+Full client side skills banner generator. Visit [https://bannershake.com](https://bannershake.com)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Logos
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Logos are provided by **[gilbarbara/logos](https://github.com/gilbarbara/logos)**.
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+

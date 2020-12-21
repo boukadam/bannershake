@@ -4,9 +4,9 @@
       <v-card color="primary" flat tile dark max-width="1024px" class="mx-auto mb-6">
         <v-card-title>
           <v-icon>mdi-star-circle</v-icon>
-          <h2 class="ml-2">Skills Banner Generator</h2>
+          <h2 class="ml-2">BannerShake</h2>
           <v-spacer></v-spacer>
-          <a href="https://github.com/boukadam/skills-banner-generator">
+          <a href="https://github.com/boukadam/bannershake">
             <v-icon x-large>mdi-github</v-icon>
           </a>
         </v-card-title>
@@ -111,9 +111,9 @@
     </v-card>
     <v-footer padless>
       <v-container class="d-flex justify-space-around">
-        <a class="github-button" href="https://github.com/boukadam/skills-banner-generator" data-size="large" data-show-count="true"
+        <a class="github-button" href="https://github.com/boukadam/bannershake" data-size="large" data-show-count="true"
            aria-label="Star boukadam/skills-banner-generator on GitHub">Star</a>
-        <div>{{ new Date().getFullYear() }} - Skills Banner Generator</div>
+        <div>{{ new Date().getFullYear() }} - BannerShake</div>
         <a class="github-button" href="https://github.com/boukadam" data-size="large" aria-label="Follow @boukadam on GitHub">Follow @boukadam</a>
       </v-container>
     </v-footer>
