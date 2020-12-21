@@ -101,7 +101,7 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="success" @click="download" x-large> Download as PNG</v-btn>
+          <v-btn color="success" :disabled="generationBeingProcessed" @click="download" x-large> Download as PNG</v-btn>
           <v-spacer></v-spacer>
         </v-card-actions>
       </v-card>
@@ -113,12 +113,7 @@
       <v-container class="d-flex justify-space-around">
         <a class="github-button" href="https://github.com/boukadam/skills-banner-generator" data-size="large" data-show-count="true"
            aria-label="Star boukadam/skills-banner-generator on GitHub">Star</a>
-        <div>
-          {{ new Date().getFullYear() }} —
-          <v-btn class="pa-0" text href="https://github.com/boukadam">
-            <strong>@boukadam</strong>
-          </v-btn>
-        </div>
+        <div>{{ new Date().getFullYear() }} - Skills Banner Generator</div>
         <a class="github-button" href="https://github.com/boukadam" data-size="large" aria-label="Follow @boukadam on GitHub">Follow @boukadam</a>
       </v-container>
     </v-footer>
@@ -153,11 +148,14 @@ export default {
     canvasHeight: 200 * 4,
     logoSize: 40 * 4,
     logoMargin: 4 * 4,
+    logosAreaWidth: 800 * 4,
     generatedImage: null,
     generationBeingProcessed: false,
     backgroundColor: "#FFFFEFFF",
     colorPickerMenu: false,
-    brandImage: null
+    brandImage: null,
+    maxBrandImageWidth: 100 * 4,
+    maxBrandImageHeight: 100 * 4
   }),
   computed: {
     logoArea() {
@@ -167,7 +165,7 @@ export default {
       return this.nbLogoPerColumn * this.nbLogoPerRow;
     },
     nbLogoPerRow() {
-      return Math.floor(this.canvasWidth / this.logoArea);
+      return Math.floor(this.logosAreaWidth / this.logoArea);
     },
     nbLogoPerColumn() {
       return Math.floor(this.canvasHeight / this.logoArea);
@@ -213,7 +211,14 @@ export default {
       };
     },
     setBrandImage(file) {
-      this.brandImage = URL.createObjectURL(file);
+      let reader = new FileReader();
+      let _this = this;
+      reader.addEventListener("load", function () {
+        _this.brandImage = reader.result;
+      }, false);
+      if (file) {
+        reader.readAsDataURL(file);
+      }
     },
     generate() {
       this.generationBeingProcessed = true;
@@ -238,7 +243,38 @@ export default {
         let brand = new Image;
         let _this = this;
         brand.addEventListener("load", function () {
-          ctx.drawImage(brand, 0, 0);
+          let width = this.naturalWidth;
+          let height = this.naturalHeight;
+          if (this.naturalWidth > _this.maxBrandImageWidth) {
+            width = _this.maxBrandImageWidth;
+            height = width * (this.naturalHeight / this.naturalWidth);
+            if (height > (_this.maxBrandImageHeight)) {
+              height = _this.maxBrandImageHeight;
+              width = height * (this.naturalWidth / this.naturalHeight);
+            }
+          } else if (this.naturalHeight > _this.maxBrandImageHeight) {
+            height = _this.maxBrandImageHeight;
+            width = height * (this.naturalWidth / this.naturalHeight);
+            if (width > _this.maxBrandImageWidth) {
+              width = _this.maxBrandImageWidth;
+              height = width * (this.naturalHeight / this.naturalWidth);
+            }
+          }
+          let x = _this.logoSize;
+          let y = (_this.canvasHeight / 2) - (height / 2);
+          ctx.drawImage(brand, x, y, width, height);
+
+          let xLine = (2 * x) + width;
+          let yLine = _this.canvasHeight / 8;
+          ctx.beginPath();
+          ctx.moveTo(xLine,yLine);
+          ctx.lineTo(xLine, 7 * yLine);
+          ctx.lineWidth = 4;
+          ctx.strokeStyle = '#616161FF';
+          ctx.stroke();
+
+          _this.logosAreaWidth = _this.canvasWidth - xLine;
+
           _this.generateLogos(canvas);
         });
         brand.src = this.brandImage;
@@ -258,7 +294,7 @@ export default {
           let width = _this.logoSize * (this.naturalWidth / this.naturalHeight);
           if (width > _this.logoSize) {
             width = _this.logoSize;
-            height = (_this.logoSize * this.naturalHeight) / this.naturalWidth;
+            height = _this.logoSize * (this.naturalHeight / this.naturalWidth);
           }
           let coordinate = _this.computeCoordinate(index);
           let yShift = 0;
