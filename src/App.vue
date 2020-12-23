@@ -3,7 +3,7 @@
     <v-card color="indigo" flat tile dark>
       <v-card color="indigo" flat tile dark max-width="1024px" class="mx-auto">
         <v-card-title>
-          <v-icon>mdi-star-circle</v-icon>
+          <v-img :src="require('./assets/logo-white.png')" max-width="40"/>
           <h2 class="ml-2">BannerShake</h2>
           <v-spacer></v-spacer>
           <v-btn icon href="https://github.com/boukadam/bannershake">
@@ -12,9 +12,9 @@
         </v-card-title>
         <v-card-text class="mt-6">
           <v-row align="center">
-            <span class="ml-2 mb-4 font-weight-light title">
+            <span class="ml-2 mb-4 font-weight-light title text-justify">
               <strong>BannerShake</strong> is a tool that allows you to generate your own banner from your technical skills.
-              <v-dialog v-model="dialog" scrollable max-width="800px">
+              <v-dialog v-model="dialog" scrollable max-width="800px" :fullscreen="$vuetify.breakpoint.mobile">
                 <template v-slot:activator="{ on, attrs }">
                   <v-btn text v-bind="attrs" v-on="on">
                     How it works?
@@ -27,21 +27,28 @@
                     <v-icon @click="dialog = false">mdi-close</v-icon>
                   </v-card-title>
                   <v-divider></v-divider>
-                  <v-card-text class="my-4 font-weight-light title">
+                  <v-card-text class="my-4 font-weight-light title text-justify">
                     <p>
                       First, select the skills you want to highlight.
                     </p>
                     <p>
-                      Then, choose the background color and then the size of the skills logos (be careful, the number of skills displayed depends
-                      on the size you choose).
+                      You can even add an image of your choice which will be displayed on the left side of the banner.
+                      By doing this, you reduce the number of skills in your banner.
                     </p>
                     <p>
-                      You can even add an image of your choice which will be displayed on the left side of the banner.
+                      Then, choose the size of the skills logos and the background color,
+                      the number of skills displayed depends on the size you choose.
                     </p>
                     <p>
                       For example, an old project that I did called <strong>Wafood</strong> was done with
                     </p>
-                    <v-img :src="require('./static/examples/wafood-skills-banner.png')"/>
+                    <p>
+                      <v-img :src="require('./static/examples/wafood-skills-banner.png')"/>
+                    </p>
+                    <p>
+                      Another example, personal banner :
+                    </p>
+                    <v-img :src="require('./static/examples/boukadam-banner.png')"/>
                   </v-card-text>
                   <v-divider></v-divider>
                   <v-card-actions>
@@ -56,32 +63,46 @@
               ({{ nbLogoTotal - selected.length }} left)
             </span>
           </v-row>
-          <v-autocomplete
-              v-model="selected"
-              :items="skills"
-              :search-input.sync="search"
-              label="Select your skills"
-              multiple
-              clearable
-              chips
-              hide-selected
-              item-value="files[0]"
-              item-text="name"
-          >
-            <template v-slot:item="data">
-              <v-row class="ml-2" align="center">
-                <img :src="require('./static/logos/' + data.item.files[0])" width="24"/>
-                <span class="pl-2">{{ data.item.name }}</span>
-              </v-row>
-            </template>
-            <template v-slot:selection="data">
-              <v-chip close @click:close="onSkillRemoved(data)">
-                <span>{{ data.item.name }}</span>
-              </v-chip>
-            </template>
-          </v-autocomplete>
-          <v-row align="center">
-            <v-col cols="4">
+          <v-row class="px-3">
+            <v-autocomplete
+                v-model="selected"
+                :items="skills"
+                :search-input.sync="search"
+                label="Select your skills"
+                multiple
+                clearable
+                chips
+                hide-selected
+                item-value="files[0]"
+                item-text="name"
+            >
+              <template v-slot:item="data">
+                <v-row class="ml-2" align="center">
+                  <img :src="require('./static/logos/' + data.item.files[0])" width="24"/>
+                  <span class="pl-2">{{ data.item.name }}</span>
+                </v-row>
+              </template>
+              <template v-slot:selection="data">
+                <v-chip close @click:close="onSkillRemoved(data)">
+                  <span>{{ data.item.name }}</span>
+                </v-chip>
+              </template>
+            </v-autocomplete>
+          </v-row>
+          <v-row align="center" justify="center">
+            <v-col :cols="$vuetify.breakpoint.mobile ? 12 : 4" class="py-0">
+              <v-file-input accept="image/*" label="Brand image" chips @change="setBrandImage"></v-file-input>
+            </v-col>
+            <v-col :cols="$vuetify.breakpoint.mobile ? 12 : 4">
+              <v-select
+                  v-model="logoSize"
+                  :items="logosSizes"
+                  label="Logo size"
+                  item-text="title"
+                  item-value="size"
+              ></v-select>
+            </v-col>
+            <v-col :cols="$vuetify.breakpoint.mobile ? 12 : 4" :class="$vuetify.breakpoint.mobile ? 'pb-0' : 'pb-5'">
               <v-text-field v-model="backgroundColor" label="Background color" hide-details readonly class="ma-0 pa-0">
                 <template v-slot:append>
                   <v-menu v-model="colorPickerMenu" top nudge-bottom="105" nudge-left="16" :close-on-content-click="false">
@@ -92,34 +113,27 @@
                       <v-card-text class="pa-0">
                         <v-color-picker v-model="backgroundColor" show-swatches flat light/>
                       </v-card-text>
+                      <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn color="success" text large @click="colorPickerMenu = false">Close</v-btn>
+                      </v-card-actions>
                     </v-card>
                   </v-menu>
                 </template>
               </v-text-field>
             </v-col>
-            <v-col cols="4">
-              <v-select
-                  v-model="logoSize"
-                  :items="logosSizes"
-                  label="Logo size"
-                  item-text="title"
-                  item-value="size"
-              ></v-select>
-            </v-col>
-            <v-col cols="4">
-              <v-file-input accept="image/*" label="Brand image" chips @change="setBrandImage"></v-file-input>
-            </v-col>
           </v-row>
 
           <v-row align="center">
-            <v-spacer></v-spacer>
-            <span v-if="selected.length > nbLogoTotal" class="font-weight-regular title warning--text">Too many logos selected</span>
-            <v-col cols="4">
+            <v-col :cols="$vuetify.breakpoint.mobile ? 12 : 8">
+              <span v-if="selected.length > nbLogoTotal" class="font-weight-regular title warning--text">Too many logos selected</span>
+            </v-col>
+            <v-col :cols="$vuetify.breakpoint.mobile ? 12 : 4">
               <v-btn
                   color="success"
                   :disabled="selected.length === 0 || selected.length > nbLogoTotal"
                   @click="generate"
-                  x-large
+                  :x-large="!$vuetify.breakpoint.mobile"
                   block
                   :loading="generationBeingProcessed"
               >
@@ -132,13 +146,20 @@
     </v-card>
 
     <v-card tile height="100%">
-      <v-card v-if="generatedImage" max-width="1024px" class="mx-auto my-12">
+      <v-card v-if="generatedImage" max-width="1024px" class="mx-auto my-12" tile color="#FAFAFAFF">
         <v-card-text>
           <v-img :src="generatedImage"></v-img>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="success" :disabled="generationBeingProcessed" @click="download" x-large> Download as PNG</v-btn>
+          <v-btn
+              color="success"
+              :loading="generationBeingProcessed"
+              @click="download"
+              :x-large="!$vuetify.breakpoint.mobile"
+          >
+            Download as PNG
+          </v-btn>
           <v-spacer></v-spacer>
         </v-card-actions>
       </v-card>
@@ -152,9 +173,9 @@
           <a class="github-button" href="https://github.com/boukadam/bannershake" data-size="large" data-show-count="true"
              aria-label="Star boukadam/skills-banner-generator on GitHub">Star</a>
         </div>
-        <div class="mx-12">
+        <div v-if="!$vuetify.breakpoint.mobile" class="mx-12">
           <v-row align="center">{{ new Date().getFullYear() }} -
-            <v-icon small color="black" class="mx-1">mdi-star-circle</v-icon>
+            <v-img :src="require('./assets/logo-black.png')" max-width="24" class="mx-1"/>
             BannerShake
           </v-row>
         </div>
