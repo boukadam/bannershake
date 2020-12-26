@@ -66,7 +66,7 @@
                     <v-divider></v-divider>
                     <v-card-actions>
                       <v-spacer></v-spacer>
-                      <v-btn color="success" text x-large @click="postFeedback">Send</v-btn>
+                      <v-btn color="success" text x-large @click="postFeedback" :loading="feedbackSubmitLoading">Send</v-btn>
                     </v-card-actions>
                   </v-form>
                 </v-card>
@@ -286,6 +286,7 @@ export default {
     feedbackDialog: false,
     feedbackEmail: null,
     feedbackComment: null,
+    feedbackSubmitLoading: false,
     snackbar: false,
     snackbarText: ""
   }),
@@ -509,6 +510,7 @@ export default {
       }
     },
     postFeedback() {
+      this.feedbackSubmitLoading = true;
       const data = {
         contactEmail: this.feedbackEmail,
         message: this.feedbackComment
@@ -527,7 +529,8 @@ export default {
         this.snackbarText = "An error occurred when sending mail! Please retry later"
       }).finally(() => {
         this.feedbackDialog = false;
-        this.snackbar = true
+        this.snackbar = true;
+        this.feedbackSubmitLoading = false;
       })
     }
   },
