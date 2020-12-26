@@ -6,25 +6,81 @@
           <v-img :src="require('./assets/logo-white.png')" max-width="40"/>
           <h2 class="ml-2">BannerShake</h2>
           <v-spacer></v-spacer>
-          <v-btn icon href="https://github.com/boukadam/bannershake">
-            <v-icon x-large>mdi-github</v-icon>
-          </v-btn>
+          <v-menu offset-y close-on-content-click left max-width="300px">
+            <template v-slot:activator="{ attrs, on }">
+              <v-btn v-bind="attrs" v-on="on" icon>
+                <v-icon large>mdi-help-circle</v-icon>
+              </v-btn>
+            </template>
+            <v-list class="body-2" rounded>
+              <v-list-item href="https://github.com/boukadam/bannershake">
+                <v-list-item-icon>
+                  <v-icon color="indigo">mdi-github</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                  <v-list-item-title>Last update</v-list-item-title>
+                  <span class="grey--text text--darken-2 font-italic mt-1">{{ lastCommitMessage }} </span>
+                  <small v-if="lastUpdate" class="font-weight-light">{{ lastUpdate }}</small>
+                </v-list-item-content>
+              </v-list-item>
+              <v-divider></v-divider>
+              <v-list-item @click="feedbackDialog = true">
+                <v-list-item-icon>
+                  <v-icon color="indigo">mdi-lightbulb-on</v-icon>
+                </v-list-item-icon>
+                <v-list-item-title>Feedback</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
         </v-card-title>
         <v-card-text class="mt-6">
           <v-row align="center">
             <span class="ml-2 mb-4 font-weight-light title text-justify">
               <strong>BannerShake</strong> is a tool that allows you to generate your own banner from your technical skills.
-              <v-dialog v-model="dialog" scrollable max-width="800px" :fullscreen="$vuetify.breakpoint.mobile">
+              <v-dialog v-model="feedbackDialog" scrollable max-width="800px" :fullscreen="$vuetify.breakpoint.mobile">
+                <v-card max-height="700px">
+                  <v-card-title>
+                    <span>Feedback</span>
+                    <v-spacer></v-spacer>
+                    <v-icon @click="feedbackDialog = false">mdi-close</v-icon>
+                  </v-card-title>
+                  <v-divider></v-divider>
+                  <v-form ref="form">
+                    <v-card-text class="my-4 font-weight-light title text-justify">
+                      <p>
+                        You can't find a technology or a skill in the list? You want to make a return or suggest an evolution?
+                      </p>
+                      <p>
+                        Please specify it in the comment box below
+                      </p>
+                      <v-text-field v-model="feedbackEmail" label="Email (Optional)" append-icon="mdi-email"></v-text-field>
+                      <v-textarea
+                        v-model="feedbackComment"
+                        label="Comment"
+                        auto-grow
+                        rows="1"
+                        append-icon="mdi-comment"
+                        :rules="[value => !!value || 'Required.']"
+                      ></v-textarea>
+                    </v-card-text>
+                    <v-divider></v-divider>
+                    <v-card-actions>
+                      <v-spacer></v-spacer>
+                      <v-btn color="success" text x-large @click="postFeedback">Send</v-btn>
+                    </v-card-actions>
+                  </v-form>
+                </v-card>
+              </v-dialog>
+
+              <v-dialog v-model="howItWorksDialog" scrollable max-width="800px" :fullscreen="$vuetify.breakpoint.mobile">
                 <template v-slot:activator="{ on, attrs }">
-                  <v-btn text v-bind="attrs" v-on="on">
-                    How it works?
-                  </v-btn>
+                  <v-btn text v-bind="attrs" v-on="on">How it works?</v-btn>
                 </template>
                 <v-card max-height="700px">
                   <v-card-title>
                     <span>How it works</span>
                     <v-spacer></v-spacer>
-                    <v-icon @click="dialog = false">mdi-close</v-icon>
+                    <v-icon @click="howItWorksDialog = false">mdi-close</v-icon>
                   </v-card-title>
                   <v-divider></v-divider>
                   <v-card-text class="my-4 font-weight-light title text-justify">
@@ -53,7 +109,7 @@
                   <v-divider></v-divider>
                   <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn color="success" text x-large @click="dialog = false">Got it!</v-btn>
+                    <v-btn color="success" text x-large @click="howItWorksDialog = false">Got it!</v-btn>
                   </v-card-actions>
                 </v-card>
               </v-dialog>
@@ -144,7 +200,7 @@
         </v-card-text>
       </v-card>
     </v-card>
-
+    <v-snackbar v-model="snackbar" :timeout="5000">{{ snackbarText }}</v-snackbar>
     <v-card tile height="100%">
       <v-card v-if="generatedImage" max-width="1024px" class="mx-auto my-12" tile color="#FAFAFAFF">
         <v-card-text>
@@ -189,6 +245,7 @@
 
 <script>
 import json from "./static/logos.json";
+import moment from "moment";
 
 export default {
   name: "App",
@@ -223,8 +280,23 @@ export default {
     brandImage: null,
     maxBrandImageWidth: 100 * 4,
     maxBrandImageHeight: 100 * 4,
-    dialog: false
+    howItWorksDialog: false,
+    lastUpdate: null,
+    lastCommitMessage: null,
+    feedbackDialog: false,
+    feedbackEmail: null,
+    feedbackComment: null,
+    snackbar: false,
+    snackbarText: ""
   }),
+  mounted() {
+    fetch("https://api.github.com/repos/boukadam/bannershake/commits/main")
+        .then(response => response.json())
+        .then(response => {
+          this.lastUpdate = moment(response.commit.committer.date).fromNow();
+          this.lastCommitMessage = response.commit.message;
+        });
+  },
   computed: {
     logoArea() {
       return this.logoSize + 2 * this.logoMargin;
@@ -257,6 +329,9 @@ export default {
     selected() {
       this.search = null;
     },
+    feedbackDialog() {
+      this.$refs.form.reset()
+    }
   },
   methods: {
     getLogoSizeLabel(size) {
@@ -433,6 +508,28 @@ export default {
         lnk.fireEvent("onclick");
       }
     },
+    postFeedback() {
+      const data = {
+        contactEmail: this.feedbackEmail,
+        message: this.feedbackComment
+      }
+
+      fetch("/.netlify/functions/send-email", {
+        method: 'post',
+        body: JSON.stringify(data)
+      }).then((response) => {
+        if (response.status === 200) {
+          this.snackbarText = "Your message was sent successfully! Thanks for your contributions!"
+        } else {
+          this.snackbarText = "An error occurred when sending mail! Please retry later"
+        }
+      }).catch(() => {
+        this.snackbarText = "An error occurred when sending mail! Please retry later"
+      }).finally(() => {
+        this.feedbackDialog = false;
+        this.snackbar = true
+      })
+    }
   },
 };
 </script>
