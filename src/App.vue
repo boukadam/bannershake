@@ -73,12 +73,12 @@
                 clearable
                 chips
                 hide-selected
-                item-value="files[0]"
+                item-value="icon"
                 item-text="name"
             >
               <template v-slot:item="data">
                 <v-row class="ml-2" align="center">
-                  <img :src="require('./static/logos/' + data.item.files[0])" width="24"/>
+                  <img :src="require('./static/logos/' + data.item.icon)" width="24"/>
                   <span class="pl-2">{{ data.item.name }}</span>
                 </v-row>
               </template>

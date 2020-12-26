@@ -1,10 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
-	<g>
-		<polygon fill="#5F3237" points="256 256 0 256 0 0 256 0"></polygon>
-		<polygon fill="#E56E62" points="256 256 51.2 256 51.2 51.2 256 51.2"></polygon>
-		<polygon fill="#ED955B" points="204.8 204.8 51.2 204.8 51.2 51.2 204.8 51.2"></polygon>
-		<polygon fill="#F9E862" points="204.8 204.8 102.4 204.8 102.4 102.4 204.8 102.4"></polygon>
-		<polygon fill="#FFFFFF" points="153.6 153.6 102.4 153.6 102.4 102.4 153.6 102.4"></polygon>
-	</g>
-</svg>
+<svg width="256" height="256" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid"><path fill="#5F3237" d="M256 256H0V0h256z"/><path fill="#E56E62" d="M256 256H51.2V51.2H256z"/><path fill="#ED955B" d="M204.8 204.8H51.2V51.2h153.6z"/><path fill="#F9E862" d="M204.8 204.8H102.4V102.4h102.4z"/><path fill="#FFF" d="M153.6 153.6h-51.2v-51.2h51.2z"/></svg>
