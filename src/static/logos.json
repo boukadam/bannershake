@@ -324,6 +324,12 @@
     "icon": "arduino.svg"
   },
   {
+    "name": "Argo",
+    "shortname": "argo",
+    "url": "https://argoproj.github.io/",
+    "icon": "argo-icon.svg"
+  },
+  {
     "name": "Armory",
     "shortname": "armory",
     "url": "http://www.armory.io/",
@@ -726,6 +732,12 @@
     "icon": "bluetooth.svg"
   },
   {
+    "name": "Booqable",
+    "shortname": "booqable",
+    "url": "https://booqable.com/",
+    "icon": "booqable.svg"
+  },
+  {
     "name": "Bootstrap",
     "shortname": "bootstrap",
     "url": "http://getbootstrap.com/",
@@ -880,6 +892,12 @@
     "shortname": "bugsnag",
     "url": "https://bugsnag.com/",
     "icon": "bugsnag.svg"
+  },
+  {
+    "name": "Buildkite",
+    "shortname": "buildkite",
+    "url": "https://buildkite.com/",
+    "icon": "buildkite.svg"
   },
   {
     "name": "Bulma",
@@ -1048,6 +1066,12 @@
     "shortname": "cirrus",
     "url": "http://www.mastercard.com/ie/consumer/cirrus-card.html",
     "icon": "cirrus.svg"
+  },
+  {
+    "name": "Cirrus CI",
+    "shortname": "cirrus-ci",
+    "url": "https://cirrus-ci.org/",
+    "icon": "cirrus-ci.svg"
   },
   {
     "name": "ClickDeploy",
@@ -1866,6 +1890,12 @@
     "icon": "envato.svg"
   },
   {
+    "name": "Envoy Proxy",
+    "shortname": "envoyproxy",
+    "url": "https://www.envoyproxy.io/",
+    "icon": "envoyproxy.svg"
+  },
+  {
     "name": "Envoyer",
     "shortname": "envoyer",
     "url": "https://envoyer.io/",
@@ -2248,6 +2278,12 @@
     "shortname": "get-satisfaction",
     "url": "https://getsatisfaction.com/",
     "icon": "get-satisfaction.svg"
+  },
+  {
+    "name": "Get Your Guide",
+    "shortname": "getyourguide",
+    "url": "https://www.getyourguide.com/",
+    "icon": "getyourguide.svg"
   },
   {
     "name": "Ghost",
@@ -4716,6 +4752,12 @@
     "icon": "puppy-linux.svg"
   },
   {
+    "name": "Purescript",
+    "shortname": "purescript",
+    "url": "https://www.purescript.org/",
+    "icon": "purescript-icon.svg"
+  },
+  {
     "name": "Pushbullet",
     "shortname": "pushbullet",
     "url": "https://www.pushbullet.com/",
@@ -5178,6 +5220,12 @@
     "icon": "scaledrone.svg"
   },
   {
+    "name": "Scaleway",
+    "shortname": "scaleway",
+    "url": "https://www.scaleway.com/",
+    "icon": "scaleway-icon.svg"
+  },
+  {
     "name": "Scaphold",
     "shortname": "scaphold",
     "url": "https://scaphold.io/",
@@ -5338,6 +5386,12 @@
     "shortname": "sitepoint",
     "url": "http://www.sitepoint.com/",
     "icon": "sitepoint.svg"
+  },
+  {
+    "name": "Skaffolder",
+    "shortname": "skaffolder",
+    "url": "https://skaffolder.com/",
+    "icon": "skaffolder.svg"
   },
   {
     "name": "Sketch",
@@ -5580,6 +5634,12 @@
     "icon": "stickermule.svg"
   },
   {
+    "name": "Stimulus",
+    "shortname": "stimulus",
+    "url": "https://stimulus.hotwire.dev/",
+    "icon": "stimulus.svg"
+  },
+  {
     "name": "Stitch",
     "shortname": "stitch",
     "url": "https://www.stitchdata.com/",
@@ -5650,6 +5710,12 @@
     "shortname": "stylus",
     "url": "https://learnboost.github.io/stylus/",
     "icon": "stylus.svg"
+  },
+  {
+    "name": "Sublime Text",
+    "shortname": "sublimetext",
+    "url": "https://www.sublimetext.com/",
+    "icon": "sublimetext-icon.svg"
   },
   {
     "name": "Subversion",
@@ -5878,6 +5944,12 @@
     "shortname": "todomvc",
     "url": "http://todomvc.com/",
     "icon": "todomvc.svg"
+  },
+  {
+    "name": "Tor",
+    "shortname": "tor",
+    "url": "https://www.torproject.org/",
+    "icon": "tor.svg"
   },
   {
     "name": "Torus",
