@@ -1,0 +1,37 @@
+{
+  "title": "BannerShake - Générateur de bannière de compétences",
+  "lastUpdate": "Dernière mise à jour",
+  "bannerShakeDesc": "<strong>BannerShake</strong> est un outil vous permettant de générer votre propre bannière de compétences.",
+  "feedback": {
+    "title": "Feedback",
+    "text": "<p>Vous ne trouvez pas une technologie ou une compétence? Vous souhaitre faire un retour ou suggérer une évolution?</p><p>Merci de le préciser dans la zone de commentaire ci-après</p>",
+    "emailField": "Email ou nom d'utilisateur (Optionnel)",
+    "commentField": "Commentaire",
+    "requiredField": "Requis",
+    "send": "Envoyer",
+    "successMsg": "Votre message a été envoyé avec succès! Merci pour votre contribution",
+    "errorMsg": "Une erreur est survenue lors de l'envoi du message! Merci de rééssayer utlérieurement"
+  },
+  "howItWorks": {
+    "title": "Comment ça marche?",
+    "step1": "Premièrement, sélectionnez les compétences que vous souhaitez mettre en avant.",
+    "step2": "Vous avez la possibilité d'ajouter une image de votre choix qui sera affichée sur le coté gauche de la bannière. En faisant cela, vous réduisez le nombre de compétences que vous pouvez afficher dans votre bannière",
+    "step3": "En suite, choisissez la taille des logos et la couleur de l'arrière plan. Le nombre des compétences affichées dépend de la taille des logos que vous choisirez",
+    "example1": "Par exemple, un ancien projet que j'ai réalisé, nommé <strong>Wafood</strong>, a été fait avec ",
+    "example2": "Un autre exemple, une bannière personnelle",
+    "gotIt": "C'est compris!"
+  },
+  "nbLogosAlert": "Avec la taille <strong>{size}</strong> vous pouvez choisir jusqu'à {nbLogoTotal} compétences (encore {nbLogoLeft})",
+  "selectSkills": "Sélectionner vos compétences",
+  "brandImage": "Photo, image de marque",
+  "logoSize": "Taille du logo",
+  "smallLogoSize": "Petite",
+  "mediumLogoSize": "Moyenne",
+  "largeLogoSize": "Grande",
+  "backgroundColor": "Couleur de l'arrière plan",
+  "close": "Fermer",
+  "tooManySkillsAlert": "Vous avez sélectionnez trop de compétences",
+  "generate": "Générer",
+  "download": "Télécharger",
+  "html5CanvasUnsupportedErrorMsg": "Votre navigateur ne supporte pas les tag HTML5 canvas."
+}

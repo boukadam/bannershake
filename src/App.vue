@@ -6,6 +6,21 @@
           <v-img :src="require('./assets/logo-white.png')" max-width="40"/>
           <h2 class="ml-2">BannerShake</h2>
           <v-spacer></v-spacer>
+          <v-menu>
+            <template v-slot:activator="{ attrs, on }">
+              <v-btn class="white--text ma-5" v-bind="attrs" v-on="on" text>
+                {{ $i18n.locale }} &#x25BC;
+              </v-btn>
+            </template>
+            <v-list>
+              <v-list-item v-for="locale in getSupportedLocales" :key="locale.code" @click="$i18n.locale = locale.code">
+                <v-list-item-icon class="mr-4">
+                  <country-flag :country="locale.flag" size="small" />
+                </v-list-item-icon>
+                <v-list-item-title>{{ locale.name }}</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
           <v-menu offset-y close-on-content-click left max-width="300px">
             <template v-slot:activator="{ attrs, on }">
               <v-btn v-bind="attrs" v-on="on" icon>
@@ -18,105 +33,104 @@
                   <v-icon color="indigo">mdi-github</v-icon>
                 </v-list-item-icon>
                 <v-list-item-content>
-                  <v-list-item-title>Last update</v-list-item-title>
+                  <v-list-item-title>{{ $t('lastUpdate') }}</v-list-item-title>
                   <span class="grey--text text--darken-2 font-italic mt-1">{{ lastCommitMessage }} </span>
                   <small v-if="lastUpdate" class="font-weight-light">{{ lastUpdate }}</small>
                 </v-list-item-content>
+              </v-list-item>
+              <v-divider></v-divider>
+              <v-list-item @click="howItWorksDialog = true">
+                <v-list-item-icon>
+                  <v-icon color="indigo">mdi-information</v-icon>
+                </v-list-item-icon>
+                <v-list-item-title>{{ $t('howItWorks.title') }}</v-list-item-title>
               </v-list-item>
               <v-divider></v-divider>
               <v-list-item @click="feedbackDialog = true">
                 <v-list-item-icon>
                   <v-icon color="indigo">mdi-lightbulb-on</v-icon>
                 </v-list-item-icon>
-                <v-list-item-title>Feedback</v-list-item-title>
+                <v-list-item-title>{{ $t('feedback.title') }}</v-list-item-title>
               </v-list-item>
             </v-list>
           </v-menu>
         </v-card-title>
+
+        <v-dialog v-model="feedbackDialog" scrollable max-width="800px" :fullscreen="$vuetify.breakpoint.mobile">
+          <v-card max-height="700px">
+            <v-card-title>
+              <span>{{ $t('feedback.title') }}</span>
+              <v-spacer></v-spacer>
+              <v-icon @click="feedbackDialog = false">mdi-close</v-icon>
+            </v-card-title>
+            <v-divider></v-divider>
+            <v-form ref="form">
+              <v-card-text class="my-4 font-weight-light title text-justify">
+                <span v-html="$t('feedback.text')"></span>
+                <v-text-field v-model="feedbackEmail" :label="$t('feedback.emailField')" append-icon="mdi-email"></v-text-field>
+                <v-textarea
+                    v-model="feedbackComment"
+                    :label="$t('feedback.commentField')"
+                    auto-grow
+                    rows="1"
+                    append-icon="mdi-comment"
+                    :rules="[value => !!value || t('feedback.requiredField')]"
+                ></v-textarea>
+              </v-card-text>
+              <v-divider></v-divider>
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn color="success" text x-large @click="postFeedback" :loading="feedbackSubmitLoading">{{ $t('feedback.send') }}</v-btn>
+              </v-card-actions>
+            </v-form>
+          </v-card>
+        </v-dialog>
+        <v-dialog v-model="howItWorksDialog" scrollable max-width="800px" :fullscreen="$vuetify.breakpoint.mobile">
+          <v-card max-height="700px">
+            <v-card-title>
+              <span>{{ $t('howItWorks.title') }}</span>
+              <v-spacer></v-spacer>
+              <v-icon @click="howItWorksDialog = false">mdi-close</v-icon>
+            </v-card-title>
+            <v-divider></v-divider>
+            <v-card-text class="my-4 font-weight-light title text-justify">
+              <p>
+                {{ $t('howItWorks.step1') }}
+              </p>
+              <p>
+                {{ $t('howItWorks.step2') }}
+              </p>
+              <p>
+                {{ $t('howItWorks.step3') }}
+              </p>
+              <p>
+                {{ $t('howItWorks.example1') }}
+              </p>
+              <p>
+                <v-img :src="require('./static/examples/wafood-skills-banner.png')"/>
+              </p>
+              <p>
+                {{ $t('howItWorks.example2') }}
+              </p>
+              <v-img :src="require('./static/examples/boukadam-banner.png')"/>
+            </v-card-text>
+            <v-divider></v-divider>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn color="success" text x-large @click="howItWorksDialog = false">{{ $t('howItWorks.gotIt') }}</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+
         <v-card-text class="mt-6">
           <v-row align="center">
-            <span class="ml-2 mb-4 font-weight-light title text-justify">
-              <strong>BannerShake</strong> is a tool that allows you to generate your own banner from your technical skills.
-              <v-dialog v-model="feedbackDialog" scrollable max-width="800px" :fullscreen="$vuetify.breakpoint.mobile">
-                <v-card max-height="700px">
-                  <v-card-title>
-                    <span>Feedback</span>
-                    <v-spacer></v-spacer>
-                    <v-icon @click="feedbackDialog = false">mdi-close</v-icon>
-                  </v-card-title>
-                  <v-divider></v-divider>
-                  <v-form ref="form">
-                    <v-card-text class="my-4 font-weight-light title text-justify">
-                      <p>
-                        You can't find a technology or a skill in the list? You want to make a return or suggest an evolution?
-                      </p>
-                      <p>
-                        Please specify it in the comment box below
-                      </p>
-                      <v-text-field v-model="feedbackEmail" label="Email (Optional)" append-icon="mdi-email"></v-text-field>
-                      <v-textarea
-                        v-model="feedbackComment"
-                        label="Comment"
-                        auto-grow
-                        rows="1"
-                        append-icon="mdi-comment"
-                        :rules="[value => !!value || 'Required.']"
-                      ></v-textarea>
-                    </v-card-text>
-                    <v-divider></v-divider>
-                    <v-card-actions>
-                      <v-spacer></v-spacer>
-                      <v-btn color="success" text x-large @click="postFeedback" :loading="feedbackSubmitLoading">Send</v-btn>
-                    </v-card-actions>
-                  </v-form>
-                </v-card>
-              </v-dialog>
-
-              <v-dialog v-model="howItWorksDialog" scrollable max-width="800px" :fullscreen="$vuetify.breakpoint.mobile">
-                <template v-slot:activator="{ on, attrs }">
-                  <v-btn text v-bind="attrs" v-on="on">How it works?</v-btn>
-                </template>
-                <v-card max-height="700px">
-                  <v-card-title>
-                    <span>How it works</span>
-                    <v-spacer></v-spacer>
-                    <v-icon @click="howItWorksDialog = false">mdi-close</v-icon>
-                  </v-card-title>
-                  <v-divider></v-divider>
-                  <v-card-text class="my-4 font-weight-light title text-justify">
-                    <p>
-                      First, select the skills you want to highlight.
-                    </p>
-                    <p>
-                      You can even add an image of your choice which will be displayed on the left side of the banner.
-                      By doing this, you reduce the number of skills in your banner.
-                    </p>
-                    <p>
-                      Then, choose the size of the skills logos and the background color,
-                      the number of skills displayed depends on the size you choose.
-                    </p>
-                    <p>
-                      For example, an old project that I did called <strong>Wafood</strong> was done with
-                    </p>
-                    <p>
-                      <v-img :src="require('./static/examples/wafood-skills-banner.png')"/>
-                    </p>
-                    <p>
-                      Another example, personal banner :
-                    </p>
-                    <v-img :src="require('./static/examples/boukadam-banner.png')"/>
-                  </v-card-text>
-                  <v-divider></v-divider>
-                  <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn color="success" text x-large @click="howItWorksDialog = false">Got it!</v-btn>
-                  </v-card-actions>
-                </v-card>
-              </v-dialog>
+            <span class="ml-2 mb-4 font-weight-light headline text-justify">
+              <span v-html="$t('bannerShakeDesc')"></span>
             </span>
-            <span class="ml-2 mb-4 font-weight-light title">
-              With <strong>{{ getLogoSizeLabel(logoSize) }}</strong> size you can select up to {{ nbLogoTotal }} skills
-              ({{ nbLogoTotal - selected.length }} left)
+            <span
+                class="ml-2 mb-4 font-weight-light title"
+                v-html="$t('nbLogosAlert', {size: getLogoSizeLabel(logoSize), nbLogoTotal: nbLogoTotal, nbLogoLeft: nbLogoTotal - selected.length})"
+            >
             </span>
           </v-row>
           <v-row class="px-3">
@@ -124,7 +138,7 @@
                 v-model="selected"
                 :items="skills"
                 :search-input.sync="search"
-                label="Select your skills"
+                :label="$t('selectSkills')"
                 multiple
                 clearable
                 chips
@@ -147,19 +161,19 @@
           </v-row>
           <v-row align="center" justify="center">
             <v-col :cols="$vuetify.breakpoint.mobile ? 12 : 4" class="py-0">
-              <v-file-input accept="image/*" label="Brand image" chips @change="setBrandImage"></v-file-input>
+              <v-file-input accept="image/*" :label="$t('brandImage')" chips @change="setBrandImage"></v-file-input>
             </v-col>
             <v-col :cols="$vuetify.breakpoint.mobile ? 12 : 4">
               <v-select
                   v-model="logoSize"
-                  :items="logosSizes"
-                  label="Logo size"
+                  :items="logoSizes"
+                  :label="$t('logoSize')"
                   item-text="title"
                   item-value="size"
               ></v-select>
             </v-col>
             <v-col :cols="$vuetify.breakpoint.mobile ? 12 : 4" :class="$vuetify.breakpoint.mobile ? 'pb-0' : 'pb-5'">
-              <v-text-field v-model="backgroundColor" label="Background color" hide-details readonly class="ma-0 pa-0">
+              <v-text-field v-model="backgroundColor" :label="$t('backgroundColor')" hide-details readonly class="ma-0 pa-0">
                 <template v-slot:append>
                   <v-menu v-model="colorPickerMenu" top nudge-bottom="105" nudge-left="16" :close-on-content-click="false">
                     <template v-slot:activator="{ on }">
@@ -171,7 +185,7 @@
                       </v-card-text>
                       <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn color="success" text large @click="colorPickerMenu = false">Close</v-btn>
+                        <v-btn color="success" text large @click="colorPickerMenu = false">{{ $t('close') }}</v-btn>
                       </v-card-actions>
                     </v-card>
                   </v-menu>
@@ -182,7 +196,7 @@
 
           <v-row align="center">
             <v-col :cols="$vuetify.breakpoint.mobile ? 12 : 8">
-              <span v-if="selected.length > nbLogoTotal" class="font-weight-regular title warning--text">Too many logos selected</span>
+              <span v-if="selected.length > nbLogoTotal" class="font-weight-regular title warning--text">{{ $t('tooManySkillsAlert') }}</span>
             </v-col>
             <v-col :cols="$vuetify.breakpoint.mobile ? 12 : 4">
               <v-btn
@@ -193,7 +207,7 @@
                   block
                   :loading="generationBeingProcessed"
               >
-                Generate
+                {{ $t('generate') }}
               </v-btn>
             </v-col>
           </v-row>
@@ -214,20 +228,20 @@
               @click="download"
               :x-large="!$vuetify.breakpoint.mobile"
           >
-            Download as PNG
+            {{ $t('download') }}
           </v-btn>
           <v-spacer></v-spacer>
         </v-card-actions>
       </v-card>
       <canvas id="myCanvas" :width="canvasWidth" :height="canvasHeight" hidden>
-        Your browser does not support the HTML5 canvas tag.
+        {{ $t('html5CanvasUnsupportedErrorMsg') }}
       </canvas>
     </v-card>
     <v-footer padless>
       <v-container class="d-flex justify-space-between" style="max-width: 1024px">
         <div>
           <a class="github-button" href="https://github.com/boukadam/bannershake" data-size="large" data-show-count="true"
-             aria-label="Star boukadam/skills-banner-generator on GitHub">Star</a>
+             aria-label="Star boukadam/skills-banner-generator on GitHub"> Star </a>
         </div>
         <div v-if="!$vuetify.breakpoint.mobile" class="mx-12">
           <v-row align="center">{{ new Date().getFullYear() }} -
@@ -236,7 +250,9 @@
           </v-row>
         </div>
         <div>
-          <a class="github-button" href="https://github.com/boukadam" data-size="large" aria-label="Follow @boukadam on GitHub">Follow @boukadam</a>
+          <a class="github-button" href="https://github.com/boukadam" data-size="large" aria-label="Follow @boukadam on GitHub">
+            Follow @boukadam
+          </a>
         </div>
       </v-container>
     </v-footer>
@@ -245,28 +261,18 @@
 
 <script>
 import json from "./static/logos.json";
+import supportedLocales from "./locales"
 import moment from "moment";
 
 export default {
   name: "App",
+  metaInfo: {
+    title: "BannerShake - Skills Banner Generator"
+  },
   components: {},
   data: () => ({
     search: null,
     skills: json,
-    logosSizes: [
-      {
-        title: "Small",
-        size: 25 * 4,
-      },
-      {
-        title: "Medium",
-        size: 40 * 4,
-      },
-      {
-        title: "Large",
-        size: 55 * 4,
-      },
-    ],
     selected: [],
     canvasWidth: 800 * 4,
     canvasHeight: 200 * 4,
@@ -299,6 +305,25 @@ export default {
         });
   },
   computed: {
+    getSupportedLocales() {
+      return supportedLocales;
+    },
+    logoSizes() {
+      return [
+        {
+          title: this.$t('smallLogoSize'),
+          size: 25 * 4,
+        },
+        {
+          title: this.$t('mediumLogoSize'),
+          size: 40 * 4,
+        },
+        {
+          title: this.$t('largeLogoSize'),
+          size: 55 * 4,
+        },
+      ]
+    },
     logoArea() {
       return this.logoSize + 2 * this.logoMargin;
     },
@@ -336,7 +361,7 @@ export default {
   },
   methods: {
     getLogoSizeLabel(size) {
-      for (let element of this.logosSizes) {
+      for (let element of this.logoSizes) {
         if (size === element.size) {
           return element.title;
         }
@@ -521,12 +546,12 @@ export default {
         body: JSON.stringify(data)
       }).then((response) => {
         if (response.status === 200) {
-          this.snackbarText = "Your message was sent successfully! Thanks for your contributions!"
+          this.snackbarText = this.$t('feedback.successMsg');
         } else {
-          this.snackbarText = "An error occurred when sending mail! Please retry later"
+          this.snackbarText = this.$t('feedback.errorMsg');
         }
       }).catch(() => {
-        this.snackbarText = "An error occurred when sending mail! Please retry later"
+        this.snackbarText = this.$t('feedback.errorMsg');
       }).finally(() => {
         this.feedbackDialog = false;
         this.snackbar = true;

@@ -1,0 +1,37 @@
+{
+  "title": "BannerShake - Skills Banner Generator",
+  "lastUpdate": "Last update",
+  "bannerShakeDesc": "<strong>BannerShake</strong> is a tool that allows you to generate your own banner from your technical skills.",
+  "feedback": {
+    "title": "Feedback",
+    "text": "<p>You can't find a technology or a skill in the list? You want to make a return or suggest an evolution?</p><p>Please specify it in the comment box below</p>",
+    "emailField": "Email or username (Optional)",
+    "commentField": "Comment",
+    "requiredField": "Required",
+    "send": "Send",
+    "successMsg": "Your message was sent successfully! Thanks for your contributions!",
+    "errorMsg": "An error occurred when sending mail! Please retry later"
+  },
+  "howItWorks": {
+    "title": "How it works?",
+    "step1": "First, select the skills you want to highlight.",
+    "step2": "You can even add an image of your choice which will be displayed on the left side of the banner. By doing this, you reduce the number of skills in your banner.",
+    "step3": "Then, choose the size of the skills logos and the background color. The number of skills displayed depends on the size you choose.",
+    "example1": "For example, an old project that I did, called <strong>Wafood</strong>, was done with",
+    "example2": "Another example, a personal banner",
+    "gotIt": "Got it!"
+  },
+  "nbLogosAlert": "With <strong>{size}</strong> size you can select up to {nbLogoTotal} skills ({nbLogoLeft} left)",
+  "selectSkills": "Select your skills",
+  "brandImage": "Brand image",
+  "logoSize": "Logo size",
+  "smallLogoSize": "Small",
+  "mediumLogoSize": "Medium",
+  "largeLogoSize": "Large",
+  "backgroundColor": "Background color",
+  "close": "Close",
+  "tooManySkillsAlert": "Too many skills selected",
+  "generate": "Generate",
+  "download": "Download",
+  "html5CanvasUnsupportedErrorMsg": "Your browser does not support the HTML5 canvas tag."
+}
