@@ -3,12 +3,12 @@
     <v-card color="indigo" flat tile dark>
       <v-card color="indigo" flat tile dark max-width="1024px" class="mx-auto">
         <v-card-title>
-          <v-img :src="require('./assets/logo-white.png')" max-width="40"/>
-          <h2 class="ml-2">BannerShake</h2>
+          <v-img :src="require('./assets/logo-white.png')" :max-width="$vuetify.breakpoint.xs ? 28 : 40"/>
+          <span class="ml-2 text-md-h4 text-sm-h5 font-weight-bold">BannerShake</span>
           <v-spacer></v-spacer>
-          <v-menu>
+          <v-menu left offset-y>
             <template v-slot:activator="{ attrs, on }">
-              <v-btn class="white--text ma-5" v-bind="attrs" v-on="on" text>
+              <v-btn class="white--text" v-bind="attrs" v-on="on" text :small="$vuetify.breakpoint.xs">
                 {{ $i18n.locale }} &#x25BC;
               </v-btn>
             </template>
@@ -24,7 +24,7 @@
           <v-menu offset-y close-on-content-click left max-width="300px">
             <template v-slot:activator="{ attrs, on }">
               <v-btn v-bind="attrs" v-on="on" icon>
-                <v-icon large>mdi-help-circle</v-icon>
+                <v-icon :large="!$vuetify.breakpoint.xs">mdi-help-circle</v-icon>
               </v-btn>
             </template>
             <v-list class="body-2" rounded>
@@ -56,7 +56,7 @@
           </v-menu>
         </v-card-title>
 
-        <v-dialog v-model="feedbackDialog" scrollable max-width="800px" :fullscreen="$vuetify.breakpoint.mobile">
+        <v-dialog v-model="feedbackDialog" scrollable max-width="800px" :fullscreen="$vuetify.breakpoint.xs">
           <v-card max-height="700px">
             <v-card-title>
               <span>{{ $t('feedback.title') }}</span>
@@ -65,7 +65,7 @@
             </v-card-title>
             <v-divider></v-divider>
             <v-form ref="form">
-              <v-card-text class="my-4 font-weight-light title text-justify">
+              <v-card-text class="my-4 font-weight-light text-md-h5 text-h6 text-justify">
                 <span v-html="$t('feedback.text')"></span>
                 <v-text-field v-model="feedbackEmail" :label="$t('feedback.emailField')" append-icon="mdi-email"></v-text-field>
                 <v-textarea
@@ -85,7 +85,7 @@
             </v-form>
           </v-card>
         </v-dialog>
-        <v-dialog v-model="howItWorksDialog" scrollable max-width="800px" :fullscreen="$vuetify.breakpoint.mobile">
+        <v-dialog v-model="howItWorksDialog" scrollable max-width="800px" :fullscreen="$vuetify.breakpoint.xs">
           <v-card max-height="700px">
             <v-card-title>
               <span>{{ $t('howItWorks.title') }}</span>
@@ -124,11 +124,11 @@
 
         <v-card-text class="mt-6">
           <v-row align="center">
-            <span class="ml-2 mb-4 font-weight-light headline text-justify">
+            <span class="ml-2 mb-4 font-weight-light text-justify text-md-h5 text-h6">
               <span v-html="$t('bannerShakeDesc')"></span>
             </span>
             <span
-                class="ml-2 mb-4 font-weight-light title"
+                class="ml-2 mb-4 font-weight-light text-justify text-md-h5 text-h6"
                 v-html="$t('nbLogosAlert', {size: getLogoSizeLabel(logoSize), nbLogoTotal: nbLogoTotal, nbLogoLeft: nbLogoTotal - selected.length})"
             >
             </span>
@@ -148,7 +148,7 @@
             >
               <template v-slot:item="data">
                 <v-row class="ml-2" align="center">
-                  <img :src="require('./static/logos/' + data.item.icon)" width="24"/>
+                  <img :src="require('./static/' + data.item.icon)" width="24"/>
                   <span class="pl-2">{{ data.item.name }}</span>
                 </v-row>
               </template>
@@ -160,10 +160,10 @@
             </v-autocomplete>
           </v-row>
           <v-row align="center" justify="center">
-            <v-col :cols="$vuetify.breakpoint.mobile ? 12 : 4" class="py-0">
+            <v-col :cols="$vuetify.breakpoint.xs ? 12 : 4" class="py-0">
               <v-file-input accept="image/*" :label="$t('brandImage')" chips @change="setBrandImage"></v-file-input>
             </v-col>
-            <v-col :cols="$vuetify.breakpoint.mobile ? 12 : 4">
+            <v-col :cols="$vuetify.breakpoint.xs ? 12 : 4">
               <v-select
                   v-model="logoSize"
                   :items="logoSizes"
@@ -172,7 +172,7 @@
                   item-value="size"
               ></v-select>
             </v-col>
-            <v-col :cols="$vuetify.breakpoint.mobile ? 12 : 4" :class="$vuetify.breakpoint.mobile ? 'pb-0' : 'pb-5'">
+            <v-col :cols="$vuetify.breakpoint.xs ? 12 : 4" :class="$vuetify.breakpoint.xs ? 'pb-0' : 'pb-5'">
               <v-text-field v-model="backgroundColor" :label="$t('backgroundColor')" hide-details readonly class="ma-0 pa-0">
                 <template v-slot:append>
                   <v-menu v-model="colorPickerMenu" top nudge-bottom="105" nudge-left="16" :close-on-content-click="false">
@@ -195,15 +195,15 @@
           </v-row>
 
           <v-row align="center">
-            <v-col :cols="$vuetify.breakpoint.mobile ? 12 : 8">
+            <v-col :cols="$vuetify.breakpoint.xs ? 12 : 8">
               <span v-if="selected.length > nbLogoTotal" class="font-weight-regular title warning--text">{{ $t('tooManySkillsAlert') }}</span>
             </v-col>
-            <v-col :cols="$vuetify.breakpoint.mobile ? 12 : 4">
+            <v-col :cols="$vuetify.breakpoint.xs ? 12 : 4">
               <v-btn
                   color="success"
                   :disabled="selected.length === 0 || selected.length > nbLogoTotal"
                   @click="generate"
-                  :x-large="!$vuetify.breakpoint.mobile"
+                  :x-large="!$vuetify.breakpoint.xs"
                   block
                   :loading="generationBeingProcessed"
               >
@@ -226,7 +226,7 @@
               color="success"
               :loading="generationBeingProcessed"
               @click="download"
-              :x-large="!$vuetify.breakpoint.mobile"
+              :x-large="!$vuetify.breakpoint.xs"
           >
             {{ $t('download') }}
           </v-btn>
@@ -243,7 +243,7 @@
           <a class="github-button" href="https://github.com/boukadam/bannershake" data-size="large" data-show-count="true"
              aria-label="Star boukadam/skills-banner-generator on GitHub"> Star </a>
         </div>
-        <div v-if="!$vuetify.breakpoint.mobile" class="mx-12">
+        <div v-if="!$vuetify.breakpoint.xs" class="mx-12">
           <v-row align="center">{{ new Date().getFullYear() }} -
             <v-img :src="require('./assets/logo-black.png')" max-width="24" class="mx-1"/>
             BannerShake
@@ -260,7 +260,7 @@
 </template>
 
 <script>
-import json from "./static/logos.json";
+import json from "./static/provided/providedLogos.json";
 import supportedLocales from "./locales"
 import moment from "moment";
 
@@ -493,7 +493,7 @@ export default {
             _this.generationBeingProcessed = false;
           }
         });
-        image.src = require("./static/logos/" + element);
+        image.src = require("./static/" + element);
       });
     },
     download() {
