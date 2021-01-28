@@ -4479,7 +4479,7 @@
     "name": "RedHat",
     "shortname": "redhat",
     "url": "http://www.redhat.com/",
-    "icon": "provided/logos/redhat.svg"
+    "icon": "provided/logos/redhat-icon.svg"
   },
   {
     "name": "Redis",
@@ -5598,6 +5598,12 @@
     "icon": "provided/logos/vector-timber.svg"
   },
   {
+    "name": "Vercel",
+    "shortname": "vercel",
+    "url": "https://vercel.com/",
+    "icon": "provided/logos/vercel-icon.svg"
+  },
+  {
     "name": "VerneMQ",
     "shortname": "vernemq",
     "url": "https://verne.mq/",
@@ -6010,12 +6016,6 @@
     "shortname": "zapier",
     "url": "https://zapier.com/",
     "icon": "provided/logos/zapier-icon.svg"
-  },
-  {
-    "name": "Zeit",
-    "shortname": "zeit",
-    "url": "https://zeit.co/",
-    "icon": "provided/logos/zeit-icon.svg"
   },
   {
     "name": "Zend Framework",
