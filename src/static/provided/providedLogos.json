@@ -186,6 +186,12 @@
     "icon": "provided/logos/apollostack.svg"
   },
   {
+    "name": "Apostrophe",
+    "shortname": "apostrophe",
+    "url": "https://apostrophecms.com/",
+    "icon": "provided/logos/apostrophe.svg"
+  },
+  {
     "name": "Appbase",
     "shortname": "appbaseio",
     "url": "http://appbase.io/",
@@ -1362,6 +1368,12 @@
     "icon": "provided/logos/database-labs.svg"
   },
   {
+    "name": "Datadog",
+    "shortname": "datadog",
+    "url": "https://www.datadoghq.com/",
+    "icon": "provided/logos/datadog.svg"
+  },
+  {
     "name": "DatoCMS",
     "shortname": "datocms",
     "url": "https://www.datocms.com/",
@@ -1576,6 +1588,12 @@
     "shortname": "eclipse",
     "url": "https://eclipse.org/",
     "icon": "provided/logos/eclipse-icon.svg"
+  },
+  {
+    "name": "EditorConfig",
+    "shortname": "editorconfig",
+    "url": "https://editorconfig.org/",
+    "icon": "provided/logos/editorconfig.svg"
   },
   {
     "name": "egghead",
@@ -2104,6 +2122,12 @@
     "shortname": "glint",
     "url": "http://www.glintinc.com/",
     "icon": "provided/logos/glint.svg"
+  },
+  {
+    "name": "Glitch",
+    "shortname": "glitch",
+    "url": "https://glitch.com/",
+    "icon": "provided/logos/glitch-icon.svg"
   },
   {
     "name": "GNU",
@@ -3306,6 +3330,12 @@
     "icon": "provided/logos/mailgun-icon.svg"
   },
   {
+    "name": "Mailjet",
+    "shortname": "mailjet",
+    "url": "https://www.mailjet.com/",
+    "icon": "provided/logos/mailjet.svg"
+  },
+  {
     "name": "Manuscript",
     "shortname": "manuscript",
     "url": "https://manuscript.com",
@@ -3364,6 +3394,12 @@
     "shortname": "mastercard",
     "url": "https://www.mastercard.com/",
     "icon": "provided/logos/mastercard.svg"
+  },
+  {
+    "name": "Mastodon",
+    "shortname": "mastodon",
+    "url": "https://joinmastodon.org/",
+    "icon": "provided/logos/mastodon-icon.svg"
   },
   {
     "name": "Material UI",
@@ -4080,6 +4116,12 @@
     "icon": "provided/logos/pivotal_tracker.svg"
   },
   {
+    "name": "PixiJS",
+    "shortname": "pixijs",
+    "url": "https://www.pixijs.com/",
+    "icon": "provided/logos/pixijs.svg"
+  },
+  {
     "name": "PKG",
     "shortname": "pkg",
     "url": "https://github.com/zeit/pkg",
@@ -4432,6 +4474,12 @@
     "shortname": "react",
     "url": "https://facebook.github.io/react/",
     "icon": "provided/logos/react.svg"
+  },
+  {
+    "name": "React Spring",
+    "shortname": "react-spring",
+    "url": "https://www.react-spring.io/",
+    "icon": "provided/logos/react-spring.svg"
   },
   {
     "name": "React Styleguidist",
@@ -5457,7 +5505,7 @@
     "name": "TYPO3",
     "shortname": "typo3",
     "url": "https://typo3.com/",
-    "icon": "provided/logos/typo3.svg"
+    "icon": "provided/logos/typo3-icon.svg"
   },
   {
     "name": "ubuntu",
@@ -5772,6 +5820,12 @@
     "icon": "provided/logos/webhooks.svg"
   },
   {
+    "name": "Webix",
+    "shortname": "webix",
+    "url": "https://webix.com/",
+    "icon": "provided/logos/webix-icon.svg"
+  },
+  {
     "name": "Webmin",
     "shortname": "webmin",
     "url": "http://www.webmin.com/",
@@ -5938,6 +5992,12 @@
     "shortname": "xplenty",
     "url": "https://www.xplenty.com/",
     "icon": "provided/logos/xplenty.svg"
+  },
+  {
+    "name": "XState",
+    "shortname": "xstate",
+    "url": "https://xstate.js.org/",
+    "icon": "provided/logos/xstate.svg"
   },
   {
     "name": "Xtend",
