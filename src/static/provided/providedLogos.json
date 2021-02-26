@@ -912,6 +912,12 @@
     "icon": "provided/logos/certbot.svg"
   },
   {
+    "name": "Ceylon",
+    "shortname": "ceylon",
+    "url": "https://ceylon-lang.org/",
+    "icon": "provided/logos/ceylon.svg"
+  },
+  {
     "name": "Chai",
     "shortname": "chai",
     "url": "http://chaijs.com/",
@@ -2706,6 +2712,12 @@
     "icon": "provided/logos/ink.svg"
   },
   {
+    "name": "Insomnia",
+    "shortname": "insomnia",
+    "url": "https://insomnia.rest/",
+    "icon": "provided/logos/insomnia.svg"
+  },
+  {
     "name": "Instagram",
     "shortname": "instagram",
     "url": "https://instagram.com/",
@@ -3810,6 +3822,12 @@
     "icon": "provided/logos/nuclide.svg"
   },
   {
+    "name": "NumPy",
+    "shortname": "numpy",
+    "url": "https://numpy.org/",
+    "icon": "provided/logos/numpy.svg"
+  },
+  {
     "name": "Nuxt",
     "shortname": "nuxt",
     "url": "https://nuxtjs.org/",
@@ -4176,6 +4194,12 @@
     "icon": "provided/logos/postcss.svg"
   },
   {
+    "name": "Postgraphile",
+    "shortname": "postgraphile",
+    "url": "https://www.graphile.org/postgraphile/",
+    "icon": "provided/logos/postgraphile.svg"
+  },
+  {
     "name": "PostgreSQL",
     "shortname": "postgresql",
     "url": "http://www.postgresql.org/",
@@ -4386,10 +4410,22 @@
     "icon": "provided/logos/q.svg"
   },
   {
+    "name": "Qlik",
+    "shortname": "qlik",
+    "url": "https://www.qlik.com/",
+    "icon": "provided/logos/qlik.svg"
+  },
+  {
     "name": "Qt",
     "shortname": "qt",
     "url": "http://www.qt.io/",
     "icon": "provided/logos/qt.svg"
+  },
+  {
+    "name": "Quarkus",
+    "shortname": "quarkus",
+    "url": "https://quarkus.io/",
+    "icon": "provided/logos/quarkus-icon.svg"
   },
   {
     "name": "Quay",
@@ -5298,6 +5334,12 @@
     "icon": "provided/logos/t3.svg"
   },
   {
+    "name": "Tableau",
+    "shortname": "tableau",
+    "url": "https://www.tableau.com/",
+    "icon": "provided/logos/tableau-icon.svg"
+  },
+  {
     "name": "Taiga",
     "shortname": "taiga",
     "url": "https://taiga.io/",
@@ -5908,6 +5950,12 @@
     "shortname": "wicket",
     "url": "https://wicket.apache.org/",
     "icon": "provided/logos/wicket-icon.svg"
+  },
+  {
+    "name": "Wildfly",
+    "shortname": "wildfly",
+    "url": "https://www.wildfly.org",
+    "icon": "provided/logos/wildfly.svg"
   },
   {
     "name": "Windows",
