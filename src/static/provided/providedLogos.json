@@ -1128,6 +1128,12 @@
     "icon": "provided/logos/codepush.svg"
   },
   {
+    "name": "CodersRank",
+    "shortname": "codersrank",
+    "url": "https://codersrank.io/",
+    "icon": "provided/logos/codersrank.svg"
+  },
+  {
     "name": "coderwall",
     "shortname": "coderwall",
     "url": "https://coderwall.com/",
@@ -1584,6 +1590,12 @@
     "icon": "provided/logos/dyndns.svg"
   },
   {
+    "name": "Dynatrace",
+    "shortname": "dynatrace",
+    "url": "https://www.dynatrace.com/",
+    "icon": "provided/logos/dynatrace-icon.svg"
+  },
+  {
     "name": "EBANX",
     "shortname": "ebanx",
     "url": "https://www.ebanx.com",
@@ -1810,6 +1822,12 @@
     "shortname": "falcor",
     "url": "http://netflix.github.io/falcor/",
     "icon": "provided/logos/falcor.svg"
+  },
+  {
+    "name": "Fastify",
+    "shortname": "fastify",
+    "url": "https://www.fastify.io/",
+    "icon": "provided/logos/fastify-icon.svg"
   },
   {
     "name": "Fastlane",
@@ -2598,6 +2616,12 @@
     "icon": "provided/logos/hostgator-icon.svg"
   },
   {
+    "name": "Hotjar",
+    "shortname": "hotjar",
+    "url": "https://www.hotjar.com/",
+    "icon": "provided/logos/hotjar.svg"
+  },
+  {
     "name": "Hound",
     "shortname": "houndci",
     "url": "https://houndci.com/",
@@ -2836,6 +2860,12 @@
     "shortname": "jetbrains",
     "url": "https://www.jetbrains.com/",
     "icon": "provided/logos/jetbrains.svg"
+  },
+  {
+    "name": "JFrog",
+    "shortname": "jfrog",
+    "url": "https://www.jfrog.com/",
+    "icon": "provided/logos/jfrog.svg"
   },
   {
     "name": "Jhipster",
@@ -5016,6 +5046,12 @@
     "icon": "provided/logos/socket.io.svg"
   },
   {
+    "name": "SolarWinds",
+    "shortname": "solarwinds",
+    "url": "https://www.solarwinds.com/",
+    "icon": "provided/logos/solarwinds.svg"
+  },
+  {
     "name": "Solid",
     "shortname": "solid",
     "url": "https://solidproject.org/",
@@ -5092,6 +5128,12 @@
     "shortname": "spinnaker",
     "url": "https://spinnaker.io/",
     "icon": "provided/logos/spinnaker.svg"
+  },
+  {
+    "name": "Splunk",
+    "shortname": "splunk",
+    "url": "https://www.splunk.com/",
+    "icon": "provided/logos/splunk.svg"
   },
   {
     "name": "Spree Commerce",
@@ -5362,6 +5404,12 @@
     "shortname": "targetprocess",
     "url": "http://www.targetprocess.com/",
     "icon": "provided/logos/targetprocess.svg"
+  },
+  {
+    "name": "Taskade",
+    "shortname": "taskade",
+    "url": "https://www.taskade.com/",
+    "icon": "provided/logos/taskade-icon.svg"
   },
   {
     "name": "TasteJS",
