@@ -2,6 +2,15 @@
   <div>
     <v-card v-if="generatedImage" max-width="1024px" class="mx-auto my-12" tile color="#FAFAFAFF">
       <v-card-text>
+        <v-alert v-if="logosOffscreen.length > 0"
+            text
+            color="orange darken-2"
+            prominent
+            icon="mdi-alert"
+        >
+          <p>{{ $t("logosOffscreenAlert1") }}</p>
+          <span v-html="$tc('logosOffscreenAlert2', logosOffscreen.length, {logosOffscreen: logosOffscreen.join(', ')})" />
+        </v-alert>
         <v-img :src="generatedImage"></v-img>
       </v-card-text>
       <v-card-actions>
@@ -50,7 +59,9 @@ export default {
     generatedImage: null,
     generationBeingProcessed: false,
     maxBrandImageWidth: 100 * 4,
-    maxBrandImageHeight: 100 * 4
+    maxBrandImageHeight: 100 * 4,
+    logosToDraw: [],
+    logosOffscreen: []
   }),
   computed: {
     logoArea() {
@@ -58,20 +69,16 @@ export default {
     },
     nbLogoPerRow() {
       return Math.floor(this.logosAreaWidth / this.logoArea);
+    },
+    nbLogoPerColumn() {
+      return Math.floor(this.canvasHeight / this.logoArea);
     }
   },
   methods: {
-    computeCoordinate(index) {
-      let x = (index % this.nbLogoPerRow) + 1;
-      let y = Math.floor(index / this.nbLogoPerRow) + 1;
-      return {
-        x: this.canvasWidth - x * this.logoArea,
-        y: this.canvasHeight - y * this.logoArea,
-      };
-    },
     generate() {
       this.$emit("in-progress", true);
       this.generationBeingProcessed = true;
+      this.logosOffscreen = [];
 
       // Init canvas
       let canvas = document.createElement("canvas");
@@ -135,48 +142,92 @@ export default {
 
           _this.logosAreaWidth = _this.canvasWidth - xLine;
 
-          _this.generateLogos(canvas);
+          _this.initLogos(canvas);
         });
         brand.src = this.brandImage;
       } else {
-        this.generateLogos(canvas);
+        this.initLogos(canvas);
       }
     },
-    generateLogos(canvas) {
-      // Append selected logos
+    initLogos(canvas) {
       let _this = this;
-      let drawnLogos = 0;
-      let ctx = canvas.getContext("2d");
       this.skills.forEach((element, index) => {
         let image = new Image();
         image.addEventListener("load", function () {
-          let height = _this.logoSize;
-          let width = _this.logoSize * (this.naturalWidth / this.naturalHeight);
-          if (width > _this.logoSize) {
-            width = _this.logoSize;
-            height = _this.logoSize * (this.naturalHeight / this.naturalWidth);
+          const width = this.naturalWidth;
+          const height = this.naturalHeight;
+          const scale = height > width / 2 ? 1 : 2
+          _this.logosToDraw.splice(index, 0,{
+            name: element.name,
+            image: image,
+            width: width,
+            height: height,
+            scale: scale
+          })
+          if (_this.logosToDraw.length === _this.skills.length) {
+            _this.drawLogos(canvas)
           }
-          let coordinate = _this.computeCoordinate(index);
-          let yShift = 0;
-          if (height < _this.logoSize) {
-            yShift = (_this.logoSize - height) / 2;
-          }
+        });
+        image.src = require("../static/" + element.icon);
+      });
+    },
+    drawLogos(canvas) {
+      let drawnLogos = 0;
+      let ctx = canvas.getContext("2d");
+      let nextIndex = 0;
+      this.logosToDraw.forEach(element => {
+        let height = this.logoSize;
+        let width = this.logoSize * (element.width / element.height);
+        if (width > this.logoSize * element.scale) {
+          width = this.logoSize * element.scale;
+          height = this.logoSize * element.scale * (element.height / element.width);
+        }
+        let yShift = 0;
+        if (height < this.logoSize) {
+          yShift = (this.logoSize - height) / 2;
+        }
+        let xShift = 0;
+        if (width < this.logoSize) {
+          xShift = (this.logoSize - width) / 2;
+        }
+        let coordinate = this.computeCoordinate(nextIndex, element.scale);
+        if (coordinate.offscreen) {
+          this.logosOffscreen.push(element.name);
+        } else {
           ctx.drawImage(
-              image,
-              coordinate.x,
+              element.image,
+              coordinate.x + xShift,
               coordinate.y + yShift,
               width,
               height
           );
-          drawnLogos++;
-          if (drawnLogos === _this.skills.length) {
-            _this.generatedImage = canvas.toDataURL("image/png;base64");
-            _this.generationBeingProcessed = false;
-            _this.$emit("in-progress", false);
-          }
-        });
-        image.src = require("../static/" + element);
+        }
+        drawnLogos++;
+        if (drawnLogos === this.skills.length) {
+          this.generatedImage = canvas.toDataURL("image/png;base64");
+          this.generationBeingProcessed = false;
+          this.$emit("in-progress", false);
+          this.logosToDraw = [];
+        }
+        nextIndex = coordinate.nextIndex;
       });
+    },
+    computeCoordinate(index, scale) {
+      let currentIndex = index + scale - 1;
+      let remains = currentIndex % this.nbLogoPerRow;
+      let shift = 1;
+      if (index > 0 && scale > 1 && remains === 0) {
+        remains += scale - 1;
+        shift++;
+      }
+      let x = remains + 1;
+      let y = Math.floor(currentIndex / this.nbLogoPerRow) + 1;
+      return {
+        offscreen: y > this.nbLogoPerColumn,
+        x: this.canvasWidth - x * this.logoArea,
+        y: this.canvasHeight - y * this.logoArea,
+        nextIndex: currentIndex + shift
+      };
     },
     download() {
       let lnk = document.createElement("a"),

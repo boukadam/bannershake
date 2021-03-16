@@ -108,6 +108,7 @@ export default {
   }),
   methods: {
     generate() {
+      console.log(this.backgroundColor);
       this.$refs.displayBanner.generate();
     }
   }

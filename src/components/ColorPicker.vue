@@ -1,13 +1,13 @@
 <template>
   <v-text-field v-model="backgroundColor" :label="$t('backgroundColor')" hide-details readonly class="ma-0 pa-0">
   <template v-slot:append>
-    <v-menu v-model="colorPickerMenu" top nudge-bottom="105" nudge-left="16" :close-on-content-click="false">
+    <v-menu v-model="colorPickerMenu" top nudge-bottom="105" nudge-left="16" :close-on-content-click="true">
       <template v-slot:activator="{ on }">
         <div :style="swatchStyle" v-on="on"/>
       </template>
       <v-card>
         <v-card-text class="pa-0">
-          <v-color-picker v-model="backgroundColor" show-swatches flat light/>
+          <v-color-picker v-model="backgroundColor" show-swatches flat light @input="$emit('input', backgroundColor)"/>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>

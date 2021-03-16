@@ -17,7 +17,7 @@
     "step1": "First, select the skills you want to highlight.",
     "step2": "You can even add an image of your choice which will be displayed on the left side of the banner. By doing this, you reduce the number of skills in your banner.",
     "step3": "Then, choose the size of the skills logos and the background color. The number of skills displayed depends on the size you choose.",
-    "example1": "For example, an old project that I did, called <strong>Wafood</strong>, was done with",
+    "example1": "For example, an old project that I did, called Wafood, was done with",
     "example2": "Another example, a personal banner",
     "gotIt": "Got it!"
   },
@@ -31,5 +31,7 @@
   "close": "Close",
   "generate": "Generate",
   "download": "Download",
+  "logosOffscreenAlert1": "You have selected too many skills. Reduce your selection or change the size of the logos",
+  "logosOffscreenAlert2": "<strong>{logosOffscreen}</strong> will not be displayed in the banner",
   "html5CanvasUnsupportedErrorMsg": "Your browser does not support the HTML5 canvas tag."
 }

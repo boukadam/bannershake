@@ -8,7 +8,7 @@
       clearable
       chips
       hide-selected
-      item-value="icon"
+      return-object
       item-text="name"
       @input="$emit('input', $event)"
   >
@@ -43,6 +43,11 @@ export default {
   }),
   created() {
     this.selected = this.value;
+  },
+  watch: {
+    selected() {
+      this.search = null;
+    }
   },
   methods: {
     onSkillRemoved(data) {
