@@ -21,7 +21,6 @@
     "example2": "Un autre exemple, une bannière personnelle",
     "gotIt": "C'est compris!"
   },
-  "nbLogosAlert": "Avec la taille <strong>{size}</strong> vous pouvez choisir jusqu'à {nbLogoTotal} compétences (encore {nbLogoLeft})",
   "selectSkills": "Sélectionner vos compétences",
   "brandImage": "Photo, image de marque",
   "logoSize": "Taille du logo",
@@ -30,7 +29,6 @@
   "largeLogoSize": "Grande",
   "backgroundColor": "Couleur de l'arrière plan",
   "close": "Fermer",
-  "tooManySkillsAlert": "Vous avez sélectionnez trop de compétences",
   "generate": "Générer",
   "download": "Télécharger",
   "html5CanvasUnsupportedErrorMsg": "Votre navigateur ne supporte pas les tag HTML5 canvas."

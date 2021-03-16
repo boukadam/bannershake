@@ -21,7 +21,6 @@
     "example2": "Another example, a personal banner",
     "gotIt": "Got it!"
   },
-  "nbLogosAlert": "With <strong>{size}</strong> size you can select up to {nbLogoTotal} skills ({nbLogoLeft} left)",
   "selectSkills": "Select your skills",
   "brandImage": "Brand image",
   "logoSize": "Logo size",
@@ -30,7 +29,6 @@
   "largeLogoSize": "Large",
   "backgroundColor": "Background color",
   "close": "Close",
-  "tooManySkillsAlert": "Too many skills selected",
   "generate": "Generate",
   "download": "Download",
   "html5CanvasUnsupportedErrorMsg": "Your browser does not support the HTML5 canvas tag."
