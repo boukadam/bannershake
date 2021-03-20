@@ -13,7 +13,7 @@
           <BannerShakeDesc />
 
           <!-- Skills selector -->
-          <v-row class="px-3">
+          <v-row class="px-3 pt-2">
             <SkillSelector v-model="selected"></SkillSelector>
           </v-row>
 
@@ -108,7 +108,6 @@ export default {
   }),
   methods: {
     generate() {
-      console.log(this.backgroundColor);
       this.$refs.displayBanner.generate();
     }
   }

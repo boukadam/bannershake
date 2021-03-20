@@ -420,7 +420,7 @@
     "icon": "provided/logos/aws-dynamodb.svg"
   },
   {
-    "name": "AWS EC2 (Elastic Compute Cloud)",
+    "name": "AWS EC2",
     "shortname": "aws-ec2",
     "url": "https://aws.amazon.com/ec2/",
     "icon": "provided/logos/aws-ec2.svg"
@@ -438,7 +438,7 @@
     "icon": "provided/logos/aws-glacier.svg"
   },
   {
-    "name": "AWS IAM (Identity and Access Management)",
+    "name": "AWS IAM",
     "shortname": "aws-iam",
     "url": "https://aws.amazon.com/iam/",
     "icon": "provided/logos/aws-iam.svg"
@@ -468,7 +468,7 @@
     "icon": "provided/logos/aws-quicksight.svg"
   },
   {
-    "name": "AWS RDS (Relational Database Service)",
+    "name": "AWS RDS",
     "shortname": "aws-rds",
     "url": "https://aws.amazon.com/rds/",
     "icon": "provided/logos/aws-rds.svg"
@@ -480,31 +480,31 @@
     "icon": "provided/logos/aws-route53.svg"
   },
   {
-    "name": "AWS S3 (Simple Storage Service)",
+    "name": "AWS S3",
     "shortname": "aws-s3",
     "url": "https://aws.amazon.com/s3/",
     "icon": "provided/logos/aws-s3.svg"
   },
   {
-    "name": "AWS SES (Simple Email Service)",
+    "name": "AWS SES",
     "shortname": "aws-ses",
     "url": "https://aws.amazon.com/ses/",
     "icon": "provided/logos/aws-ses.svg"
   },
   {
-    "name": "AWS SNS (Simple Notification Service)",
+    "name": "AWS SNS",
     "shortname": "aws-sns",
     "url": "https://aws.amazon.com/sns/",
     "icon": "provided/logos/aws-sns.svg"
   },
   {
-    "name": "AWS SQS (Simple Queue Service)",
+    "name": "AWS SQS",
     "shortname": "aws-sqs",
     "url": "https://aws.amazon.com/sqs/",
     "icon": "provided/logos/aws-sqs.svg"
   },
   {
-    "name": "AWS WAF (Web Application Firewall)",
+    "name": "AWS WAF",
     "shortname": "aws-waf",
     "url": "https://aws.amazon.com/waf/",
     "icon": "provided/logos/aws-waf.svg"
@@ -834,7 +834,7 @@
     "icon": "provided/logos/c.svg"
   },
   {
-    "name": "C Sharp (C#) ",
+    "name": "C Sharp",
     "shortname": "c-sharp",
     "url": "http://csharp.net/",
     "icon": "provided/logos/c-sharp.svg"
@@ -2820,7 +2820,7 @@
     "icon": "provided/logos/java.svg"
   },
   {
-    "name": "Javascript (JS)",
+    "name": "Javascript",
     "shortname": "javascript",
     "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     "icon": "provided/logos/javascript.svg"
@@ -4560,7 +4560,7 @@
     "icon": "provided/logos/react-router.svg"
   },
   {
-    "name": "ReactiveX (RxJS)",
+    "name": "ReactiveX",
     "shortname": "reactivex",
     "url": "http://reactivex.io/",
     "icon": "provided/logos/reactivex.svg"

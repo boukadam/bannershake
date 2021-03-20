@@ -1,6 +1,6 @@
 <template>
   <v-footer padless>
-    <v-container class="d-flex justify-space-between" style="max-width: 1024px">
+    <v-container class="d-flex justify-space-between align-center" style="max-width: 1024px">
       <div>
         <a class="github-button" href="https://github.com/boukadam/bannershake" data-size="large" data-show-count="true"
            aria-label="Star boukadam/skills-banner-generator on GitHub"> Star </a>

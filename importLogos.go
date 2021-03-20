@@ -6,6 +6,7 @@ import (
 	"github.com/otiai10/copy"
 	"io/ioutil"
 	"os"
+	"strings"
 )
 
 type BannerShakeLogos struct {
@@ -58,8 +59,13 @@ func main() {
 			logosToRename = append(logosToRename, icon)
 			icon = value
 		}
+		var logoName = logo.Name
+		var logoNameIndexBracket = strings.Index(logoName, "(")
+		if logoNameIndexBracket > -1 {
+			logoName = strings.TrimSpace(logoName[:logoNameIndexBracket])
+		}
 		bannerShakeLogo := BannerShakeLogos{
-			Name:      logo.Name,
+			Name:      logoName,
 			Shortname: logo.Shortname,
 			Url:       logo.Url,
 			Icon:      providedLogosPrefix + icon,

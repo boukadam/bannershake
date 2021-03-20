@@ -4,6 +4,7 @@
       :items="skills"
       :search-input.sync="search"
       :label="$t('selectSkills')"
+      dense
       multiple
       clearable
       chips
@@ -14,12 +15,12 @@
   >
     <template v-slot:item="data">
       <v-row class="ml-2" align="center">
-        <img :src="require('../static/' + data.item.icon)" width="24"/>
-        <span class="pl-2">{{ data.item.name }}</span>
+        <img :src="require('../static/' + data.item.icon)" width="24" alt="" />
+        <span class="ml-4 font-weight-light">{{ data.item.name }}</span>
       </v-row>
     </template>
     <template v-slot:selection="data">
-      <v-chip close @click:close="onSkillRemoved(data)">
+      <v-chip class="mb-1" color="white" text-color="indigo" close @click:close="onSkillRemoved(data)">
         <span>{{ data.item.name }}</span>
       </v-chip>
     </template>
