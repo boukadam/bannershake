@@ -84,6 +84,12 @@
     "icon": "provided/logos/algolia.svg"
   },
   {
+    "name": "Alpine.js",
+    "shortname": "alpinejs",
+    "url": "https://alpinejs.dev/",
+    "icon": "provided/logos/alpinejs-icon.svg"
+  },
+  {
     "name": "Altair",
     "shortname": "altair",
     "url": "https://altair.sirmuel.design/",
@@ -333,7 +339,7 @@
     "name": "Auth0",
     "shortname": "auth0",
     "url": "https://auth0.com/",
-    "icon": "provided/logos/auth0.svg"
+    "icon": "provided/logos/auth0-icon.svg"
   },
   {
     "name": "Authy",
@@ -370,6 +376,12 @@
     "shortname": "aws",
     "url": "https://aws.amazon.com/",
     "icon": "provided/logos/aws.svg"
+  },
+  {
+    "name": "AWS Ampliify",
+    "shortname": "aws-amplify",
+    "url": "https://aws.amazon.com/amplify/",
+    "icon": "provided/logos/aws-amplify.svg"
   },
   {
     "name": "AWS API Gateway",
@@ -454,6 +466,12 @@
     "shortname": "aws-lambda",
     "url": "https://aws.amazon.com/lambda/",
     "icon": "provided/logos/aws-lambda.svg"
+  },
+  {
+    "name": "AWS Lightsail",
+    "shortname": "aws-lightsail",
+    "url": "https://aws.amazon.com/lightsail/",
+    "icon": "provided/logos/aws-lightsail.svg"
   },
   {
     "name": "AWS Opworks",
@@ -622,6 +640,12 @@
     "shortname": "blender",
     "url": "https://www.blender.org/",
     "icon": "provided/logos/blender.svg"
+  },
+  {
+    "name": "Blitz",
+    "shortname": "bllitzjs",
+    "url": "https://blitzjs.com/",
+    "icon": "provided/logos/blitzjs-icon.svg"
   },
   {
     "name": "Blocs",
@@ -960,6 +984,12 @@
     "icon": "provided/logos/chrome.svg"
   },
   {
+    "name": "Cinder",
+    "shortname": "cinder",
+    "url": "https://libcinder.org/",
+    "icon": "provided/logos/cinder.svg"
+  },
+  {
     "name": "CircleCI",
     "shortname": "circleci",
     "url": "https://circleci.com/",
@@ -1164,6 +1194,12 @@
     "icon": "provided/logos/coffeescript.svg"
   },
   {
+    "name": "Commitizen",
+    "shortname": "commitizen",
+    "url": "http://commitizen.github.io/cz-cli/",
+    "icon": "provided/logos/commitizen.svg"
+  },
+  {
     "name": "Compass",
     "shortname": "compass",
     "url": "http://compass-style.org/",
@@ -1236,6 +1272,12 @@
     "icon": "provided/logos/copyleft.svg"
   },
   {
+    "name": "Corda",
+    "shortname": "corda",
+    "url": "https://www.corda.net/",
+    "icon": "provided/logos/corda.svg"
+  },
+  {
     "name": "Cordova",
     "shortname": "cordova",
     "url": "https://cordova.apache.org/",
@@ -1294,6 +1336,12 @@
     "shortname": "crateio",
     "url": "https://crate.io/",
     "icon": "provided/logos/crateio.svg"
+  },
+  {
+    "name": "Create React App",
+    "shortname": "create-react-app",
+    "url": "https://create-react-app.dev/",
+    "icon": "provided/logos/create-react-app.svg"
   },
   {
     "name": "CreateJS",
@@ -1548,6 +1596,12 @@
     "icon": "provided/logos/drip.svg"
   },
   {
+    "name": "Drizzle",
+    "shortname": "drizzle",
+    "url": "https://trufflesuite.com/drizzle/",
+    "icon": "provided/logos/drizzle-icon.svg"
+  },
+  {
     "name": "Drone",
     "shortname": "drone",
     "url": "https://drone.io/",
@@ -1768,6 +1822,12 @@
     "shortname": "ethereum",
     "url": "https://www.ethereum.org/",
     "icon": "provided/logos/ethereum.svg"
+  },
+  {
+    "name": "Ethers",
+    "shortname": "ethers",
+    "url": "https://ethers.io/",
+    "icon": "provided/logos/ethers.svg"
   },
   {
     "name": "Ethnio",
@@ -2058,6 +2118,12 @@
     "icon": "provided/logos/game-analytics-icon.svg"
   },
   {
+    "name": "Ganache",
+    "shortname": "ganache",
+    "url": "https://trufflesuite.com/ganache/",
+    "icon": "provided/logos/ganache-icon.svg"
+  },
+  {
     "name": "Gatsby",
     "shortname": "gatsby",
     "url": "https://www.gatsbyjs.org/",
@@ -2160,10 +2226,22 @@
     "icon": "provided/logos/glitch-icon.svg"
   },
   {
+    "name": "GNOME",
+    "shortname": "gnome",
+    "url": "https://www.gnome.org/",
+    "icon": "provided/logos/gnome-icon.svg"
+  },
+  {
     "name": "GNU",
     "shortname": "gnu",
     "url": "https://www.gnu.org/",
     "icon": "provided/logos/gnu.svg"
+  },
+  {
+    "name": "GNUnet",
+    "shortname": "gnunet",
+    "url": "https://www.gnunet.org/en/index.html",
+    "icon": "provided/logos/gnu-net.svg"
   },
   {
     "name": "Go",
@@ -2500,6 +2578,12 @@
     "shortname": "hapi",
     "url": "http://hapijs.com/",
     "icon": "provided/logos/hapi.svg"
+  },
+  {
+    "name": "Hardhat",
+    "shortname": "hardhat",
+    "url": "https://hardhat.org/",
+    "icon": "provided/logos/hardhat-icon.svg"
   },
   {
     "name": "Hashnode",
@@ -3246,6 +3330,12 @@
     "icon": "provided/logos/linux-tux.svg"
   },
   {
+    "name": "Lit",
+    "shortname": "lit",
+    "url": "https://lit.dev/",
+    "icon": "provided/logos/lit-icon.svg"
+  },
+  {
     "name": "Litmus",
     "shortname": "litmus",
     "url": "http://litmus.com/",
@@ -3382,6 +3472,18 @@
     "shortname": "mailjet",
     "url": "https://www.mailjet.com/",
     "icon": "provided/logos/mailjet.svg"
+  },
+  {
+    "name": "Malina.js",
+    "shortname": "malinajs",
+    "url": "https://github.com/malinajs/malinajs",
+    "icon": "provided/logos/malinajs.svg"
+  },
+  {
+    "name": "Manjaro",
+    "shortname": "manjaro",
+    "url": "https://manjaro.org/",
+    "icon": "provided/logos/manjaro.svg"
   },
   {
     "name": "Manuscript",
@@ -3534,6 +3636,12 @@
     "icon": "provided/logos/metabase.svg"
   },
   {
+    "name": "MetaMask",
+    "shortname": "metamask",
+    "url": "https://metamask.io/",
+    "icon": "provided/logos/metamask-icon.svg"
+  },
+  {
     "name": "Meteor",
     "shortname": "meteor",
     "url": "https://www.meteor.com/",
@@ -3553,15 +3661,39 @@
   },
   {
     "name": "Microsoft Azure",
-    "shortname": "azure",
+    "shortname": "microsoft-azure",
     "url": "https://azure.microsoft.com/",
-    "icon": "provided/logos/azure-icon.svg"
+    "icon": "provided/logos/microsoft-azure.svg"
   },
   {
     "name": "Microsoft Edge",
     "shortname": "microsoft-edge",
     "url": "https://www.microsoft.com/en-us/windows/microsoft-edge",
     "icon": "provided/logos/microsoft-edge.svg"
+  },
+  {
+    "name": "Microsoft OneDrive",
+    "shortname": "microsoft-onedrive",
+    "url": "https://onedrive.com/",
+    "icon": "provided/logos/microsoft-onedrive.svg"
+  },
+  {
+    "name": "Microsoft Power BI",
+    "shortname": "microsoft-power-bi",
+    "url": "https://powerbi.microsoft.com/",
+    "icon": "provided/logos/microsoft-power-bi.svg"
+  },
+  {
+    "name": "Microsoft Teams",
+    "shortname": "microsoft-teams",
+    "url": "https://teams.com/",
+    "icon": "provided/logos/microsoft-teams.svg"
+  },
+  {
+    "name": "Microsoft Windows",
+    "shortname": "microsoft-windows",
+    "url": "https://www.microsoft.com/windows",
+    "icon": "provided/logos/microsoft-windows.svg"
   },
   {
     "name": "Middleman",
@@ -3708,10 +3840,16 @@
     "icon": "provided/logos/mparticle-icon.svg"
   },
   {
+    "name": "Multipass",
+    "shortname": "multipass",
+    "url": "https://multipass.run/",
+    "icon": "provided/logos/multipass.svg"
+  },
+  {
     "name": "MySQL",
     "shortname": "mysql",
     "url": "http://dev.mysql.com/",
-    "icon": "provided/logos/mysql.svg"
+    "icon": "provided/logos/mysql-icon.svg"
   },
   {
     "name": "Namecheap",
@@ -3978,6 +4116,12 @@
     "icon": "provided/logos/openstack-icon.svg"
   },
   {
+    "name": "OpenZeppelin",
+    "shortname": "open-zeppelin",
+    "url": "https://openzeppelin.com/",
+    "icon": "provided/logos/open-zeppelin-icon.svg"
+  },
+  {
     "name": "Opera",
     "shortname": "opera",
     "url": "http://www.opera.com/",
@@ -4036,6 +4180,12 @@
     "shortname": "pagekite",
     "url": "http://pagekite.net/",
     "icon": "provided/logos/pagekite.svg"
+  },
+  {
+    "name": "PagerDuty",
+    "shortname": "pagerduty",
+    "url": "https://www.pagerduty.com/",
+    "icon": "provided/logos/pagerduty-icon.svg"
   },
   {
     "name": "Panda",
@@ -4270,6 +4420,12 @@
     "shortname": "precursor",
     "url": "https://precursorapp.com/",
     "icon": "provided/logos/precursor.svg"
+  },
+  {
+    "name": "Prerender",
+    "shortname": "prerender",
+    "url": "https://prerender.io/",
+    "icon": "provided/logos/prerender-icon.svg"
   },
   {
     "name": "PrestaShop",
@@ -4656,6 +4812,18 @@
     "icon": "provided/logos/relay.svg"
   },
   {
+    "name": "Release",
+    "shortname": "release",
+    "url": "https://github.com/vercel/release",
+    "icon": "provided/logos/release.svg"
+  },
+  {
+    "name": "Remix",
+    "shortname": "remix",
+    "url": "https://remix.run/",
+    "icon": "provided/logos/remix-icon.svg"
+  },
+  {
     "name": "RequireJS",
     "shortname": "require",
     "url": "http://requirejs.org/",
@@ -4696,6 +4864,12 @@
     "shortname": "rocksdb",
     "url": "http://rocksdb.org/",
     "icon": "provided/logos/rocksdb.svg"
+  },
+  {
+    "name": "Rocky Linux",
+    "shortname": "rocky-linux",
+    "url": "https://rockylinux.org/",
+    "icon": "provided/logos/rocky-linux-icon.svg"
   },
   {
     "name": "Rollbar",
@@ -4876,6 +5050,12 @@
     "shortname": "semantic-web",
     "url": "https://www.w3.org/standards/semanticweb/",
     "icon": "provided/logos/semantic-web.svg"
+  },
+  {
+    "name": "semantic-release",
+    "shortname": "semantic-release",
+    "url": "https://semantic-release.gitbook.io/semantic-release/",
+    "icon": "provided/logos/semantic-release.svg"
   },
   {
     "name": "Semaphore",
@@ -5088,6 +5268,18 @@
     "icon": "provided/logos/solid.svg"
   },
   {
+    "name": "Solid",
+    "shortname": "solidjs",
+    "url": "https://www.solidjs.com/",
+    "icon": "provided/logos/solidjs-icon.svg"
+  },
+  {
+    "name": "Solidity",
+    "shortname": "solidity",
+    "url": "https://soliditylang.org/",
+    "icon": "provided/logos/solidity.svg"
+  },
+  {
     "name": "Solr",
     "shortname": "solr",
     "url": "http://lucene.apache.org/solr/",
@@ -5226,6 +5418,12 @@
     "icon": "provided/logos/steam.svg"
   },
   {
+    "name": "Stencil",
+    "shortname": "stenciljs",
+    "url": "https://stenciljs.com/",
+    "icon": "provided/logos/stenciljs-icon.svg"
+  },
+  {
     "name": "Stetho",
     "shortname": "stetho",
     "url": "http://facebook.github.io/stetho/",
@@ -5302,6 +5500,12 @@
     "shortname": "stylelint",
     "url": "http://stylelint.io/",
     "icon": "provided/logos/stylelint.svg"
+  },
+  {
+    "name": "Stylis",
+    "shortname": "stylis",
+    "url": "https://stylis.js.org/",
+    "icon": "provided/logos/stylis.svg"
   },
   {
     "name": "Stylus",
@@ -5392,6 +5596,12 @@
     "shortname": "swiftype",
     "url": "https://swiftype.com/",
     "icon": "provided/logos/swiftype.svg"
+  },
+  {
+    "name": "SWR",
+    "shortname": "swr",
+    "url": "https://swr.vercel.app/",
+    "icon": "provided/logos/swr.svg"
   },
   {
     "name": "Symfony",
@@ -5572,6 +5782,12 @@
     "shortname": "trello",
     "url": "https://trello.com/",
     "icon": "provided/logos/trello.svg"
+  },
+  {
+    "name": "Truffle",
+    "shortname": "truffle",
+    "url": "https://trufflesuite.com/",
+    "icon": "provided/logos/truffle-icon.svg"
   },
   {
     "name": "tsuru",
@@ -5882,8 +6098,8 @@
   {
     "name": "Waffle",
     "shortname": "waffle",
-    "url": "https://waffle.io/",
-    "icon": "provided/logos/waffle.svg"
+    "url": "https://getwaffle.io/",
+    "icon": "provided/logos/waffle-icon.svg"
   },
   {
     "name": "Wagtail",
@@ -5926,6 +6142,12 @@
     "shortname": "web.dev",
     "url": "https://web.dev/",
     "icon": "provided/logos/web.dev-icon.svg"
+  },
+  {
+    "name": "web3js",
+    "shortname": "web3js",
+    "url": "https://github.com/ChainSafe/web3.js",
+    "icon": "provided/logos/web3js.svg"
   },
   {
     "name": "WebAssembly",
@@ -6052,12 +6274,6 @@
     "shortname": "wildfly",
     "url": "https://www.wildfly.org",
     "icon": "provided/logos/wildfly.svg"
-  },
-  {
-    "name": "Windows",
-    "shortname": "microsoft-windows",
-    "url": "https://www.microsoft.com/windows",
-    "icon": "provided/logos/microsoft-windows.svg"
   },
   {
     "name": "Wire",
