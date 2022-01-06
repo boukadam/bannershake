@@ -18,6 +18,12 @@
     "icon": "provided/logos/500px.svg"
   },
   {
+    "name": "ActiveCampaign",
+    "shortname": "active-campaign",
+    "url": "https://www.activecampaign.com/",
+    "icon": "provided/logos/active-campaign-icon.svg"
+  },
+  {
     "name": "AdRoll",
     "shortname": "adroll",
     "url": "https://www.adroll.com/",
@@ -124,6 +130,12 @@
     "shortname": "ampersand",
     "url": "https://ampersandjs.com/",
     "icon": "provided/logos/ampersand.svg"
+  },
+  {
+    "name": "Amplitude",
+    "shortname": "amplitude",
+    "url": "https://amplitude.com/",
+    "icon": "provided/logos/amplitude-icon.svg"
   },
   {
     "name": "Android",
@@ -298,6 +310,12 @@
     "shortname": "asciidoctor",
     "url": "https://github.com/asciidoctor",
     "icon": "provided/logos/asciidoctor.svg"
+  },
+  {
+    "name": "Astro",
+    "shortname": "astro",
+    "url": "https://astro.build/",
+    "icon": "provided/logos/astro.svg"
   },
   {
     "name": "Astronomer",
@@ -526,6 +544,12 @@
     "shortname": "aws-waf",
     "url": "https://aws.amazon.com/waf/",
     "icon": "provided/logos/aws-waf.svg"
+  },
+  {
+    "name": "Axios",
+    "shortname": "axios",
+    "url": "https://axios-http.com/",
+    "icon": "provided/logos/axios.svg"
   },
   {
     "name": "Babel",
@@ -1386,6 +1410,12 @@
     "icon": "provided/logos/cucumber.svg"
   },
   {
+    "name": "curl",
+    "shortname": "curl",
+    "url": "https://curl.se/",
+    "icon": "provided/logos/curl.svg"
+  },
+  {
     "name": "Customer.io",
     "shortname": "customerio",
     "url": "http://customer.io/",
@@ -1920,6 +1950,12 @@
     "icon": "provided/logos/fedora.svg"
   },
   {
+    "name": "fetch",
+    "shortname": "fetch",
+    "url": "https://github.com/whatwg/fetch",
+    "icon": "provided/logos/fetch.svg"
+  },
+  {
     "name": "Figma",
     "shortname": "figma",
     "url": "https://www.figma.com/",
@@ -2170,6 +2206,18 @@
     "shortname": "github",
     "url": "https://github.com/",
     "icon": "provided/logos/github-icon.svg"
+  },
+  {
+    "name": "GitHub Actions",
+    "shortname": "github-actions",
+    "url": "https://github.com/features/actions",
+    "icon": "provided/logos/github-actions.svg"
+  },
+  {
+    "name": "GitHub Copilot",
+    "shortname": "github-copilot",
+    "url": "https://copilot.github.com/",
+    "icon": "provided/logos/github-copilot.svg"
   },
   {
     "name": "GitKraken",
@@ -2736,6 +2784,12 @@
     "icon": "provided/logos/hubspot.svg"
   },
   {
+    "name": "Huggy",
+    "shortname": "huggy",
+    "url": "https://www.huggy.io/",
+    "icon": "provided/logos/huggy.svg"
+  },
+  {
     "name": "Hugo",
     "shortname": "hugo",
     "url": "https://gohugo.io/",
@@ -2782,6 +2836,12 @@
     "shortname": "imagemin",
     "url": "https://github.com/imagemin/imagemin",
     "icon": "provided/logos/imagemin.svg"
+  },
+  {
+    "name": "Immer",
+    "shortname": "immer",
+    "url": "https://immerjs.github.io/immer/",
+    "icon": "provided/logos/immer-icon.svg"
   },
   {
     "name": "Immutable",
@@ -3054,6 +3114,12 @@
     "icon": "provided/logos/jupyter.svg"
   },
   {
+    "name": "JWT",
+    "shortname": "jwt",
+    "url": "https://jwt.io/",
+    "icon": "provided/logos/jwt-icon.svg"
+  },
+  {
     "name": "Kafka",
     "shortname": "kafka",
     "url": "http://kafka.apache.org/",
@@ -3256,6 +3322,12 @@
     "shortname": "leankit",
     "url": "http://leankit.com/",
     "icon": "provided/logos/leankit-icon.svg"
+  },
+  {
+    "name": "Lerna",
+    "shortname": "lerna",
+    "url": "https://lerna.js.org/",
+    "icon": "provided/logos/lerna.svg"
   },
   {
     "name": "Less",
@@ -3562,6 +3634,12 @@
     "shortname": "materializecss",
     "url": "http://materializecss.com/",
     "icon": "provided/logos/materializecss.svg"
+  },
+  {
+    "name": "Matplotlib",
+    "shortname": "matplotlib",
+    "url": "https://matplotlib.org/",
+    "icon": "provided/logos/matplotlib-icon.svg"
   },
   {
     "name": "Mattermost",
@@ -4014,6 +4092,12 @@
     "icon": "provided/logos/nodewebkit.svg"
   },
   {
+    "name": "Nx",
+    "shortname": "nx",
+    "url": "https://nx.dev/",
+    "icon": "provided/logos/nx.svg"
+  },
+  {
     "name": "O'Reilly",
     "shortname": "oreilly",
     "url": "http://www.oreilly.com/",
@@ -4056,6 +4140,12 @@
     "icon": "provided/logos/onesignal.svg"
   },
   {
+    "name": "Open AI",
+    "shortname": "openai",
+    "url": "https://openai.com/",
+    "icon": "provided/logos/openai-icon.svg"
+  },
+  {
     "name": "open collective",
     "shortname": "opencollective",
     "url": "https://opencollective.com/",
@@ -4096,6 +4186,18 @@
     "shortname": "opencv",
     "url": "http://opencv.org/",
     "icon": "provided/logos/opencv.svg"
+  },
+  {
+    "name": "openFrameworks",
+    "shortname": "openframeworks",
+    "url": "https://openframeworks.cc/",
+    "icon": "provided/logos/openframeworks.svg"
+  },
+  {
+    "name": "OpenJS Foundation",
+    "shortname": "openjs-foundation",
+    "url": "https://openjsf.org/",
+    "icon": "provided/logos/openjs-foundation-icon.svg"
   },
   {
     "name": "OpenLayers",
@@ -4980,6 +5082,12 @@
     "icon": "provided/logos/sameroom.svg"
   },
   {
+    "name": "Samsung",
+    "shortname": "samsung",
+    "url": "https://www.samsung.com/",
+    "icon": "provided/logos/samsung.svg"
+  },
+  {
     "name": "Sanity",
     "shortname": "sanity",
     "url": "https://www.sanity.io/",
@@ -5232,6 +5340,12 @@
     "icon": "provided/logos/snap-svg.svg"
   },
   {
+    "name": "snowflake",
+    "shortname": "snowflake",
+    "url": "https://www.snowflake.com/",
+    "icon": "provided/logos/snowflake-icon.svg"
+  },
+  {
     "name": "Snowpack",
     "shortname": "snowpack",
     "url": "https://www.snowpack.dev/",
@@ -5356,6 +5470,12 @@
     "shortname": "splunk",
     "url": "https://www.splunk.com/",
     "icon": "provided/logos/splunk.svg"
+  },
+  {
+    "name": "Spotify",
+    "shortname": "spotify",
+    "url": "https://www.spotify.com/",
+    "icon": "provided/logos/spotify-icon.svg"
   },
   {
     "name": "Spree Commerce",
@@ -5718,6 +5838,18 @@
     "icon": "provided/logos/testlodge.svg"
   },
   {
+    "name": "Tidal",
+    "shortname": "tidal",
+    "url": "https://tidal.com/",
+    "icon": "provided/logos/tidal-icon.svg"
+  },
+  {
+    "name": "TikTok",
+    "shortname": "tiktok",
+    "url": "https://www.tiktok.com/",
+    "icon": "provided/logos/tiktok-icon.svg"
+  },
+  {
     "name": "TNW",
     "shortname": "tnw",
     "url": "https://thenextweb.com/",
@@ -5812,6 +5944,12 @@
     "shortname": "tunein",
     "url": "http://tunein.com/",
     "icon": "provided/logos/tunein.svg"
+  },
+  {
+    "name": "Turborepo",
+    "shortname": "turborepo",
+    "url": "https://turborepo.org/",
+    "icon": "provided/logos/turborepo-icon.svg"
   },
   {
     "name": "Turret",
@@ -6310,6 +6448,12 @@
     "shortname": "workboard",
     "url": "http://www.workboard.com/",
     "icon": "provided/logos/workboard.svg"
+  },
+  {
+    "name": "Workplace",
+    "shortname": "workplace",
+    "url": "https://www.workplace.com/",
+    "icon": "provided/logos/workplace.svg"
   },
   {
     "name": "WP engine",
