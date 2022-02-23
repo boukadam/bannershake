@@ -24,6 +24,12 @@
     "icon": "provided/logos/active-campaign-icon.svg"
   },
   {
+    "name": "Adonis",
+    "shortname": "adonisjs",
+    "url": "https://adonisjs.com/",
+    "icon": "provided/logos/adonisjs-icon.svg"
+  },
+  {
     "name": "AdRoll",
     "shortname": "adroll",
     "url": "https://www.adroll.com/",
@@ -294,6 +300,12 @@
     "icon": "provided/logos/arduino.svg"
   },
   {
+    "name": "Argo",
+    "shortname": "argo",
+    "url": "https://argoproj.github.io/",
+    "icon": "provided/logos/argo-icon.svg"
+  },
+  {
     "name": "Armory",
     "shortname": "armory",
     "url": "http://www.armory.io/",
@@ -408,6 +420,54 @@
     "icon": "provided/logos/aws-api-gateway.svg"
   },
   {
+    "name": "AWS App Mesh",
+    "shortname": "aws-app-mesh",
+    "url": "https://aws.amazon.com/app-mesh",
+    "icon": "provided/logos/aws-app-mesh.svg"
+  },
+  {
+    "name": "AWS AppFlow",
+    "shortname": "aws-appflow",
+    "url": "https://aws.amazon.com/appflow/",
+    "icon": "provided/logos/aws-appflow.svg"
+  },
+  {
+    "name": "AWS AppSync",
+    "shortname": "aws-appsync",
+    "url": "https://aws.amazon.com/appsync/",
+    "icon": "provided/logos/aws-appsync.svg"
+  },
+  {
+    "name": "AWS Athena",
+    "shortname": "aws-athena",
+    "url": "https://aws.amazon.com/athena",
+    "icon": "provided/logos/aws-athena.svg"
+  },
+  {
+    "name": "AWS Aurora",
+    "shortname": "aws-aurora",
+    "url": "https://aws.amazon.com/rds/aurora",
+    "icon": "provided/logos/aws-aurora.svg"
+  },
+  {
+    "name": "AWS Backup",
+    "shortname": "aws-backup",
+    "url": "https://aws.amazon.com/backup/",
+    "icon": "provided/logos/aws-backup.svg"
+  },
+  {
+    "name": "AWS Batch",
+    "shortname": "aws-batch",
+    "url": "https://aws.amazon.com/batch/",
+    "icon": "provided/logos/aws-batch.svg"
+  },
+  {
+    "name": "AWS Certificate Manager",
+    "shortname": "aws-certificate-manager",
+    "url": "https://aws.amazon.com/certificate-manager/",
+    "icon": "provided/logos/aws-certificate-manager.svg"
+  },
+  {
     "name": "AWS CloudFormation",
     "shortname": "aws-cloudformation",
     "url": "https://aws.amazon.com/cloudformation/",
@@ -426,10 +486,28 @@
     "icon": "provided/logos/aws-cloudsearch.svg"
   },
   {
+    "name": "AWS CloudTrail",
+    "shortname": "aws-cloudtrail",
+    "url": "https://aws.amazon.com/cloudtrail/",
+    "icon": "provided/logos/aws-cloudtrail.svg"
+  },
+  {
     "name": "AWS CloudWatch",
     "shortname": "aws-cloudwatch",
     "url": "https://aws.amazon.com/cloudwatch/",
     "icon": "provided/logos/aws-cloudwatch.svg"
+  },
+  {
+    "name": "AWS CodeBuild",
+    "shortname": "aws-codebuild",
+    "url": "https://aws.amazon.com/codebuild/",
+    "icon": "provided/logos/aws-codebuild.svg"
+  },
+  {
+    "name": "AWS CodeCommit",
+    "shortname": "aws-codecommit",
+    "url": "https://aws.amazon.com/codecommit/",
+    "icon": "provided/logos/aws-codecommit.svg"
   },
   {
     "name": "AWS CodeDeploy",
@@ -438,10 +516,34 @@
     "icon": "provided/logos/aws-codedeploy.svg"
   },
   {
+    "name": "AWS CodePipeline",
+    "shortname": "aws-codepipeline",
+    "url": "https://aws.amazon.com/codepipeline/",
+    "icon": "provided/logos/aws-codepipeline.svg"
+  },
+  {
+    "name": "AWS CodeStar",
+    "shortname": "aws-codestar",
+    "url": "https://aws.amazon.com/codestar/",
+    "icon": "provided/logos/aws-codestar.svg"
+  },
+  {
     "name": "AWS Cognito",
     "shortname": "aws-cognito",
     "url": "https://aws.amazon.com/cognito/",
     "icon": "provided/logos/aws-cognito.svg"
+  },
+  {
+    "name": "AWS Config",
+    "shortname": "aws-config",
+    "url": "https://aws.amazon.com/config/",
+    "icon": "provided/logos/aws-config.svg"
+  },
+  {
+    "name": "AWS DocumentDB",
+    "shortname": "aws-documentdb",
+    "url": "https://aws.amazon.com/documentdb/",
+    "icon": "provided/logos/aws-documentdb.svg"
   },
   {
     "name": "AWS DynamoDB",
@@ -456,10 +558,46 @@
     "icon": "provided/logos/aws-ec2.svg"
   },
   {
-    "name": "AWS Elastic Cache",
-    "shortname": "aws-elastic-cache",
+    "name": "AWS ECS",
+    "shortname": "aws-ecs",
+    "url": "https://aws.amazon.com/ecs/",
+    "icon": "provided/logos/aws-ecs.svg"
+  },
+  {
+    "name": "AWS EKS",
+    "shortname": "aws-eks",
+    "url": "https://aws.amazon.com/eks/",
+    "icon": "provided/logos/aws-eks.svg"
+  },
+  {
+    "name": "AWS Elastic Beanstalk",
+    "shortname": "aws-elastic-beanstalk",
+    "url": "https://aws.amazon.com/elasticbeanstalk/",
+    "icon": "provided/logos/aws-elastic-beanstalk.svg"
+  },
+  {
+    "name": "AWS ElastiCache",
+    "shortname": "aws-elasticache",
     "url": "https://aws.amazon.com/elasticache/",
-    "icon": "provided/logos/aws-elastic-cache.svg"
+    "icon": "provided/logos/aws-elasticache.svg"
+  },
+  {
+    "name": "AWS ELB",
+    "shortname": "aws-elb",
+    "url": "https://aws.amazon.com/elasticloadbalancing/",
+    "icon": "provided/logos/aws-elb.svg"
+  },
+  {
+    "name": "AWS EventBridge",
+    "shortname": "aws-eventbridge",
+    "url": "https://aws.amazon.com/eventbridge/",
+    "icon": "provided/logos/aws-eventbridge.svg"
+  },
+  {
+    "name": "AWS Fargate",
+    "shortname": "aws-fargate",
+    "url": "https://aws.amazon.com/fargate/",
+    "icon": "provided/logos/aws-fargate.svg"
   },
   {
     "name": "AWS Glacier",
@@ -468,16 +606,40 @@
     "icon": "provided/logos/aws-glacier.svg"
   },
   {
+    "name": "AWS Glue",
+    "shortname": "aws-glue",
+    "url": "https://aws.amazon.com/glue/",
+    "icon": "provided/logos/aws-glue.svg"
+  },
+  {
     "name": "AWS IAM",
     "shortname": "aws-iam",
     "url": "https://aws.amazon.com/iam/",
     "icon": "provided/logos/aws-iam.svg"
   },
   {
+    "name": "AWS Keyspaces",
+    "shortname": "aws-keyspaces",
+    "url": "https://aws.amazon.com/keyspaces/",
+    "icon": "provided/logos/aws-keyspaces.svg"
+  },
+  {
     "name": "AWS Kinesis",
     "shortname": "aws-kinesis",
     "url": "https://aws.amazon.com/kinesis/",
     "icon": "provided/logos/aws-kinesis.svg"
+  },
+  {
+    "name": "AWS KMS",
+    "shortname": "aws-kms",
+    "url": "https://aws.amazon.com/kms/",
+    "icon": "provided/logos/aws-kms.svg"
+  },
+  {
+    "name": "AWS Lake Formation",
+    "shortname": "aws-lake-formation",
+    "url": "https://aws.amazon.com/lake-formation/",
+    "icon": "provided/logos/aws-lake-formation.svg"
   },
   {
     "name": "AWS Lambda",
@@ -492,6 +654,30 @@
     "icon": "provided/logos/aws-lightsail.svg"
   },
   {
+    "name": "AWS MQ",
+    "shortname": "aws-mq",
+    "url": "https://aws.amazon.com/amazon-mq/",
+    "icon": "provided/logos/aws-mq.svg"
+  },
+  {
+    "name": "AWS MSK",
+    "shortname": "aws-msk",
+    "url": "https://aws.amazon.com/msk/",
+    "icon": "provided/logos/aws-msk.svg"
+  },
+  {
+    "name": "AWS Neptune",
+    "shortname": "aws-neptune",
+    "url": "https://aws.amazon.com/neptune/",
+    "icon": "provided/logos/aws-neptune.svg"
+  },
+  {
+    "name": "AWS Open Search",
+    "shortname": "aws-open-search",
+    "url": "https://aws.amazon.com/opensearch-service/",
+    "icon": "provided/logos/aws-open-search.svg"
+  },
+  {
     "name": "AWS Opworks",
     "shortname": "aws-opsworks",
     "url": "https://aws.amazon.com/opsworks/",
@@ -500,7 +686,7 @@
   {
     "name": "AWS QuickSight",
     "shortname": "aws-quicksight",
-    "url": "https://quicksight.aws/",
+    "url": "https://aws.amazon.com/quicksight/",
     "icon": "provided/logos/aws-quicksight.svg"
   },
   {
@@ -508,6 +694,12 @@
     "shortname": "aws-rds",
     "url": "https://aws.amazon.com/rds/",
     "icon": "provided/logos/aws-rds.svg"
+  },
+  {
+    "name": "AWS Redshift",
+    "shortname": "aws-redshift",
+    "url": "https://aws.amazon.com/redshift/",
+    "icon": "provided/logos/aws-redshift.svg"
   },
   {
     "name": "AWS Route 53",
@@ -522,10 +714,22 @@
     "icon": "provided/logos/aws-s3.svg"
   },
   {
+    "name": "AWS Secrets Manager",
+    "shortname": "aws-secrets-manager",
+    "url": "https://aws.amazon.com/secrets-manager/",
+    "icon": "provided/logos/aws-secrets-manager.svg"
+  },
+  {
     "name": "AWS SES",
     "shortname": "aws-ses",
     "url": "https://aws.amazon.com/ses/",
     "icon": "provided/logos/aws-ses.svg"
+  },
+  {
+    "name": "AWS Shield",
+    "shortname": "aws-shield",
+    "url": "https://aws.amazon.com/shield/",
+    "icon": "provided/logos/aws-shield.svg"
   },
   {
     "name": "AWS SNS",
@@ -540,10 +744,40 @@
     "icon": "provided/logos/aws-sqs.svg"
   },
   {
+    "name": "AWS Step Functions",
+    "shortname": "aws-step-functions",
+    "url": "https://aws.amazon.com/step-functions/",
+    "icon": "provided/logos/aws-step-functions.svg"
+  },
+  {
+    "name": "AWS Systems Manager",
+    "shortname": "aws-systems-manager",
+    "url": "https://aws.amazon.com/systems-manager/",
+    "icon": "provided/logos/aws-systems-manager.svg"
+  },
+  {
+    "name": "AWS Timestream",
+    "shortname": "aws-timestream",
+    "url": "https://aws.amazon.com/timestream/",
+    "icon": "provided/logos/aws-timestream.svg"
+  },
+  {
+    "name": "AWS VPC",
+    "shortname": "aws-vpc",
+    "url": "https://aws.amazon.com/vpc/",
+    "icon": "provided/logos/aws-vpc.svg"
+  },
+  {
     "name": "AWS WAF",
     "shortname": "aws-waf",
     "url": "https://aws.amazon.com/waf/",
     "icon": "provided/logos/aws-waf.svg"
+  },
+  {
+    "name": "AWS X-Ray",
+    "shortname": "aws-xray",
+    "url": "https://aws.amazon.com/xray/",
+    "icon": "provided/logos/aws-xray.svg"
   },
   {
     "name": "Axios",
@@ -1470,6 +1704,12 @@
     "icon": "provided/logos/datocms-icon.svg"
   },
   {
+    "name": "dbt",
+    "shortname": "dbt",
+    "url": "https://www.getdbt.com/",
+    "icon": "provided/logos/dbt-icon.svg"
+  },
+  {
     "name": "DC/OS",
     "shortname": "dcos",
     "url": "https://dcos.io/",
@@ -1788,10 +2028,10 @@
     "icon": "provided/logos/envato.svg"
   },
   {
-    "name": "Envoy Proxy",
-    "shortname": "envoyproxy",
+    "name": "Envoy",
+    "shortname": "envoy",
     "url": "https://www.envoyproxy.io/",
-    "icon": "provided/logos/envoyproxy.svg"
+    "icon": "provided/logos/envoy-icon.svg"
   },
   {
     "name": "Envoyer",
@@ -2104,6 +2344,12 @@
     "shortname": "foundation",
     "url": "http://foundation.zurb.com/",
     "icon": "provided/logos/foundation.svg"
+  },
+  {
+    "name": "Framer",
+    "shortname": "framer",
+    "url": "https://www.framer.com/",
+    "icon": "provided/logos/framer.svg"
   },
   {
     "name": "Framework7",
@@ -2550,6 +2796,12 @@
     "icon": "provided/logos/grove.svg"
   },
   {
+    "name": "gRPC",
+    "shortname": "grpc",
+    "url": "https://grpc.io/",
+    "icon": "provided/logos/grpc.svg"
+  },
+  {
     "name": "Grunt",
     "shortname": "grunt",
     "url": "http://gruntjs.com/",
@@ -2560,6 +2812,12 @@
     "shortname": "gulp",
     "url": "http://gulpjs.com/",
     "icon": "provided/logos/gulp.svg"
+  },
+  {
+    "name": "Gun",
+    "shortname": "gunjs",
+    "url": "https://gun.js.org/",
+    "icon": "provided/logos/gunjs.svg"
   },
   {
     "name": "Gunicorn",
@@ -2676,10 +2934,22 @@
     "icon": "provided/logos/heap.svg"
   },
   {
+    "name": "Helm",
+    "shortname": "helm",
+    "url": "https://helm.sh/",
+    "icon": "provided/logos/helm.svg"
+  },
+  {
     "name": "Help Scout",
     "shortname": "helpscout",
     "url": "https://www.helpscout.net/",
     "icon": "provided/logos/helpscout-icon.svg"
+  },
+  {
+    "name": "Hermes",
+    "shortname": "hermes",
+    "url": "https://hermesengine.dev/",
+    "icon": "provided/logos/hermes.svg"
   },
   {
     "name": "Heroku",
@@ -2778,6 +3048,12 @@
     "icon": "provided/logos/html5-boilerplate.svg"
   },
   {
+    "name": "HTTPie",
+    "shortname": "httpie",
+    "url": "https://httpie.io/",
+    "icon": "provided/logos/httpie-icon.svg"
+  },
+  {
     "name": "Hubspot",
     "shortname": "hubspot",
     "url": "http://www.hubspot.com/",
@@ -2836,6 +3112,12 @@
     "shortname": "imagemin",
     "url": "https://github.com/imagemin/imagemin",
     "icon": "provided/logos/imagemin.svg"
+  },
+  {
+    "name": "Imba",
+    "shortname": "imba",
+    "url": "https://imba.io/",
+    "icon": "provided/logos/imba-icon.svg"
   },
   {
     "name": "Immer",
@@ -3364,6 +3646,12 @@
     "shortname": "lighthouse",
     "url": "https://developers.google.com/web/tools/lighthouse",
     "icon": "provided/logos/lighthouse.svg"
+  },
+  {
+    "name": "Lightstep",
+    "shortname": "lightstep",
+    "url": "https://lightstep.com/",
+    "icon": "provided/logos/lightstep-icon.svg"
   },
   {
     "name": "lighttpd",
@@ -3948,6 +4236,12 @@
     "icon": "provided/logos/nativescript.svg"
   },
   {
+    "name": "NATS",
+    "shortname": "nats",
+    "url": "https://nats.io/",
+    "icon": "provided/logos/nats-icon.svg"
+  },
+  {
     "name": "Neat",
     "shortname": "neat",
     "url": "http://neat.bourbon.io/",
@@ -4218,6 +4512,12 @@
     "icon": "provided/logos/openstack-icon.svg"
   },
   {
+    "name": "OpenTelemetry",
+    "shortname": "opentelemetry",
+    "url": "https://opentelemetry.io/",
+    "icon": "provided/logos/opentelemetry-icon.svg"
+  },
+  {
     "name": "OpenZeppelin",
     "shortname": "open-zeppelin",
     "url": "https://openzeppelin.com/",
@@ -4468,6 +4768,12 @@
     "shortname": "pm2",
     "url": "https://github.com/Unitech/pm2",
     "icon": "provided/logos/pm2.svg"
+  },
+  {
+    "name": "pnPM",
+    "shortname": "pnpm",
+    "url": "https://pnpm.io/",
+    "icon": "provided/logos/pnpm.svg"
   },
   {
     "name": "POEditor",
@@ -4932,6 +5238,12 @@
     "icon": "provided/logos/require.svg"
   },
   {
+    "name": "ReScript",
+    "shortname": "rescript",
+    "url": "https://rescript-lang.org/",
+    "icon": "provided/logos/rescript-icon.svg"
+  },
+  {
     "name": "rest.li",
     "shortname": "rest-li",
     "url": "https://github.com/linkedin/rest.li",
@@ -4942,6 +5254,12 @@
     "shortname": "rethinkdb",
     "url": "http://www.rethinkdb.com/",
     "icon": "provided/logos/rethinkdb.svg"
+  },
+  {
+    "name": "Retool",
+    "shortname": "retool",
+    "url": "https://retool.com/",
+    "icon": "provided/logos/retool-icon.svg"
   },
   {
     "name": "Riak",
@@ -5460,6 +5778,12 @@
     "icon": "provided/logos/speedcurve.svg"
   },
   {
+    "name": "SpiderMonkey",
+    "shortname": "spidermonkey",
+    "url": "https://spidermonkey.dev/",
+    "icon": "provided/logos/spidermonkey-icon.svg"
+  },
+  {
     "name": "Spinnaker",
     "shortname": "spinnaker",
     "url": "https://spinnaker.io/",
@@ -5530,6 +5854,12 @@
     "shortname": "statuspage",
     "url": "https://www.statuspage.io/",
     "icon": "provided/logos/statuspage.svg"
+  },
+  {
+    "name": "stdlib",
+    "shortname": "stdlib",
+    "url": "https://stdlib.io/",
+    "icon": "provided/logos/stdlib-icon.svg"
   },
   {
     "name": "Steam",
@@ -5784,6 +6114,12 @@
     "icon": "provided/logos/tastejs.svg"
   },
   {
+    "name": "Tauri",
+    "shortname": "tauri",
+    "url": "https://tauri.studio/",
+    "icon": "provided/logos/tauri.svg"
+  },
+  {
     "name": "Tealium",
     "shortname": "tealium",
     "url": "https://tealium.com",
@@ -5868,6 +6204,12 @@
     "icon": "provided/logos/todomvc.svg"
   },
   {
+    "name": "TOML",
+    "shortname": "toml",
+    "url": "https://toml.io/",
+    "icon": "provided/logos/toml.svg"
+  },
+  {
     "name": "Tor",
     "shortname": "tor",
     "url": "https://www.torproject.org/",
@@ -5946,6 +6288,12 @@
     "icon": "provided/logos/tunein.svg"
   },
   {
+    "name": "Tuple",
+    "shortname": "tuple",
+    "url": "https://tuple.app/",
+    "icon": "provided/logos/tuple.svg"
+  },
+  {
     "name": "Turborepo",
     "shortname": "turborepo",
     "url": "https://turborepo.org/",
@@ -6003,7 +6351,7 @@
     "name": "Udacity",
     "shortname": "udacity",
     "url": "https://udacity.com",
-    "icon": "provided/logos/udacity.svg"
+    "icon": "provided/logos/udacity-icon.svg"
   },
   {
     "name": "Udemy",
@@ -6300,6 +6648,12 @@
     "icon": "provided/logos/webcomponents.svg"
   },
   {
+    "name": "WebdriverIO",
+    "shortname": "webdriverio",
+    "url": "https://webdriver.io/",
+    "icon": "provided/logos/webdriverio.svg"
+  },
+  {
     "name": "Webflow",
     "shortname": "webflow",
     "url": "https://webflow.com",
@@ -6426,6 +6780,12 @@
     "icon": "provided/logos/wix.svg"
   },
   {
+    "name": "WMR",
+    "shortname": "wmr",
+    "url": "https://wmr.dev/",
+    "icon": "provided/logos/wmr.svg"
+  },
+  {
     "name": "WooCommerce",
     "shortname": "woocommerce",
     "url": "http://www.woothemes.com/woocommerce/",
@@ -6520,6 +6880,12 @@
     "shortname": "yahoo",
     "url": "https://search.yahoo.com/",
     "icon": "provided/logos/yahoo.svg"
+  },
+  {
+    "name": "YAML",
+    "shortname": "yaml",
+    "url": "https://yaml.org/",
+    "icon": "provided/logos/yaml.svg"
   },
   {
     "name": "Yammer",
