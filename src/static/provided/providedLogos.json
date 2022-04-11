@@ -939,7 +939,7 @@
     "name": "Booqable",
     "shortname": "booqable",
     "url": "https://booqable.com/",
-    "icon": "provided/logos/booqable.svg"
+    "icon": "provided/logos/booqable-icon.svg"
   },
   {
     "name": "Bootstrap",
@@ -1174,6 +1174,12 @@
     "shortname": "carbide",
     "url": "https://alpha.trycarbide.com/",
     "icon": "provided/logos/carbide.svg"
+  },
+  {
+    "name": "Cardano",
+    "shortname": "cardano",
+    "url": "https://cardano.org/",
+    "icon": "provided/logos/cardano-icon.svg"
   },
   {
     "name": "Cassandra",
@@ -2928,6 +2934,12 @@
     "icon": "provided/logos/hbase.svg"
   },
   {
+    "name": "Headless UI",
+    "shortname": "headlessui",
+    "url": "https://headlessui.dev/",
+    "icon": "provided/logos/headlessui-icon.svg"
+  },
+  {
     "name": "Heap",
     "shortname": "heap",
     "url": "https://heapanalytics.com/",
@@ -3543,7 +3555,7 @@
     "name": "Kotlin",
     "shortname": "kotlin",
     "url": "http://kotlinlang.org/",
-    "icon": "provided/logos/kotlin.svg"
+    "icon": "provided/logos/kotlin-icon.svg"
   },
   {
     "name": "Kraken",
@@ -4125,7 +4137,7 @@
     "name": "Mockflow",
     "shortname": "mockflow",
     "url": "http://www.mockflow.com/",
-    "icon": "provided/logos/mockflow.svg"
+    "icon": "provided/logos/mockflow-icon.svg"
   },
   {
     "name": "Modernizr",
@@ -6168,6 +6180,12 @@
     "icon": "provided/logos/terser-icon.svg"
   },
   {
+    "name": "Testing Library",
+    "shortname": "testing-library",
+    "url": "https://testing-library.com/",
+    "icon": "provided/logos/testing-library.svg"
+  },
+  {
     "name": "TestLodge",
     "shortname": "testlodge",
     "url": "http://www.testlodge.com/",
@@ -6262,6 +6280,12 @@
     "shortname": "truffle",
     "url": "https://trufflesuite.com/",
     "icon": "provided/logos/truffle-icon.svg"
+  },
+  {
+    "name": "ts-node",
+    "shortname": "tsnode",
+    "url": "https://typestrong.org/ts-node/",
+    "icon": "provided/logos/tsnode.svg"
   },
   {
     "name": "tsuru",
@@ -6408,6 +6432,12 @@
     "icon": "provided/logos/unity.svg"
   },
   {
+    "name": "unocss",
+    "shortname": "unocss",
+    "url": "https://unocss.antfu.me/",
+    "icon": "provided/logos/unocss.svg"
+  },
+  {
     "name": "Upcase",
     "shortname": "upcase",
     "url": "https://upcase.com/",
@@ -6486,6 +6516,12 @@
     "icon": "provided/logos/vercel-icon.svg"
   },
   {
+    "name": "Verdaccio",
+    "shortname": "verdaccio",
+    "url": "https://verdaccio.org/",
+    "icon": "provided/logos/verdaccio-icon.svg"
+  },
+  {
     "name": "VerneMQ",
     "shortname": "vernemq",
     "url": "https://verne.mq/",
@@ -6534,6 +6570,12 @@
     "icon": "provided/logos/vitejs.svg"
   },
   {
+    "name": "Vitest",
+    "shortname": "vitest",
+    "url": "https://vitest.dev/",
+    "icon": "provided/logos/vitest.svg"
+  },
+  {
     "name": "Vivaldi",
     "shortname": "vivaldi",
     "url": "https://vivaldi.com/",
@@ -6556,6 +6598,12 @@
     "shortname": "vuetifyjs",
     "url": "https://vuetifyjs.com/",
     "icon": "provided/logos/vuetifyjs.svg"
+  },
+  {
+    "name": "VueUse",
+    "shortname": "vueuse",
+    "url": "https://vueuse.org/",
+    "icon": "provided/logos/vueuse.svg"
   },
   {
     "name": "Vulkan",
