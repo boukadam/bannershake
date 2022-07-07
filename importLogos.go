@@ -6,8 +6,8 @@ import (
 	"io"
 	"io/ioutil"
 	"os"
-	"strings"
 	"path"
+	"strings"
 )
 
 type BannerShakeLogos struct {
@@ -27,7 +27,7 @@ type Logos struct {
 const providedLogosBase = "src/static/provided/"
 const providedLogosDir = providedLogosBase + "logos/"
 const providedLogosPrefix = "provided/logos/"
-const logosRepo = "../logos"
+const logosRepo = "gilbarbara_logos"
 
 var logosBlockedByAdblock = map[string]string{
 	"admob.svg":          "_admob.svg",
@@ -85,15 +85,15 @@ func main() {
 	}
 
 	_ = os.Mkdir(providedLogosBase, 0755)
-	_ = ioutil.WriteFile(providedLogosBase + "providedLogos.json", jsonOutput, 0644)
-	_ = CopyDir(logosRepo + "/logos", providedLogosDir)
+	_ = ioutil.WriteFile(providedLogosBase+"providedLogos.json", jsonOutput, 0644)
+	_ = CopyDir(logosRepo+"/logos", providedLogosDir)
 
 	for _, logoToRemove := range logosToRemove {
 		_ = os.Remove(providedLogosDir + logoToRemove)
 	}
 
 	for _, logoToRename := range logosToRename {
-		_ = os.Rename(providedLogosDir + logoToRename, providedLogosDir + logosBlockedByAdblock[logoToRename])
+		_ = os.Rename(providedLogosDir+logoToRename, providedLogosDir+logosBlockedByAdblock[logoToRename])
 	}
 
 }
