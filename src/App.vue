@@ -83,6 +83,7 @@ import ColorPicker from "@/components/ColorPicker";
 import BrandImageSelector from "@/components/BrandImageSelector";
 import LogoSizeSelector from "@/components/LogoSizeSelector";
 import BannerShakeDesc from "@/components/BannerShakeDesc";
+import { mapState } from "vuex";
 
 export default {
   name: "App",
@@ -106,6 +107,21 @@ export default {
     backgroundColor: "#FFFFEFFF",
     brandImage: null,
   }),
+  created() {
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+      get: (searchParams, prop) => searchParams.get(prop),
+    });
+    const skillsStr = params.skills
+    if (skillsStr) {
+      this.selected = skillsStr.split(',').map(s => this.skillsByShortname.get(s))
+      console.log(this.selected)
+    }
+  },
+  computed: {
+    ...mapState({
+      skillsByShortname: (state) => new Map(state.skills.map(s => [s.shortname, s]),)
+    })
+  },
   methods: {
     generate() {
       this.$refs.displayBanner.generate();

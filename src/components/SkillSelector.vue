@@ -43,8 +43,8 @@
 </template>
 <script>
 
-import json from "@/static/provided/providedLogos.json";
 import draggable from "vuedraggable";
+import { mapState } from "vuex";
 
 export default {
   components: {draggable},
@@ -56,7 +56,6 @@ export default {
   },
   data: () => ({
     search: null,
-    skills: json,
     selected: [],
     reorder: false,
     drag: false
@@ -71,7 +70,10 @@ export default {
         group: {name: "group", pull: true, put: true},
         sort: true,
       };
-    }
+    },
+    ...mapState({
+      skills: (state) => state.skills
+    })
   },
   watch: {
     selected() {

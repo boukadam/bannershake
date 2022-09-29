@@ -31,6 +31,9 @@
   "close": "Close",
   "generate": "Generate",
   "download": "Download",
+  "copy": "Copy",
+  "copyTitle": "URL copied !",
+  "copyMsg": "You have copied the URL allowing you to regenerate your skill banner effortlessly",
   "logosOffscreenAlert1": "You have selected too many skills. Reduce your selection or change the size of the logos",
   "logosOffscreenAlert2": "<strong>{logosOffscreen}</strong> will not be displayed in the banner",
   "html5CanvasUnsupportedErrorMsg": "Your browser does not support the HTML5 canvas tag."

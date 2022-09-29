@@ -14,7 +14,17 @@
         <v-img :src="generatedImage"></v-img>
       </v-card-text>
       <v-card-actions>
-        <v-spacer></v-spacer>
+        <v-text-field readonly outlined hide-details background-color="white" class="mr-2" v-model="url" />
+        <v-btn
+            color="blue-grey"
+            class="white--text"
+            :loading="generationBeingProcessed"
+            @click="copy"
+            :x-large="!$vuetify.breakpoint.xs"
+        >
+          {{ $t('copy') }}
+        </v-btn>
+        <v-divider vertical class="mx-2" />
         <v-btn
             color="success"
             :loading="generationBeingProcessed"
@@ -23,7 +33,6 @@
         >
           {{ $t('download') }}
         </v-btn>
-        <v-spacer></v-spacer>
       </v-card-actions>
     </v-card>
     <canvas id="myCanvas" :width="canvasWidth" :height="canvasHeight" hidden>
@@ -72,6 +81,9 @@ export default {
     },
     nbLogoPerColumn() {
       return Math.floor(this.canvasHeight / this.logoArea);
+    },
+    url() {
+      return "https://bannershake.com?skills=" + this.skills.map(s => s.shortname).join(',')
     }
   },
   methods: {
@@ -266,6 +278,14 @@ export default {
       } else if (lnk.fireEvent) {
         lnk.fireEvent("onclick");
       }
+    },
+    copy() {
+      navigator.clipboard.writeText(this.url)
+      this.$notify({
+        title: this.$t('copyTitle'),
+        type: 'success',
+        text: this.$t('copyMsg')
+      })
     }
   }
 }
