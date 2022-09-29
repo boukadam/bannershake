@@ -15,22 +15,39 @@
   >
     <template v-slot:item="data">
       <v-row class="ml-2" align="center">
-        <img :src="require('../static/' + data.item.icon)" width="24" alt="" />
+        <img :src="require('../static/' + data.item.icon)" width="24" alt=""/>
         <span class="ml-4 font-weight-light">{{ data.item.name }}</span>
       </v-row>
     </template>
     <template v-slot:selection="data">
-      <v-chip class="mb-1" color="white" text-color="indigo" close @click:close="onSkillRemoved(data)">
-        <span>{{ data.item.name }}</span>
-      </v-chip>
+      <draggable
+          :id="data.index"
+          :list="selected"
+          v-bind="dragOptions"
+          :move="move"
+          @change="change"
+      >
+        <v-chip
+            draggable
+            v-model="selected[data.index]"
+            :key="data.item.value"
+            @mousedown.stop
+            @click.stop
+            class="mb-1" color="white" text-color="indigo" close @click:close="onSkillRemoved(data)"
+        >
+          {{ data.item.name }}
+        </v-chip>
+      </draggable>
     </template>
   </v-autocomplete>
 </template>
 <script>
 
 import json from "@/static/provided/providedLogos.json";
+import draggable from "vuedraggable";
 
 export default {
+  components: {draggable},
   props: {
     value: {
       type: Array,
@@ -40,10 +57,21 @@ export default {
   data: () => ({
     search: null,
     skills: json,
-    selected: []
+    selected: [],
+    reorder: false,
+    drag: false
   }),
   created() {
     this.selected = this.value;
+  },
+  computed: {
+    dragOptions() {
+      return {
+        animation: 200,
+        group: {name: "group", pull: true, put: true},
+        sort: true,
+      };
+    }
   },
   watch: {
     selected() {
@@ -53,6 +81,24 @@ export default {
   methods: {
     onSkillRemoved(data) {
       data.parent.selectItem(data.item);
+    },
+    move(value) {
+      this.dragged = {
+        from: parseInt(value.from.id),
+        to: parseInt(value.to.id),
+        newIndex: value.draggedContext.futureIndex,
+      }
+    },
+    change(value) {
+      if (value.removed) {
+        // insert
+        this.selected.splice(this.dragged.to + this.dragged.newIndex, 0, this.selected[this.dragged.from])
+        // delete
+        if (this.dragged.from < this.dragged.to) // LTR
+          this.selected.splice(this.dragged.from, 1)
+        else // RTL
+          this.selected.splice(this.dragged.from + 1, 1)
+      }
     }
   }
 }
