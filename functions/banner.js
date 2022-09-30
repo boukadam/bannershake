@@ -9,5 +9,16 @@ export async function onRequest(context) {
         data, // arbitrary space for passing data between middlewares
     } = context;
 
-    return new Response("Hello, world!");
+    const svg = '<svg height="100" width="100">' +
+        '  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />' +
+        '  Sorry, your browser does not support inline SVG.  ' +
+        '</svg> '
+
+    return new Response(svg, {
+        status: 200,
+        statusText: 'OK',
+        headers: {
+            'Content-Type': 'image/svg+xml'
+        }
+    });
 }
