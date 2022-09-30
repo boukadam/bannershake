@@ -1,0 +1,40 @@
+{
+  "title": "BannerShake - Generador de banners de habilidades",
+  "lastUpdate": "Última actualización",
+  "bannerShakeDesc": "<strong>BannerShake</strong> es una herramienta que te permite generar tu propio banner a partir de tus habilidades técnicas.",
+  "feedback": {
+    "title": "Feedback",
+    "text": "<p>¿No puede encontrar una tecnología o una habilidad en la lista? ¿Quieres hacer una devolución o sugerir una evolución?</p><p>Por favor especifíquelo en el cuadro de comentarios a continuación.</p>",
+    "emailField": "Correo electrónico o nombre de usuario (Opcional)",
+    "commentField": "Comentario",
+    "requiredField": "Necesario",
+    "send": "Enviar",
+    "successMsg": "¡Su mensaje fue enviado exitosamente! ¡Gracias por tus contribuciones!",
+    "errorMsg": "¡Ocurrió un error al enviar el correo! Vuelva a intentarlo más tarde"
+  },
+  "howItWorks": {
+    "title": "¿Cómo funciona?",
+    "step1": "Primero, seleccione las habilidades que desea resaltar.",
+    "step2": "Incluso puede agregar una imagen de su elección que se mostrará en el lado izquierdo del banner. Al hacer esto, reduce la cantidad de habilidades en su banner.",
+    "step3": "Luego, elige el tamaño de los logos de las habilidades y el color de fondo. El número de habilidades mostradas depende del tamaño que elijas.",
+      "example1": "Por ejemplo, un proyecto antiguo que hice, llamado Wafood, se hizo con",
+    "example2": "Otro ejemplo, un banner personal",
+    "gotIt": "¡Entiendo!"
+  },
+  "selectSkills": "Selecciona tus habilidades",
+  "brandImage": "Imagen de marca",
+  "logoSize": "Tamaño del logotipo",
+  "smallLogoSize": "Pequeño",
+  "mediumLogoSize": "Medio",
+  "largeLogoSize": "Largo",
+  "backgroundColor": "Color de fondo",
+  "close": "Cerca",
+  "generate": "Generar",
+  "download": "Descargar",
+  "copy": "Copiar",
+  "copyTitle": "¡URL copiada!",
+  "copyMsg": "Ha copiado la URL que le permite regenerar su banner de habilidades sin esfuerzo",
+  "logosOffscreenAlert1": "Has seleccionado demasiadas habilidades. Reduzca su selección o cambie el tamaño de los logotipos",
+  "logosOffscreenAlert2": "<strong>{logosOffscreen}</strong> no se mostrará en el banner",
+  "html5CanvasUnsupportedErrorMsg": "Su navegador no es compatible con la etiqueta de lienzo HTML5."
+}
