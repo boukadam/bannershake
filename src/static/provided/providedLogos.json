@@ -396,6 +396,12 @@
     "icon": "provided/logos/arangodb-icon.svg"
   },
   {
+    "name": "Architect",
+    "shortname": "architect",
+    "url": "https://arc.codes/",
+    "icon": "provided/logos/architect-icon.svg"
+  },
+  {
     "name": "Archlinux",
     "shortname": "archlinux",
     "url": "https://www.archlinux.org/",
@@ -1194,6 +1200,12 @@
     "icon": "provided/logos/brunch.svg"
   },
   {
+    "name": "Bubble",
+    "shortname": "bubble",
+    "url": "https://bubble.io/",
+    "icon": "provided/logos/bubble-icon.svg"
+  },
+  {
     "name": "Buck",
     "shortname": "buck",
     "url": "https://buckbuild.com/",
@@ -1230,6 +1242,12 @@
     "icon": "provided/logos/bugsnag-icon.svg"
   },
   {
+    "name": "Builder",
+    "shortname": "builder-io",
+    "url": "https://www.builder.io/",
+    "icon": "provided/logos/builder-io-icon.svg"
+  },
+  {
     "name": "Buildkite",
     "shortname": "buildkite",
     "url": "https://buildkite.com/",
@@ -1246,6 +1264,12 @@
     "shortname": "bun",
     "url": "https://bun.sh/",
     "icon": "provided/logos/bun.svg"
+  },
+  {
+    "name": "Bunny",
+    "shortname": "bunny-net",
+    "url": "https://bunny.net/",
+    "icon": "provided/logos/bunny-net-icon.svg"
   },
   {
     "name": "Bēhance",
@@ -1392,6 +1416,12 @@
     "icon": "provided/logos/chrome.svg"
   },
   {
+    "name": "Chrome Web Store",
+    "shortname": "chrome-web-store",
+    "url": "https://chrome.google.com/webstore",
+    "icon": "provided/logos/chrome-web-store.svg"
+  },
+  {
     "name": "Cinder",
     "shortname": "cinder",
     "url": "https://libcinder.org/",
@@ -1500,6 +1530,12 @@
     "icon": "provided/logos/cocoapods.svg"
   },
   {
+    "name": "Coda",
+    "shortname": "coda",
+    "url": "https://coda.io/",
+    "icon": "provided/logos/coda-icon.svg"
+  },
+  {
     "name": "Codacy",
     "shortname": "codacy",
     "url": "https://www.codacy.com/",
@@ -1509,7 +1545,7 @@
     "name": "Code Climate",
     "shortname": "codeclimate",
     "url": "https://codeclimate.com/",
-    "icon": "provided/logos/codeclimate.svg"
+    "icon": "provided/logos/codeclimate-icon.svg"
   },
   {
     "name": "Code Sandbox",
@@ -1578,6 +1614,12 @@
     "icon": "provided/logos/coderwall.svg"
   },
   {
+    "name": "CodeSee",
+    "shortname": "codesee",
+    "url": "https://www.codesee.io/",
+    "icon": "provided/logos/codesee-icon.svg"
+  },
+  {
     "name": "Codio",
     "shortname": "codio",
     "url": "https://codio.com/",
@@ -1614,6 +1656,12 @@
     "icon": "provided/logos/compose.svg"
   },
   {
+    "name": "Compose Multiplatform",
+    "shortname": "compose-multiplatform",
+    "url": "https://www.jetbrains.com/lp/compose-mpp/",
+    "icon": "provided/logos/compose-multiplatform.svg"
+  },
+  {
     "name": "Composer",
     "shortname": "composer",
     "url": "https://getcomposer.org/",
@@ -1636,6 +1684,12 @@
     "shortname": "concretecms",
     "url": "https://www.concretecms.com/",
     "icon": "provided/logos/concretecms-icon.svg"
+  },
+  {
+    "name": "Conda",
+    "shortname": "conda",
+    "url": "https://conda.io/",
+    "icon": "provided/logos/conda.svg"
   },
   {
     "name": "Confluence",
@@ -1824,6 +1878,18 @@
     "icon": "provided/logos/datadog.svg"
   },
   {
+    "name": "DataGrip",
+    "shortname": "datagrip",
+    "url": "https://www.jetbrains.com/datagrip/",
+    "icon": "provided/logos/datagrip.svg"
+  },
+  {
+    "name": "DataSpell",
+    "shortname": "dataspell",
+    "url": "https://www.jetbrains.com/dataspell/",
+    "icon": "provided/logos/dataspell.svg"
+  },
+  {
     "name": "DatoCMS",
     "shortname": "datocms",
     "url": "https://www.datocms.com/",
@@ -1878,6 +1944,12 @@
     "icon": "provided/logos/derby.svg"
   },
   {
+    "name": "Descript",
+    "shortname": "descript",
+    "url": "https://www.descript.com/",
+    "icon": "provided/logos/descript-icon.svg"
+  },
+  {
     "name": "Designer News",
     "shortname": "designernews",
     "url": "https://www.designernews.co/",
@@ -1887,7 +1959,7 @@
     "name": "DeviantArt",
     "shortname": "deviantart",
     "url": "http://www.deviantart.com/",
-    "icon": "provided/logos/deviantart.svg"
+    "icon": "provided/logos/deviantart-icon.svg"
   },
   {
     "name": "Dgraph",
@@ -1984,6 +2056,12 @@
     "shortname": "dojo",
     "url": "https://dojotoolkit.org/",
     "icon": "provided/logos/dojo-toolkit.svg"
+  },
+  {
+    "name": "Dovetail",
+    "shortname": "dovetail",
+    "url": "https://dovetailapp.com/",
+    "icon": "provided/logos/dovetail-icon.svg"
   },
   {
     "name": "DreamHost",
@@ -2214,6 +2292,12 @@
     "icon": "provided/logos/envoyer.svg"
   },
   {
+    "name": "epsagon",
+    "shortname": "epsagon",
+    "url": "https://epsagon.com/",
+    "icon": "provided/logos/epsagon-icon.svg"
+  },
+  {
     "name": "Erlang",
     "shortname": "erlang",
     "url": "http://www.erlang.org/",
@@ -2241,7 +2325,7 @@
     "name": "Eta",
     "shortname": "eta-lang",
     "url": "http://eta-lang.org/",
-    "icon": "provided/logos/eta-lang.svg"
+    "icon": "provided/logos/eta.svg"
   },
   {
     "name": "etcd",
@@ -2610,6 +2694,12 @@
     "icon": "provided/logos/geekbot.svg"
   },
   {
+    "name": "GeeTest",
+    "shortname": "geetest",
+    "url": "https://www.geetest.com/",
+    "icon": "provided/logos/geetest-icon.svg"
+  },
+  {
     "name": "Get Your Guide",
     "shortname": "getyourguide",
     "url": "https://www.getyourguide.com/",
@@ -2626,6 +2716,12 @@
     "shortname": "giantswarm",
     "url": "https://giantswarm.io/",
     "icon": "provided/logos/giantswarm.svg"
+  },
+  {
+    "name": "Gin",
+    "shortname": "gin",
+    "url": "https://gin-gonic.com/",
+    "icon": "provided/logos/gin.svg"
   },
   {
     "name": "Git",
@@ -2758,6 +2854,12 @@
     "shortname": "gohorse",
     "url": "https://medium.com/@dekaah/22-axioms-of-the-extreme-go-horse-methodology-xgh-9fa739ab55b4",
     "icon": "provided/logos/gohorse.svg"
+  },
+  {
+    "name": "GoLand",
+    "shortname": "goland",
+    "url": "https://www.jetbrains.com/go/",
+    "icon": "provided/logos/goland.svg"
   },
   {
     "name": "Google",
@@ -2976,6 +3078,12 @@
     "icon": "provided/logos/graylog-icon.svg"
   },
   {
+    "name": "GreenSock",
+    "shortname": "greensock",
+    "url": "https://greensock.com/",
+    "icon": "provided/logos/greensock-icon.svg"
+  },
+  {
     "name": "Gridsome",
     "shortname": "gridsome",
     "url": "https://gridsome.org",
@@ -2998,6 +3106,12 @@
     "shortname": "grove",
     "url": "https://grove.io/",
     "icon": "provided/logos/grove.svg"
+  },
+  {
+    "name": "GrowthBook",
+    "shortname": "growth-book",
+    "url": "https://www.growthbook.io/",
+    "icon": "provided/logos/growth-book-icon.svg"
   },
   {
     "name": "gRPC",
@@ -3096,6 +3210,12 @@
     "icon": "provided/logos/hardhat-icon.svg"
   },
   {
+    "name": "Harness",
+    "shortname": "harness",
+    "url": "https://harness.io/",
+    "icon": "provided/logos/harness-icon.svg"
+  },
+  {
     "name": "Hashnode",
     "shortname": "hashnode",
     "url": "https://hashnode.com/",
@@ -3130,6 +3250,12 @@
     "shortname": "hbase",
     "url": "http://hbase.apache.org/",
     "icon": "provided/logos/hbase.svg"
+  },
+  {
+    "name": "hCaptcha",
+    "shortname": "hcaptcha",
+    "url": "https://www.hcaptcha.com/",
+    "icon": "provided/logos/hcaptcha-icon.svg"
   },
   {
     "name": "Headless UI",
@@ -3208,6 +3334,12 @@
     "shortname": "homebrew",
     "url": "https://brew.sh/",
     "icon": "provided/logos/homebrew.svg"
+  },
+  {
+    "name": "Hookstate",
+    "shortname": "hookstate",
+    "url": "https://hookstate.js.org/",
+    "icon": "provided/logos/hookstate.svg"
   },
   {
     "name": "Hootsuite",
@@ -3504,6 +3636,12 @@
     "icon": "provided/logos/jetbrains-icon.svg"
   },
   {
+    "name": "JetBrains Space",
+    "shortname": "jetbrains-space",
+    "url": "https://www.jetbrains.com/space/",
+    "icon": "provided/logos/jetbrains-space-icon.svg"
+  },
+  {
     "name": "JFrog",
     "shortname": "jfrog",
     "url": "https://www.jfrog.com/",
@@ -3526,6 +3664,12 @@
     "shortname": "joomla",
     "url": "http://www.joomla.org/",
     "icon": "provided/logos/joomla.svg"
+  },
+  {
+    "name": "Jotai",
+    "shortname": "jotai",
+    "url": "https://jotai.org/",
+    "icon": "provided/logos/jotai.svg"
   },
   {
     "name": "jQuery",
@@ -3750,6 +3894,12 @@
     "icon": "provided/logos/krakenjs.svg"
   },
   {
+    "name": "Ktor",
+    "shortname": "ktor",
+    "url": "https://ktor.io/",
+    "icon": "provided/logos/ktor-icon.svg"
+  },
+  {
     "name": "Kubernetes",
     "shortname": "kubernetes",
     "url": "http://kubernetes.io/",
@@ -3783,7 +3933,13 @@
     "name": "Lateral",
     "shortname": "lateral",
     "url": "https://lateral.io/",
-    "icon": "provided/logos/lateral.svg"
+    "icon": "provided/logos/lateral-icon.svg"
+  },
+  {
+    "name": "LaunchDarkly",
+    "shortname": "launchdarkly",
+    "url": "https://launchdarkly.com/",
+    "icon": "provided/logos/launchdarkly-icon.svg"
   },
   {
     "name": "Launchrock",
@@ -4212,6 +4368,12 @@
     "icon": "provided/logos/meteor-icon.svg"
   },
   {
+    "name": "Micro",
+    "shortname": "micro",
+    "url": "https://micro-editor.github.io/",
+    "icon": "provided/logos/micro-icon.svg"
+  },
+  {
     "name": "Microcosm",
     "shortname": "microcosm",
     "url": "http://code.viget.com/microcosm/",
@@ -4233,7 +4395,7 @@
     "name": "Microsoft",
     "shortname": "microsoft",
     "url": "http://www.microsoft.com/",
-    "icon": "provided/logos/microsoft.svg"
+    "icon": "provided/logos/microsoft-icon.svg"
   },
   {
     "name": "Microsoft Azure",
@@ -4422,6 +4584,18 @@
     "icon": "provided/logos/mparticle-icon.svg"
   },
   {
+    "name": "MPS",
+    "shortname": "mps",
+    "url": "https://www.jetbrains.com/mps/",
+    "icon": "provided/logos/mps-icon.svg"
+  },
+  {
+    "name": "MSW",
+    "shortname": "msw",
+    "url": "https://mswjs.io/",
+    "icon": "provided/logos/msw.svg"
+  },
+  {
     "name": "Multipass",
     "shortname": "multipass",
     "url": "https://multipass.run/",
@@ -4512,6 +4686,12 @@
     "icon": "provided/logos/nasm.svg"
   },
   {
+    "name": "Neverinstall",
+    "shortname": "neverinstall",
+    "url": "https://neverinstall.com/",
+    "icon": "provided/logos/neverinstall-icon.svg"
+  },
+  {
     "name": "New Relic",
     "shortname": "new-relic",
     "url": "http://newrelic.com/",
@@ -4528,6 +4708,12 @@
     "shortname": "nginx",
     "url": "https://www.nginx.com/",
     "icon": "provided/logos/nginx.svg"
+  },
+  {
+    "name": "NHost",
+    "shortname": "nhost",
+    "url": "https://nhost.io/",
+    "icon": "provided/logos/nhost-icon.svg"
   },
   {
     "name": "Nightwatch.js",
@@ -4648,6 +4834,12 @@
     "shortname": "oauth",
     "url": "http://oauth.net/",
     "icon": "provided/logos/oauth.svg"
+  },
+  {
+    "name": "Observable",
+    "shortname": "observable",
+    "url": "https://observablehq.com/",
+    "icon": "provided/logos/observablehq.svg"
   },
   {
     "name": "OCaml",
@@ -5014,6 +5206,12 @@
     "shortname": "planless",
     "url": "https://www.planless.io/",
     "icon": "provided/logos/planless-icon.svg"
+  },
+  {
+    "name": "Plasmic",
+    "shortname": "plasmic",
+    "url": "https://www.plasmic.app/",
+    "icon": "provided/logos/plasmic.svg"
   },
   {
     "name": "Plastic SCM",
@@ -5472,6 +5670,18 @@
     "icon": "provided/logos/reasonml-icon.svg"
   },
   {
+    "name": "reCAPTCHA",
+    "shortname": "recaptcha",
+    "url": "https://www.google.com/recaptcha/",
+    "icon": "provided/logos/recaptcha.svg"
+  },
+  {
+    "name": "Recoil",
+    "shortname": "recoil",
+    "url": "https://recoiljs.org/",
+    "icon": "provided/logos/recoil-icon.svg"
+  },
+  {
     "name": "Reddit",
     "shortname": "reddit",
     "url": "https://www.reddit.com/",
@@ -5542,6 +5752,18 @@
     "shortname": "remix",
     "url": "https://remix.run/",
     "icon": "provided/logos/remix-icon.svg"
+  },
+  {
+    "name": "Renovate",
+    "shortname": "renovatebot",
+    "url": "https://renovatebot.com/",
+    "icon": "provided/logos/renovatebot.svg"
+  },
+  {
+    "name": "Replit",
+    "shortname": "replit",
+    "url": "https://replit.com/",
+    "icon": "provided/logos/replit-icon.svg"
   },
   {
     "name": "RequireJS",
@@ -6168,6 +6390,12 @@
     "icon": "provided/logos/stackshare.svg"
   },
   {
+    "name": "Stately",
+    "shortname": "stately",
+    "url": "https://stately.ai/",
+    "icon": "provided/logos/stately-icon.svg"
+  },
+  {
     "name": "StatusPage",
     "shortname": "statuspage",
     "url": "https://www.statuspage.io/",
@@ -6204,6 +6432,12 @@
     "icon": "provided/logos/stickermule.svg"
   },
   {
+    "name": "Stigg",
+    "shortname": "stigg",
+    "url": "https://www.stigg.io/",
+    "icon": "provided/logos/stigg-icon.svg"
+  },
+  {
     "name": "Stimulus",
     "shortname": "stimulus",
     "url": "https://stimulus.hotwire.dev/",
@@ -6220,6 +6454,18 @@
     "shortname": "stoplight",
     "url": "https://stoplight.io/",
     "icon": "provided/logos/stoplight.svg"
+  },
+  {
+    "name": "Storyblocks",
+    "shortname": "storyblocks",
+    "url": "https://www.storyblocks.com/",
+    "icon": "provided/logos/storyblocks-icon.svg"
+  },
+  {
+    "name": "Storyblok",
+    "shortname": "storyblok",
+    "url": "https://www.storyblok.com/",
+    "icon": "provided/logos/storyblok-icon.svg"
   },
   {
     "name": "Storybook",
@@ -6316,6 +6562,12 @@
     "shortname": "surge",
     "url": "http://surge.sh/",
     "icon": "provided/logos/surge.svg"
+  },
+  {
+    "name": "SurrealDB",
+    "shortname": "surrealdb",
+    "url": "https://surrealdb.com/",
+    "icon": "provided/logos/surrealdb-icon.svg"
   },
   {
     "name": "survicate",
@@ -6454,6 +6706,12 @@
     "shortname": "tealium",
     "url": "https://tealium.com",
     "icon": "provided/logos/tealium.svg"
+  },
+  {
+    "name": "TeamCity",
+    "shortname": "teamcity",
+    "url": "https://www.jetbrains.com/teamcity/",
+    "icon": "provided/logos/teamcity.svg"
   },
   {
     "name": "Teamgrid",
@@ -6654,6 +6912,12 @@
     "icon": "provided/logos/tuple.svg"
   },
   {
+    "name": "Turbopack",
+    "shortname": "turbopack",
+    "url": "https://turbo.build/pack",
+    "icon": "provided/logos/turbopack-icon.svg"
+  },
+  {
     "name": "Turborepo",
     "shortname": "turborepo",
     "url": "https://turborepo.org/",
@@ -6790,6 +7054,12 @@
     "shortname": "upcase",
     "url": "https://upcase.com/",
     "icon": "provided/logos/upcase.svg"
+  },
+  {
+    "name": "Upstash",
+    "shortname": "upstash",
+    "url": "https://upstash.com/",
+    "icon": "provided/logos/upstash-icon.svg"
   },
   {
     "name": "Upwork",
@@ -7002,6 +7272,12 @@
     "icon": "provided/logos/watchman.svg"
   },
   {
+    "name": "WayScript",
+    "shortname": "wayscript",
+    "url": "https://www.wayscript.com/",
+    "icon": "provided/logos/wayscript-icon.svg"
+  },
+  {
     "name": "Wear OS",
     "shortname": "wear-os",
     "url": "https://wearos.google.com/",
@@ -7156,6 +7432,12 @@
     "shortname": "wildfly",
     "url": "https://www.wildfly.org",
     "icon": "provided/logos/wildfly.svg"
+  },
+  {
+    "name": "Windi CSS",
+    "shortname": "windi-css",
+    "url": "https://windicss.org/",
+    "icon": "provided/logos/windi-css.svg"
   },
   {
     "name": "Wire",
@@ -7360,6 +7642,12 @@
     "shortname": "zeplin",
     "url": "https://zeplin.io/",
     "icon": "provided/logos/zeplin.svg"
+  },
+  {
+    "name": "zeroheight",
+    "shortname": "zeroheight",
+    "url": "https://zeroheight.com/",
+    "icon": "provided/logos/zeroheight-icon.svg"
   },
   {
     "name": "Zig",
