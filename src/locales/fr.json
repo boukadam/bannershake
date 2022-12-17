@@ -1,7 +1,7 @@
 {
   "title": "BannerShake - Générateur de bannière de compétences",
   "lastUpdate": "Dernière mise à jour",
-  "bannerShakeDesc": "<strong>BannerShake</strong> est un outil vous permettant de générer votre propre bannière de compétences.",
+  "bannerShakeDesc": "<p><strong>BannerShake</strong> est un outil vous permettant de générer votre propre bannière de compétences.</p><p>Vous pouvez composer votre bannière à partir des <strong>{count}</strong> icones disponibles</p>",
   "feedback": {
     "title": "Feedback",
     "text": "<p>Vous ne trouvez pas une technologie ou une compétence? Vous souhaitre faire un retour ou suggérer une évolution?</p><p>Merci de le préciser dans la zone de commentaire ci-après</p>",

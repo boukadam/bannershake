@@ -2,7 +2,7 @@
   <v-app>
     <notifications position="bottom right"/>
     <v-card color="indigo" flat tile dark>
-      <v-card color="indigo" flat tile dark max-width="1024px" class="mx-auto">
+      <v-card color="indigo" flat tile dark max-width="1200px" class="mx-auto">
         <!-- Head banner -->
         <Header />
 
@@ -114,7 +114,6 @@ export default {
     const skillsStr = params.skills
     if (skillsStr) {
       this.selected = skillsStr.split(',').map(s => this.skillsByShortname.get(s))
-      console.log(this.selected)
     }
   },
   computed: {

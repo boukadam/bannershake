@@ -1,7 +1,7 @@
 {
   "title": "BannerShake - Generador de banners de habilidades",
   "lastUpdate": "Última actualización",
-  "bannerShakeDesc": "<strong>BannerShake</strong> es una herramienta que te permite generar tu propio banner a partir de tus habilidades técnicas.",
+  "bannerShakeDesc": "<p><strong>BannerShake</strong> es una herramienta que te permite generar tu propio banner a partir de tus habilidades técnicas.</p><p>Puedes componer tu banner a partir de los <strong>{count}</strong> iconos disponibles</p>",
   "feedback": {
     "title": "Feedback",
     "text": "<p>¿No puede encontrar una tecnología o una habilidad en la lista? ¿Quieres hacer una devolución o sugerir una evolución?</p><p>Por favor especifíquelo en el cuadro de comentarios a continuación.</p>",

@@ -1,7 +1,7 @@
 {
   "title": "BannerShake - Skills Banner Generator",
   "lastUpdate": "Last update",
-  "bannerShakeDesc": "<strong>BannerShake</strong> is a tool that allows you to generate your own banner from your technical skills.",
+  "bannerShakeDesc": "<p><strong>BannerShake</strong> is a tool that allows you to generate your own banner from your technical skills.</p><p>You can compose your banner from the <strong>{count}</strong> icons available</p>",
   "feedback": {
     "title": "Feedback",
     "text": "<p>You can't find a technology or a skill in the list? You want to make a return or suggest an evolution?</p><p>Please specify it in the comment box below</p>",

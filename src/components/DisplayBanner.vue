@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card v-if="generatedImage" max-width="1024px" class="mx-auto my-12" tile color="#FAFAFAFF">
+    <v-card v-if="generatedImage" max-width="1200px" class="mx-auto my-12" tile color="#FAFAFAFF">
       <v-card-text>
         <v-alert v-if="logosOffscreen.length > 0"
             text
