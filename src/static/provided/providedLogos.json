@@ -1446,6 +1446,12 @@
     "icon": "provided/logos/cirrus-ci.svg"
   },
   {
+    "name": "Clio",
+    "shortname": "clio-lang",
+    "url": "https://clio-lang.org/",
+    "icon": "provided/logos/clio-lang.svg"
+  },
+  {
     "name": "CLion",
     "shortname": "clion",
     "url": "https://www.jetbrains.com/clion/",
@@ -2781,7 +2787,7 @@
     "name": "Glamorous",
     "shortname": "glamorous",
     "url": "https://glamorous.rocks/",
-    "icon": "provided/logos/glamorous.svg"
+    "icon": "provided/logos/glamorous-icon.svg"
   },
   {
     "name": "Gleam",
@@ -2932,6 +2938,12 @@
     "shortname": "google-developers",
     "url": "https://developers.google.com/",
     "icon": "provided/logos/google-developers.svg"
+  },
+  {
+    "name": "Google Domains",
+    "shortname": "google-domains",
+    "url": "https://domains.google/",
+    "icon": "provided/logos/google-domains-icon.svg"
   },
   {
     "name": "Google Drive",
@@ -3214,6 +3226,12 @@
     "shortname": "harness",
     "url": "https://harness.io/",
     "icon": "provided/logos/harness-icon.svg"
+  },
+  {
+    "name": "HashiCorp",
+    "shortname": "hashicorp",
+    "url": "https://www.hashicorp.com/",
+    "icon": "provided/logos/hashicorp-icon.svg"
   },
   {
     "name": "Hashnode",
@@ -4776,6 +4794,12 @@
     "icon": "provided/logos/nomad-icon.svg"
   },
   {
+    "name": "Notion",
+    "shortname": "notion",
+    "url": "https://www.notion.so/",
+    "icon": "provided/logos/notion-icon.svg"
+  },
+  {
     "name": "Noysi",
     "shortname": "noysi",
     "url": "https://noysi.com/",
@@ -5256,6 +5280,12 @@
     "icon": "provided/logos/pnpm.svg"
   },
   {
+    "name": "PocketBase",
+    "shortname": "pocket-base",
+    "url": "https://pocketbase.io/",
+    "icon": "provided/logos/pocket-base.svg"
+  },
+  {
     "name": "POEditor",
     "shortname": "poeditor",
     "url": "https://poeditor.com/",
@@ -5394,12 +5424,6 @@
     "icon": "provided/logos/proofy.svg"
   },
   {
-    "name": "Protactor",
-    "shortname": "protactor",
-    "url": "http://www.protractortest.org/",
-    "icon": "provided/logos/protactor.svg"
-  },
-  {
     "name": "Proto.io",
     "shortname": "protoio",
     "url": "https://proto.io/",
@@ -5410,6 +5434,12 @@
     "shortname": "protonet",
     "url": "https://protonet.info",
     "icon": "provided/logos/protonet.svg"
+  },
+  {
+    "name": "Protractor",
+    "shortname": "protractor",
+    "url": "http://www.protractortest.org/",
+    "icon": "provided/logos/protractor.svg"
   },
   {
     "name": "Prott",
@@ -5956,6 +5986,12 @@
     "shortname": "sanity",
     "url": "https://www.sanity.io/",
     "icon": "provided/logos/sanity.svg"
+  },
+  {
+    "name": "SAP",
+    "shortname": "sap",
+    "url": "https://www.sap.com/",
+    "icon": "provided/logos/sap.svg"
   },
   {
     "name": "Sass",
@@ -7266,6 +7302,12 @@
     "icon": "provided/logos/wakatime.svg"
   },
   {
+    "name": "WalkMe",
+    "shortname": "walkme",
+    "url": "https://www.walkme.com/",
+    "icon": "provided/logos/walkme.svg"
+  },
+  {
     "name": "Watchman",
     "shortname": "watchman",
     "url": "https://facebook.github.io/watchman/",
@@ -7612,6 +7654,12 @@
     "shortname": "zwave",
     "url": "http://www.z-wave.com/",
     "icon": "provided/logos/zwave.svg"
+  },
+  {
+    "name": "Zabbix",
+    "shortname": "zabbix",
+    "url": "https://www.zabbix.com/",
+    "icon": "provided/logos/zabbix.svg"
   },
   {
     "name": "Zapier",

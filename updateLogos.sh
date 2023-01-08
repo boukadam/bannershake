@@ -11,6 +11,7 @@ if [[ ! -d "$GILBARBARA_LOGOS_DIR" ]]; then
   git clone $GILBARBARA_LOGOS_REPO $GILBARBARA_LOGOS_DIR
   DO_UPDATE=true
 else
+  git co main
   cd $GILBARBARA_LOGOS_DIR
   LOCAL_HEAD=$(git rev-parse @)
   REMOTE_HEAD=$(git rev-parse @{u})
