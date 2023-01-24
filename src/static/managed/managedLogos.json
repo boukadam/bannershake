@@ -1,0 +1,14 @@
+[
+  {
+    "name": " Gatling",
+    "shortname": "gatling",
+    "url": "https://gatling.io/",
+    "icon": "managed/logos/gatling-icon.svg"
+  },
+  {
+    "name": " Karate",
+    "shortname": "karate",
+    "url": "https://karatelabs.github.io/karate/",
+    "icon": "managed/logos/karate-icon.svg"
+  }
+]
