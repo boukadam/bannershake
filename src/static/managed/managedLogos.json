@@ -1,14 +1,56 @@
 [
   {
-    "name": " Gatling",
+    "name": "Gatling",
     "shortname": "gatling",
     "url": "https://gatling.io/",
     "icon": "managed/logos/gatling-icon.svg"
   },
   {
-    "name": " Karate",
+    "name": "Karate",
     "shortname": "karate",
     "url": "https://karatelabs.github.io/karate/",
     "icon": "managed/logos/karate-icon.svg"
+  },
+  {
+    "name": "Rundeck",
+    "shortname": "rundeck",
+    "url": "https://www.rundeck.com/",
+    "icon": "managed/logos/rundeck-icon.svg"
+  },
+  {
+    "name": "Freemarker",
+    "shortname": "freemarker",
+    "url": "https://freemarker.apache.org/",
+    "icon": "managed/logos/freemarker-icon.svg"
+  },
+  {
+    "name": "Gravitee.io",
+    "shortname": "gravitee",
+    "url": "https://www.gravitee.io/",
+    "icon": "managed/logos/gravitee-icon.svg"
+  },
+  {
+    "name": "Groovy",
+    "shortname": "groovy",
+    "url": "https://groovy-lang.org/",
+    "icon": "managed/logos/groovy-icon.svg"
+  },
+  {
+    "name": "Camunda",
+    "shortname": "camunda",
+    "url": "https://camunda.com/",
+    "icon": "managed/logos/camunda-icon.svg"
+  },
+  {
+    "name": "AWX",
+    "shortname": "aws",
+    "url": "https://github.com/ansible/awx",
+    "icon": "managed/logos/awx-icon.svg"
+  },
+  {
+    "name": "H2",
+    "shortname": "h2",
+    "url": "https://h2database.com/",
+    "icon": "managed/logos/h2-icon.png"
   }
 ]
