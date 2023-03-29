@@ -1,11 +1,5 @@
 [
   {
-    "name": " Brain.js",
-    "shortname": "brainjs",
-    "url": "https://brain.js.org/",
-    "icon": "provided/logos/brainjs.svg"
-  },
-  {
     "name": ".NET",
     "shortname": "dotnet",
     "url": "http://www.microsoft.com/net",
@@ -453,7 +447,7 @@
     "name": "Astro",
     "shortname": "astro",
     "url": "https://astro.build/",
-    "icon": "provided/logos/astro.svg"
+    "icon": "provided/logos/astro-icon.svg"
   },
   {
     "name": "Astronomer",
@@ -1120,6 +1114,12 @@
     "shortname": "brackets",
     "url": "http://brackets.io/",
     "icon": "provided/logos/brackets.svg"
+  },
+  {
+    "name": "Brain.js",
+    "shortname": "brainjs",
+    "url": "https://brain.js.org/",
+    "icon": "provided/logos/brainjs.svg"
   },
   {
     "name": "Branch",
@@ -2172,6 +2172,12 @@
     "icon": "provided/logos/ecma.svg"
   },
   {
+    "name": "Edgio",
+    "shortname": "edgio",
+    "url": "https://edg.io/",
+    "icon": "provided/logos/edgio-icon.svg"
+  },
+  {
     "name": "EditorConfig",
     "shortname": "editorconfig",
     "url": "https://editorconfig.org/",
@@ -3009,7 +3015,7 @@
     "name": "Google Pay",
     "shortname": "google-pay",
     "url": "https://pay.google.com/about/",
-    "icon": "provided/logos/google-pay-icon.svg"
+    "icon": "provided/logos/google-pay.svg"
   },
   {
     "name": "Google Photos",
@@ -3034,6 +3040,12 @@
     "shortname": "google-tag-manager",
     "url": "https://marketingplatform.google.com/about/tag-manager/",
     "icon": "provided/logos/google-tag-manager.svg"
+  },
+  {
+    "name": "Google Workspace",
+    "shortname": "google-workspace",
+    "url": "https://workspace.google.com/",
+    "icon": "provided/logos/google-workspace.svg"
   },
   {
     "name": "Gradle",
@@ -4302,6 +4314,12 @@
     "icon": "provided/logos/matplotlib-icon.svg"
   },
   {
+    "name": "Matter",
+    "shortname": "matter",
+    "url": "https://csa-iot.org/all-solutions/matter/",
+    "icon": "provided/logos/matter-icon.svg"
+  },
+  {
     "name": "Mattermost",
     "shortname": "mattermost",
     "url": "http://www.mattermost.org/",
@@ -4695,7 +4713,7 @@
     "name": "Netlify",
     "shortname": "netlify",
     "url": "https://www.netlify.com/",
-    "icon": "provided/logos/netlify.svg"
+    "icon": "provided/logos/netlify-icon.svg"
   },
   {
     "name": "Netwide Assembler",
@@ -4930,6 +4948,12 @@
     "shortname": "opensource",
     "url": "http://opensource.org/",
     "icon": "provided/logos/opensource.svg"
+  },
+  {
+    "name": "OpenAPI",
+    "shortname": "openapi",
+    "url": "https://www.openapis.org/",
+    "icon": "provided/logos/openapi-icon.svg"
   },
   {
     "name": "OpenCart",
@@ -5844,6 +5868,12 @@
     "icon": "provided/logos/riot.svg"
   },
   {
+    "name": "RisingWave",
+    "shortname": "risingwave",
+    "url": "https://www.risingwave.dev",
+    "icon": "provided/logos/risingwave-icon.svg"
+  },
+  {
     "name": "RocketChat",
     "shortname": "rocket-chat",
     "url": "https://rocket.chat/",
@@ -6456,6 +6486,12 @@
     "icon": "provided/logos/stenciljs-icon.svg"
   },
   {
+    "name": "Stepsize",
+    "shortname": "stepsize",
+    "url": "https://stepsize.com/",
+    "icon": "provided/logos/stepsize-icon.svg"
+  },
+  {
     "name": "Stetho",
     "shortname": "stetho",
     "url": "http://facebook.github.io/stetho/",
@@ -6670,6 +6706,12 @@
     "shortname": "swiftype",
     "url": "https://swiftype.com/",
     "icon": "provided/logos/swiftype.svg"
+  },
+  {
+    "name": "Swimm",
+    "shortname": "swimm",
+    "url": "https://swimm.io/",
+    "icon": "provided/logos/swimm.svg"
   },
   {
     "name": "SWR",
@@ -7708,6 +7750,12 @@
     "shortname": "zoho",
     "url": "http://www.zoho.com/",
     "icon": "provided/logos/zoho.svg"
+  },
+  {
+    "name": "Zoom",
+    "shortname": "zoom",
+    "url": "https://zoom.us/",
+    "icon": "provided/logos/zoom-icon.svg"
   },
   {
     "name": "Zorin OS",
