@@ -360,6 +360,12 @@
     "icon": "provided/logos/apple-pay.svg"
   },
   {
+    "name": "Applitools",
+    "shortname": "applitools",
+    "url": "https://applitools.com/",
+    "icon": "provided/logos/applitools-icon.svg"
+  },
+  {
     "name": "AppSignal",
     "shortname": "appsignal",
     "url": "https://appsignal.com/",
@@ -388,6 +394,12 @@
     "shortname": "arangodb",
     "url": "https://www.arangodb.com/",
     "icon": "provided/logos/arangodb-icon.svg"
+  },
+  {
+    "name": "Arc",
+    "shortname": "arc",
+    "url": "https://arc.net/",
+    "icon": "provided/logos/arc.svg"
   },
   {
     "name": "Architect",
@@ -454,6 +466,12 @@
     "shortname": "astronomer",
     "url": "https://www.astronomer.io/",
     "icon": "provided/logos/astronomer.svg"
+  },
+  {
+    "name": "AsyncAPI",
+    "shortname": "asyncapi",
+    "url": "https://www.asyncapi.com/",
+    "icon": "provided/logos/async-api-icon.svg"
   },
   {
     "name": "Atlassian",
@@ -960,6 +978,12 @@
     "icon": "provided/logos/basekit.svg"
   },
   {
+    "name": "Baseline",
+    "shortname": "baseline",
+    "url": "https://web.dev/baseline/",
+    "icon": "provided/logos/baseline.svg"
+  },
+  {
     "name": "Bash",
     "shortname": "bash",
     "url": "https://www.gnu.org/software/bash/",
@@ -1239,7 +1263,7 @@
     "name": "Bugsnag",
     "shortname": "bugsnag",
     "url": "https://bugsnag.com/",
-    "icon": "provided/logos/bugsnag-icon.svg"
+    "icon": "provided/logos/bugsnag.svg"
   },
   {
     "name": "Builder",
@@ -1402,6 +1426,12 @@
     "shortname": "chevereto",
     "url": "https://chevereto.com/",
     "icon": "provided/logos/chevereto.svg"
+  },
+  {
+    "name": "Chroma",
+    "shortname": "chroma",
+    "url": "https://www.trychroma.com/",
+    "icon": "provided/logos/chroma.svg"
   },
   {
     "name": "Chromatic",
@@ -1824,6 +1854,12 @@
     "icon": "provided/logos/cssnext.svg"
   },
   {
+    "name": "Cube",
+    "shortname": "cube",
+    "url": "https://cube.dev/",
+    "icon": "provided/logos/cube-icon.svg"
+  },
+  {
     "name": "Cucumber",
     "shortname": "cucumber",
     "url": "https://cucumber.io/",
@@ -1860,6 +1896,24 @@
     "icon": "provided/logos/d3.svg"
   },
   {
+    "name": "daily.dev",
+    "shortname": "dailydev",
+    "url": "https://daily.dev/",
+    "icon": "provided/logos/dailydev-icon.svg"
+  },
+  {
+    "name": "daisyUI",
+    "shortname": "daisyui",
+    "url": "https://daisyui.com/",
+    "icon": "provided/logos/daisyUI.svg"
+  },
+  {
+    "name": "Danfo.js",
+    "shortname": "danfo",
+    "url": "https://danfo.jsdata.org/",
+    "icon": "provided/logos/danfo.svg"
+  },
+  {
     "name": "Dart",
     "shortname": "dart",
     "url": "https://dart.dev/",
@@ -1870,6 +1924,12 @@
     "shortname": "dashlane",
     "url": "https://www.dashlane.com/",
     "icon": "provided/logos/dashlane-icon.svg"
+  },
+  {
+    "name": "Data Station",
+    "shortname": "data-station",
+    "url": "https://datastation.multiprocess.io/",
+    "icon": "provided/logos/data-station.svg"
   },
   {
     "name": "Database Labs",
@@ -2064,6 +2124,12 @@
     "icon": "provided/logos/dojo-toolkit.svg"
   },
   {
+    "name": "dolt",
+    "shortname": "dolt",
+    "url": "https://github.com/dolthub/dolt",
+    "icon": "provided/logos/dolt.svg"
+  },
+  {
     "name": "Dovetail",
     "shortname": "dovetail",
     "url": "https://dovetailapp.com/",
@@ -2170,6 +2236,12 @@
     "shortname": "ecma",
     "url": "https://www.ecma-international.org/",
     "icon": "provided/logos/ecma.svg"
+  },
+  {
+    "name": "EdgeDB",
+    "shortname": "edgedb",
+    "url": "https://www.edgedb.com/",
+    "icon": "provided/logos/edgedb.svg"
   },
   {
     "name": "Edgio",
@@ -2308,6 +2380,12 @@
     "shortname": "epsagon",
     "url": "https://epsagon.com/",
     "icon": "provided/logos/epsagon-icon.svg"
+  },
+  {
+    "name": "Eraser",
+    "shortname": "eraser",
+    "url": "https://www.eraser.io/",
+    "icon": "provided/logos/eraser-icon.svg"
   },
   {
     "name": "Erlang",
@@ -2628,6 +2706,12 @@
     "icon": "provided/logos/foundation.svg"
   },
   {
+    "name": "FoundationDB",
+    "shortname": "foundationdb",
+    "url": "https://www.foundationdb.org/",
+    "icon": "provided/logos/foundationdb-icon.svg"
+  },
+  {
     "name": "Framer",
     "shortname": "framer",
     "url": "https://www.framer.com/",
@@ -2910,6 +2994,12 @@
     "icon": "provided/logos/google-analytics.svg"
   },
   {
+    "name": "Google Bard",
+    "shortname": "google-bard",
+    "url": "https://bard.google.com/",
+    "icon": "provided/logos/google-bard-icon.svg"
+  },
+  {
     "name": "Google Calendar",
     "shortname": "google-calendar",
     "url": "https://www.google.com/calendar/about/",
@@ -3028,6 +3118,12 @@
     "shortname": "google-play",
     "url": "https://play.google.com/",
     "icon": "provided/logos/google-play-icon.svg"
+  },
+  {
+    "name": "Google Play Console",
+    "shortname": "google-play-console",
+    "url": "https://play.google.com/console/",
+    "icon": "provided/logos/google-play-console-icon.svg"
   },
   {
     "name": "Google Search Console",
@@ -3516,6 +3612,12 @@
     "icon": "provided/logos/importio.svg"
   },
   {
+    "name": "Incident",
+    "shortname": "incident",
+    "url": "https://incident.io/",
+    "icon": "provided/logos/incident-icon.svg"
+  },
+  {
     "name": "Infer",
     "shortname": "infer",
     "url": "http://fbinfer.com/",
@@ -3750,6 +3852,12 @@
     "icon": "provided/logos/json.svg"
   },
   {
+    "name": "JSON-LD",
+    "shortname": "json-ld",
+    "url": "https://json-ld.org/",
+    "icon": "provided/logos/json-ld.svg"
+  },
+  {
     "name": "JSPM",
     "shortname": "jspm",
     "url": "http://jspm.io/",
@@ -3810,6 +3918,12 @@
     "icon": "provided/logos/karma.svg"
   },
   {
+    "name": "Katalon",
+    "shortname": "katalon",
+    "url": "https://katalon.com/",
+    "icon": "provided/logos/katalon-icon.svg"
+  },
+  {
     "name": "KDE",
     "shortname": "kde",
     "url": "https://kde.org/",
@@ -3832,6 +3946,12 @@
     "shortname": "keycdn",
     "url": "https://www.keycdn.com/",
     "icon": "provided/logos/keycdn-icon.svg"
+  },
+  {
+    "name": "KeyDB",
+    "shortname": "keydb",
+    "url": "https://docs.keydb.dev/",
+    "icon": "provided/logos/keydb-icon.svg"
   },
   {
     "name": "KeystoneJS",
@@ -4020,6 +4140,12 @@
     "icon": "provided/logos/leveldb.svg"
   },
   {
+    "name": "Lexical",
+    "shortname": "lexical",
+    "url": "https://lexical.dev/",
+    "icon": "provided/logos/lexical-icon.svg"
+  },
+  {
     "name": "Lift",
     "shortname": "liftweb",
     "url": "http://liftweb.net/",
@@ -4042,6 +4168,12 @@
     "shortname": "lighttpd",
     "url": "http://www.lighttpd.net/",
     "icon": "provided/logos/lighttpd.svg"
+  },
+  {
+    "name": "Linear",
+    "shortname": "linear",
+    "url": "https://linear.app/",
+    "icon": "provided/logos/linear-icon.svg"
   },
   {
     "name": "LinkedIn",
@@ -4326,6 +4458,12 @@
     "icon": "provided/logos/mattermost-icon.svg"
   },
   {
+    "name": "Mautic",
+    "shortname": "mautic",
+    "url": "https://www.mautic.org/",
+    "icon": "provided/logos/mautic-icon.svg"
+  },
+  {
     "name": "Maven",
     "shortname": "maven",
     "url": "https://maven.apache.org/",
@@ -4356,10 +4494,22 @@
     "icon": "provided/logos/medusa-icon.svg"
   },
   {
+    "name": "Meilisearch",
+    "shortname": "meilisearch",
+    "url": "https://www.meilisearch.com/",
+    "icon": "provided/logos/meilisearch.svg"
+  },
+  {
     "name": "Memcached",
     "shortname": "memcached",
     "url": "http://memcached.org/",
     "icon": "provided/logos/memcached.svg"
+  },
+  {
+    "name": "Memgraph",
+    "shortname": "memgraph",
+    "url": "https://memgraph.com/",
+    "icon": "provided/logos/memgraph.svg"
   },
   {
     "name": "mention",
@@ -4486,6 +4636,12 @@
     "shortname": "milligram",
     "url": "https://milligram.io",
     "icon": "provided/logos/milligram.svg"
+  },
+  {
+    "name": "MindsDB",
+    "shortname": "mindsdb",
+    "url": "https://mindsdb.com/",
+    "icon": "provided/logos/mindsdb-icon.svg"
   },
   {
     "name": "Mint",
@@ -4686,6 +4842,12 @@
     "icon": "provided/logos/neo4j.svg"
   },
   {
+    "name": "Neon",
+    "shortname": "neon",
+    "url": "https://neon.tech/",
+    "icon": "provided/logos/neon-icon.svg"
+  },
+  {
     "name": "Neovim",
     "shortname": "neovim",
     "url": "http://neovim.io/",
@@ -4854,6 +5016,12 @@
     "icon": "provided/logos/nvidia.svg"
   },
   {
+    "name": "nvm",
+    "shortname": "nvm",
+    "url": "https://github.com/nvm-sh/nvm",
+    "icon": "provided/logos/nvm.svg"
+  },
+  {
     "name": "NW.js a.k.a. Nodewebkit",
     "shortname": "nwjs",
     "url": "http://nwjs.io/",
@@ -4884,6 +5052,12 @@
     "icon": "provided/logos/observablehq.svg"
   },
   {
+    "name": "Obsidian",
+    "shortname": "obsidian",
+    "url": "https://obsidian.md/",
+    "icon": "provided/logos/obsidian-icon.svg"
+  },
+  {
     "name": "OCaml",
     "shortname": "ocaml",
     "url": "https://ocaml.org/",
@@ -4900,6 +5074,12 @@
     "shortname": "octopus-deploy",
     "url": "https://octopus.com/",
     "icon": "provided/logos/octopus-deploy.svg"
+  },
+  {
+    "name": "Okta",
+    "shortname": "okta",
+    "url": "https://www.okta.com/",
+    "icon": "provided/logos/okta-icon.svg"
   },
   {
     "name": "Olark",
@@ -5094,6 +5274,12 @@
     "icon": "provided/logos/panda.svg"
   },
   {
+    "name": "Pandas",
+    "shortname": "pandas",
+    "url": "https://pandas.pydata.org/",
+    "icon": "provided/logos/pandas-icon.svg"
+  },
+  {
     "name": "Parcel",
     "shortname": "parcel",
     "url": "https://parceljs.org/",
@@ -5208,10 +5394,28 @@
     "icon": "provided/logos/phpstorm.svg"
   },
   {
+    "name": "Pinecone",
+    "shortname": "pinecone",
+    "url": "https://www.pinecone.io/",
+    "icon": "provided/logos/pinecone-icon.svg"
+  },
+  {
+    "name": "Pinia",
+    "shortname": "pinia",
+    "url": "https://pinia.vuejs.org/",
+    "icon": "provided/logos/pinia.svg"
+  },
+  {
     "name": "Pinterest",
     "shortname": "pinterest",
     "url": "https://www.pinterest.com/",
     "icon": "provided/logos/pinterest.svg"
+  },
+  {
+    "name": "Pipedream",
+    "shortname": "pipedream",
+    "url": "https://pipedream.com/",
+    "icon": "provided/logos/pipedream.svg"
   },
   {
     "name": "pipedrive",
@@ -5338,6 +5542,12 @@
     "shortname": "postgresql",
     "url": "http://www.postgresql.org/",
     "icon": "provided/logos/postgresql.svg"
+  },
+  {
+    "name": "PostHog",
+    "shortname": "posthog",
+    "url": "https://posthog.com/",
+    "icon": "provided/logos/posthog-icon.svg"
   },
   {
     "name": "Postman",
@@ -5607,7 +5817,7 @@
     "name": "Qwik",
     "shortname": "qwik",
     "url": "https://qwik.builder.io/",
-    "icon": "provided/logos/qwik.svg"
+    "icon": "provided/logos/qwik-icon.svg"
   },
   {
     "name": "R",
@@ -5964,6 +6174,12 @@
     "icon": "provided/logos/runscope.svg"
   },
   {
+    "name": "Rush",
+    "shortname": "rush",
+    "url": "https://rushjs.io/",
+    "icon": "provided/logos/rush-icon.svg"
+  },
+  {
     "name": "Rust",
     "shortname": "rust",
     "url": "http://www.rust-lang.org/",
@@ -6180,6 +6396,12 @@
     "icon": "provided/logos/shopify.svg"
   },
   {
+    "name": "Shortcut",
+    "shortname": "shorcut",
+    "url": "https://www.shortcut.com/",
+    "icon": "provided/logos/shortcut-icon.svg"
+  },
+  {
     "name": "Sidekiq",
     "shortname": "sidekiq",
     "url": "http://sidekiq.org/",
@@ -6190,6 +6412,12 @@
     "shortname": "signal",
     "url": "https://signal.org/",
     "icon": "provided/logos/signal.svg"
+  },
+  {
+    "name": "sigstore",
+    "shortname": "sigstore",
+    "url": "https://www.sigstore.dev",
+    "icon": "provided/logos/sigstore-icon.svg"
   },
   {
     "name": "Sinatra",
@@ -6276,6 +6504,12 @@
     "icon": "provided/logos/snap-svg.svg"
   },
   {
+    "name": "Snaplet",
+    "shortname": "snaplet",
+    "url": "https://www.snaplet.dev/",
+    "icon": "provided/logos/snaplet-icon.svg"
+  },
+  {
     "name": "snowflake",
     "shortname": "snowflake",
     "url": "https://www.snowflake.com/",
@@ -6328,6 +6562,18 @@
     "shortname": "solr",
     "url": "http://lucene.apache.org/solr/",
     "icon": "provided/logos/solr.svg"
+  },
+  {
+    "name": "SonarCloud",
+    "shortname": "sonarcloud",
+    "url": "https://www.sonarsource.com/products/sonarcloud/",
+    "icon": "provided/logos/sonarcloud-icon.svg"
+  },
+  {
+    "name": "SonarLint",
+    "shortname": "sonarlint",
+    "url": "https://www.sonarsource.com/products/sonarlint/",
+    "icon": "provided/logos/sonarlint-icon.svg"
   },
   {
     "name": "SonarQube",
@@ -6606,6 +6852,12 @@
     "icon": "provided/logos/stylus.svg"
   },
   {
+    "name": "Stytch",
+    "shortname": "stytch",
+    "url": "https://stytch.com/",
+    "icon": "provided/logos/stytch.svg"
+  },
+  {
     "name": "Sublime Text",
     "shortname": "sublimetext",
     "url": "https://www.sublimetext.com/",
@@ -6628,6 +6880,12 @@
     "shortname": "supabase",
     "url": "https://supabase.com/",
     "icon": "provided/logos/supabase-icon.svg"
+  },
+  {
+    "name": "SuperTokens",
+    "shortname": "supertokens",
+    "url": "https://supertokens.com/",
+    "icon": "provided/logos/supertokens-icon.svg"
   },
   {
     "name": "Surge",
@@ -6904,6 +7162,12 @@
     "shortname": "tor",
     "url": "https://www.torproject.org/",
     "icon": "provided/logos/tor.svg"
+  },
+  {
+    "name": "Tor",
+    "shortname": "tor",
+    "url": "https://www.torproject.org/",
+    "icon": "provided/logos/tor-browser.svg"
   },
   {
     "name": "Traackr",
@@ -7266,6 +7530,12 @@
     "icon": "provided/logos/vitejs.svg"
   },
   {
+    "name": "Vitess",
+    "shortname": "vitess",
+    "url": "https://vitess.io/",
+    "icon": "provided/logos/vitess.svg"
+  },
+  {
     "name": "Vitest",
     "shortname": "vitest",
     "url": "https://vitest.dev/",
@@ -7356,6 +7626,12 @@
     "icon": "provided/logos/watchman.svg"
   },
   {
+    "name": "Waypoint",
+    "shortname": "waypoint",
+    "url": "https://www.waypointproject.io/",
+    "icon": "provided/logos/waypoint-icon.svg"
+  },
+  {
     "name": "WayScript",
     "shortname": "wayscript",
     "url": "https://www.wayscript.com/",
@@ -7408,6 +7684,12 @@
     "shortname": "webflow",
     "url": "https://webflow.com",
     "icon": "provided/logos/webflow.svg"
+  },
+  {
+    "name": "WebGPU",
+    "shortname": "webgpu",
+    "url": "https://www.w3.org/TR/webgpu/",
+    "icon": "provided/logos/webgpu.svg"
   },
   {
     "name": "Webhint",
@@ -7566,6 +7848,12 @@
     "icon": "provided/logos/workboard.svg"
   },
   {
+    "name": "WorkOS",
+    "shortname": "workos",
+    "url": "https://workos.com/",
+    "icon": "provided/logos/workos-icon.svg"
+  },
+  {
     "name": "Workplace",
     "shortname": "workplace",
     "url": "https://www.workplace.com/",
@@ -7600,6 +7888,18 @@
     "shortname": "xampp",
     "url": "https://www.apachefriends.org/",
     "icon": "provided/logos/xampp.svg"
+  },
+  {
+    "name": "Xata",
+    "shortname": "xata",
+    "url": "https://xata.io/",
+    "icon": "provided/logos/xata-icon.svg"
+  },
+  {
+    "name": "Xcode",
+    "shortname": "xcode",
+    "url": "https://developer.apple.com/xcode/",
+    "icon": "provided/logos/xcode.svg"
   },
   {
     "name": "Xero",
@@ -7692,6 +7992,12 @@
     "icon": "provided/logos/youtube-icon.svg"
   },
   {
+    "name": "YugabyteDB",
+    "shortname": "yugabyte",
+    "url": "https://www.yugabyte.com/",
+    "icon": "provided/logos/yugabyte-icon.svg"
+  },
+  {
     "name": "Z-Wave",
     "shortname": "zwave",
     "url": "http://www.z-wave.com/",
@@ -7707,7 +8013,7 @@
     "name": "Zapier",
     "shortname": "zapier",
     "url": "https://zapier.com/",
-    "icon": "provided/logos/zapier-icon.svg"
+    "icon": "provided/logos/zapier.svg"
   },
   {
     "name": "Zend Framework",
@@ -7744,6 +8050,12 @@
     "shortname": "zig",
     "url": "https://ziglang.org/",
     "icon": "provided/logos/zig.svg"
+  },
+  {
+    "name": "Zod",
+    "shortname": "zod",
+    "url": "https://zod.dev/",
+    "icon": "provided/logos/zod.svg"
   },
   {
     "name": "Zoho",

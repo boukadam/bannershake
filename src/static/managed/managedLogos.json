@@ -52,5 +52,17 @@
     "shortname": "h2",
     "url": "https://h2database.com/",
     "icon": "managed/logos/h2-icon.png"
+  },
+  {
+    "name": "Scaleway",
+    "shortname": "scaleway",
+    "url": "https://scaleway.com/",
+    "icon": "managed/logos/scaleway-icon.png"
+  },
+  {
+    "name": "Reactor",
+    "shortname": "projectreactor",
+    "url": "https://projectreactor.io/",
+    "icon": "managed/logos/projectreactor-icon.png"
   }
 ]
