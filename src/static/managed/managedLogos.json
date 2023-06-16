@@ -57,7 +57,7 @@
     "name": "Scaleway",
     "shortname": "scaleway",
     "url": "https://scaleway.com/",
-    "icon": "managed/logos/scaleway-icon.png"
+    "icon": "managed/logos/scaleway-icon.svg"
   },
   {
     "name": "Reactor",
