@@ -27,7 +27,7 @@ export default {
       return [
         {
           title: this.$t('smallLogoSize'),
-          size: 25 * 4,
+          size: 26 * 4,
         },
         {
           title: this.$t('mediumLogoSize'),
@@ -35,7 +35,7 @@ export default {
         },
         {
           title: this.$t('largeLogoSize'),
-          size: 55 * 4,
+          size: 53 * 4,
         },
       ]
     }

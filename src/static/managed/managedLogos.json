@@ -64,5 +64,17 @@
     "shortname": "projectreactor",
     "url": "https://projectreactor.io/",
     "icon": "managed/logos/projectreactor-icon.png"
+  },
+  {
+    "name": "Traefik",
+    "shortname": "traefik",
+    "url": "https://traefik.io/",
+    "icon": "managed/logos/traefik-icon.svg"
+  },
+  {
+    "name": "Ace editor",
+    "shortname": "ace",
+    "url": "https://ace.c9.io/",
+    "icon": "managed/logos/ace-icon.png"
   }
 ]
