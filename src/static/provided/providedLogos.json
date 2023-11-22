@@ -234,6 +234,12 @@
     "icon": "provided/logos/amplitude-icon.svg"
   },
   {
+    "name": "Analog",
+    "shortname": "analog",
+    "url": "https://analogjs.org/",
+    "icon": "provided/logos/analog.svg"
+  },
+  {
     "name": "Android",
     "shortname": "android",
     "url": "https://www.android.com/",
@@ -1020,6 +1026,12 @@
     "icon": "provided/logos/bing.svg"
   },
   {
+    "name": "Biome",
+    "shortname": "biomejs",
+    "url": "https://biomejs.dev/",
+    "icon": "provided/logos/biomejs.svg"
+  },
+  {
     "name": "BitBar",
     "shortname": "bitbar",
     "url": "https://smartbear.com/product/bitbar/",
@@ -1527,7 +1539,7 @@
     "name": "CloudFlare",
     "shortname": "cloudflare",
     "url": "https://www.cloudflare.com/",
-    "icon": "provided/logos/cloudflare.svg"
+    "icon": "provided/logos/cloudflare-icon.svg"
   },
   {
     "name": "Cloudflare Workers",
@@ -1660,6 +1672,12 @@
     "shortname": "codio",
     "url": "https://codio.com/",
     "icon": "provided/logos/codio.svg"
+  },
+  {
+    "name": "Codium",
+    "shortname": "codium",
+    "url": "https://www.codium.ai/",
+    "icon": "provided/logos/codium-icon.svg"
   },
   {
     "name": "CoffeeScript",
@@ -1830,6 +1848,12 @@
     "icon": "provided/logos/createjs.svg"
   },
   {
+    "name": "Crossplane",
+    "shortname": "crossplane",
+    "url": "https://www.crossplane.io/",
+    "icon": "provided/logos/crossplane-icon.svg"
+  },
+  {
     "name": "Crucible",
     "shortname": "crucible",
     "url": "https://www.atlassian.com/software/crucible",
@@ -1941,13 +1965,19 @@
     "name": "Datadog",
     "shortname": "datadog",
     "url": "https://www.datadoghq.com/",
-    "icon": "provided/logos/datadog.svg"
+    "icon": "provided/logos/datadog-icon.svg"
   },
   {
     "name": "DataGrip",
     "shortname": "datagrip",
     "url": "https://www.jetbrains.com/datagrip/",
     "icon": "provided/logos/datagrip.svg"
+  },
+  {
+    "name": "Datasette",
+    "shortname": "datasette",
+    "url": "https://datasette.io/",
+    "icon": "provided/logos/datasette-icon.svg"
   },
   {
     "name": "DataSpell",
@@ -2043,7 +2073,7 @@
     "name": "DigitalOcean",
     "shortname": "digitalocean",
     "url": "https://www.digitalocean.com/",
-    "icon": "provided/logos/digital-ocean.svg"
+    "icon": "provided/logos/digital-ocean-icon.svg"
   },
   {
     "name": "Dimer",
@@ -2254,6 +2284,18 @@
     "shortname": "editorconfig",
     "url": "https://editorconfig.org/",
     "icon": "provided/logos/editorconfig.svg"
+  },
+  {
+    "name": "Effect",
+    "shortname": "effect",
+    "url": "https://www.effect.website/",
+    "icon": "provided/logos/effect-icon.svg"
+  },
+  {
+    "name": "Effector",
+    "shortname": "effector",
+    "url": "https://effector.dev/",
+    "icon": "provided/logos/effector.svg"
   },
   {
     "name": "egghead",
@@ -2496,6 +2538,12 @@
     "icon": "provided/logos/falcor.svg"
   },
   {
+    "name": "FastAPI",
+    "shortname": "fastapi",
+    "url": "https://fastapi.tiangolo.com/",
+    "icon": "provided/logos/fastapi-icon.svg"
+  },
+  {
     "name": "Fastify",
     "shortname": "fastify",
     "url": "https://www.fastify.io/",
@@ -2608,6 +2656,12 @@
     "shortname": "flight",
     "url": "https://flightjs.github.io/",
     "icon": "provided/logos/flight.svg"
+  },
+  {
+    "name": "Flink",
+    "shortname": "flink",
+    "url": "https://flink.apache.org/",
+    "icon": "provided/logos/apache-flink-icon.svg"
   },
   {
     "name": "Flood IO",
@@ -3460,6 +3514,12 @@
     "shortname": "homebrew",
     "url": "https://brew.sh/",
     "icon": "provided/logos/homebrew.svg"
+  },
+  {
+    "name": "Hono",
+    "shortname": "hono",
+    "url": "https://hono.dev/",
+    "icon": "provided/logos/hono.svg"
   },
   {
     "name": "Hookstate",
@@ -4638,6 +4698,18 @@
     "icon": "provided/logos/milligram.svg"
   },
   {
+    "name": "Million",
+    "shortname": "million",
+    "url": "https://million.dev/",
+    "icon": "provided/logos/million-icon.svg"
+  },
+  {
+    "name": "Milvus",
+    "shortname": "milvus",
+    "url": "https://milvus.io/",
+    "icon": "provided/logos/milvus-icon.svg"
+  },
+  {
     "name": "MindsDB",
     "shortname": "mindsdb",
     "url": "https://mindsdb.com/",
@@ -4908,6 +4980,12 @@
     "icon": "provided/logos/nginx.svg"
   },
   {
+    "name": "ngrok",
+    "shortname": "ngrok",
+    "url": "https://ngrok.com",
+    "icon": "provided/logos/ngrok.svg"
+  },
+  {
     "name": "NHost",
     "shortname": "nhost",
     "url": "https://nhost.io/",
@@ -5166,6 +5244,12 @@
     "icon": "provided/logos/openlayers.svg"
   },
   {
+    "name": "OpenSearch",
+    "shortname": "opensearch",
+    "url": "https://opensearch.org/",
+    "icon": "provided/logos/opensearch-icon.svg"
+  },
+  {
     "name": "OpenShift",
     "shortname": "openshift",
     "url": "https://www.openshift.com/",
@@ -5272,6 +5356,12 @@
     "shortname": "panda",
     "url": "http://usepanda.com/",
     "icon": "provided/logos/panda.svg"
+  },
+  {
+    "name": "Panda",
+    "shortname": "panda",
+    "url": "https://panda-css.com/",
+    "icon": "provided/logos/pandacss-icon.svg"
   },
   {
     "name": "Pandas",
@@ -5589,7 +5679,7 @@
     "name": "Presto",
     "shortname": "presto",
     "url": "https://prestodb.io/",
-    "icon": "provided/logos/presto.svg"
+    "icon": "provided/logos/presto-icon.svg"
   },
   {
     "name": "Prettier",
@@ -5688,6 +5778,12 @@
     "icon": "provided/logos/pug.svg"
   },
   {
+    "name": "Pulumi",
+    "shortname": "pulumi",
+    "url": "https://www.pulumi.com/",
+    "icon": "provided/logos/pulumi-icon.svg"
+  },
+  {
     "name": "PumpkinDB",
     "shortname": "pumpkindb",
     "url": "http://pumpkindb.org/",
@@ -5770,6 +5866,12 @@
     "shortname": "q",
     "url": "https://github.com/kriskowal/q",
     "icon": "provided/logos/q.svg"
+  },
+  {
+    "name": "Qdrant",
+    "shortname": "qdrant",
+    "url": "https://qdrant.tech/",
+    "icon": "provided/logos/qdrant-icon.svg"
   },
   {
     "name": "Qlik",
@@ -6024,6 +6126,12 @@
     "icon": "provided/logos/renovatebot.svg"
   },
   {
+    "name": "Replay",
+    "shortname": "replay",
+    "url": "https://www.replay.io/",
+    "icon": "provided/logos/replay-icon.svg"
+  },
+  {
     "name": "Replit",
     "shortname": "replit",
     "url": "https://replit.com/",
@@ -6112,12 +6220,6 @@
     "shortname": "rollupjs",
     "url": "http://rollupjs.org/",
     "icon": "provided/logos/rollupjs.svg"
-  },
-  {
-    "name": "Rome",
-    "shortname": "rome",
-    "url": "https://rome.tools/",
-    "icon": "provided/logos/rome-icon.svg"
   },
   {
     "name": "ROS",
@@ -6606,6 +6708,12 @@
     "icon": "provided/logos/spark.svg"
   },
   {
+    "name": "Spark",
+    "shortname": "apache-spark",
+    "url": "https://spark.apache.org/",
+    "icon": "provided/logos/apache-spark.svg"
+  },
+  {
     "name": "SparkPost",
     "shortname": "sparkpost",
     "url": "https://www.sparkpost.com/",
@@ -6676,6 +6784,12 @@
     "shortname": "squarespace",
     "url": "http://www.squarespace.com/",
     "icon": "provided/logos/squarespace.svg"
+  },
+  {
+    "name": "SST",
+    "shortname": "sst",
+    "url": "https://sst.dev/",
+    "icon": "provided/logos/sst-icon.svg"
   },
   {
     "name": "Stack Overflow",
@@ -6880,6 +6994,12 @@
     "shortname": "supabase",
     "url": "https://supabase.com/",
     "icon": "provided/logos/supabase-icon.svg"
+  },
+  {
+    "name": "Superset",
+    "shortname": "apache-superset",
+    "url": "https://superset.apache.org/",
+    "icon": "provided/logos/apache-superset-icon.svg"
   },
   {
     "name": "SuperTokens",
@@ -7197,7 +7317,7 @@
     "name": "treehouse",
     "shortname": "treehouse",
     "url": "https://teamtreehouse.com/",
-    "icon": "provided/logos/treehouse.svg"
+    "icon": "provided/logos/treehouse-icon.svg"
   },
   {
     "name": "Trello",
@@ -7306,6 +7426,12 @@
     "shortname": "typescript",
     "url": "https://www.typescriptlang.org/",
     "icon": "provided/logos/typescript-icon.svg"
+  },
+  {
+    "name": "typesense",
+    "shortname": "typesense",
+    "url": "https://typesense.org/",
+    "icon": "provided/logos/typesense-icon.svg"
   },
   {
     "name": "TYPO3",
@@ -7806,6 +7932,12 @@
     "icon": "provided/logos/windi-css.svg"
   },
   {
+    "name": "Wing",
+    "shortname": "winglang",
+    "url": "https://www.winglang.io/",
+    "icon": "provided/logos/winglang-icon.svg"
+  },
+  {
     "name": "Wire",
     "shortname": "wire",
     "url": "https://wire.com/",
@@ -8074,6 +8206,12 @@
     "shortname": "zorin-os",
     "url": "https://zorinos.com/",
     "icon": "provided/logos/zorin-os.svg"
+  },
+  {
+    "name": "zsh",
+    "shortname": "zsh",
+    "url": "https://www.zsh.org/",
+    "icon": "provided/logos/zsh.svg"
   },
   {
     "name": "Zube",
