@@ -2,6 +2,7 @@
   <v-app>
     <notifications position="bottom right"/>
     <v-card color="indigo" flat tile dark>
+      <GithubCorner />
       <v-card color="indigo" flat tile dark max-width="1200px" class="mx-auto">
         <!-- Head banner -->
         <Header />
@@ -84,6 +85,7 @@ import BrandImageSelector from "@/components/BrandImageSelector";
 import LogoSizeSelector from "@/components/LogoSizeSelector";
 import BannerShakeDesc from "@/components/BannerShakeDesc";
 import { mapState } from "vuex";
+import GithubCorner from "@/components/GithubCorner.vue";
 
 export default {
   name: "App",
@@ -91,6 +93,7 @@ export default {
     title: "BannerShake - Skills Banner Generator"
   },
   components: {
+    GithubCorner,
     BannerShakeDesc,
     LogoSizeSelector,
     BrandImageSelector,
