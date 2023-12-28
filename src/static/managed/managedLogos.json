@@ -76,5 +76,47 @@
     "shortname": "ace",
     "url": "https://ace.c9.io/",
     "icon": "managed/logos/ace-icon.png"
+  },
+  {
+    "name": "Azure Data Factory",
+    "shortname": "azure-data-factory",
+    "url": "https://azure.microsoft.com/fr-fr/products/data-factory",
+    "icon": "managed/logos/azure-data-factory-icon.svg"
+  },
+  {
+    "name": "Azure DevOps",
+    "shortname": "azure-devops",
+    "url": "https://azure.microsoft.com/fr-fr/products/devops",
+    "icon": "managed/logos/azure-devops-icon.svg"
+  },
+  {
+    "name": "Azure Synapse Analytics",
+    "shortname": "azure-synapse-analytics",
+    "url": "https://azure.microsoft.com/fr-fr/products/synapse-analytics",
+    "icon": "managed/logos/azure-synapse-analytics-icon.svg"
+  },
+  {
+    "name": "Databricks",
+    "shortname": "databricks",
+    "url": "https://www.databricks.com/",
+    "icon": "managed/logos/databricks-icon.svg"
+  },
+  {
+    "name": "Pluginlab",
+    "shortname": "pluginlab",
+    "url": "https://www.pluginlab.ai/",
+    "icon": "managed/logos/pluginlab-icon.svg"
+  },
+  {
+    "name": "Microsoft SQL Server",
+    "shortname": "sql-server",
+    "url": "https://www.microsoft.com/fr-fr/sql-server/",
+    "icon": "managed/logos/sql-server-icon.png"
+  },
+  {
+    "name": "Wireshark",
+    "shortname": "wireshark",
+    "url": "https://www.wireshark.org/",
+    "icon": "managed/logos/wireshark-icon.png"
   }
 ]
