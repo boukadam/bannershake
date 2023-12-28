@@ -118,5 +118,29 @@
     "shortname": "wireshark",
     "url": "https://www.wireshark.org/",
     "icon": "managed/logos/wireshark-icon.png"
+  },
+  {
+    "name": "JooQ",
+    "shortname": "jooq",
+    "url": "https://www.jooq.org/",
+    "icon": "managed/logos/jooq-icon.png"
+  },
+  {
+    "name": "Jakarta EE",
+    "shortname": "jakarta-ee",
+    "url": "https://jakarta.ee/",
+    "icon": "managed/logos/jakarta-ee-icon.png"
+  },
+  {
+    "name": "JBoss",
+    "shortname": "jboss",
+    "url": "https://www.redhat.com/fr/technologies/jboss-middleware/application-platform",
+    "icon": "managed/logos/jboss-icon.png"
+  },
+  {
+    "name": "GraalVM",
+    "shortname": "graalvm",
+    "url": "https://www.graalvm.org/",
+    "icon": "managed/logos/graalvm-icon.svg"
   }
 ]
