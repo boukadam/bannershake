@@ -10,6 +10,7 @@
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "core-js": "^3.6.5",
     "dotenv": "^8.2.0",
     "lodash": "^4.17.21",

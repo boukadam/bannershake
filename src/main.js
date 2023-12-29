@@ -8,7 +8,7 @@ import store from "./store";
 
 Vue.config.productionTip = false;
 Vue.use(Notifications);
-
+require('dotenv').config()
 new Vue({
   vuetify,
   i18n,

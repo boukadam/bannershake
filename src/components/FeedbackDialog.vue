@@ -13,12 +13,12 @@
             <span v-html="$t('feedback.text')"></span>
             <v-text-field v-model="feedbackEmail" :label="$t('feedback.emailField')" append-icon="mdi-email"></v-text-field>
             <v-textarea
-              v-model="feedbackComment"
-              :label="$t('feedback.commentField')"
-              auto-grow
-              rows="1"
-              append-icon="mdi-comment"
-              :rules="[value => !!value || $t('feedback.requiredField')]"
+                v-model="feedbackComment"
+                :label="$t('feedback.commentField')"
+                auto-grow
+                rows="1"
+                append-icon="mdi-comment"
+                :rules="[value => !!value || $t('feedback.requiredField')]"
             ></v-textarea>
           </v-card-text>
           <v-divider></v-divider>
@@ -32,6 +32,8 @@
   </div>
 </template>
 <script>
+import emailjs from '@emailjs/browser';
+
 export default {
   props: {
     value: {
@@ -58,37 +60,38 @@ export default {
     },
     postFeedback() {
       this.feedbackSubmitLoading = true;
-      const data = {
-        contactEmail: this.feedbackEmail,
+      let data = {
+        from_name: this.feedbackEmail,
         message: this.feedbackComment
       }
-      fetch("/.netlify/functions/send-email", {
-        method: 'post',
-        body: JSON.stringify(data)
-      }).then((response) => {
-        let message = ''
-        let type = 'success'
-        if (response.status === 200) {
-          message = this.$t('feedback.successMsg');
-        } else {
-          message = this.$t('feedback.errorMsg');
-          type = 'error'
-        }
-        this.$notify({
-          title: this.$t('feedback.title'),
-          type: type,
-          text: message
+
+      emailjs.send('bannershake', 'feedback', data, process.env.VUE_APP_EMAILS_JS_KEY)
+        .then((result) => {
+          let message = ''
+          let type = 'success'
+          if (result.status === 200) {
+            message = this.$t('feedback.successMsg');
+          } else {
+            message = this.$t('feedback.errorMsg');
+            type = 'error'
+          }
+          this.$notify({
+            title: this.$t('feedback.title'),
+            type: type,
+            text: message
+          })
+        }, (error) => {
+          this.$notify({
+            title: this.$t('feedback.title'),
+            type: 'error',
+            text: this.$t('feedback.errorMsg')
+          })
+          console.log('Fail to send feedback message', error.text);
         })
-      }).catch(() => {
-        this.$notify({
-          title: this.$t('feedback.title'),
-          type: 'error',
-          text: this.$t('feedback.errorMsg')
+        .finally(() => {
+          this.closeDialog();
+          this.feedbackSubmitLoading = false;
         })
-      }).finally(() => {
-        this.closeDialog();
-        this.feedbackSubmitLoading = false;
-      })
     }
   }
 }
