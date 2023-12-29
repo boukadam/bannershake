@@ -142,5 +142,17 @@
     "shortname": "graalvm",
     "url": "https://www.graalvm.org/",
     "icon": "managed/logos/graalvm-icon.svg"
+  },
+  {
+    "name": "RuleShake",
+    "shortname": "ruleshake",
+    "url": "https://www.ruleshake.com/",
+    "icon": "managed/logos/ruleshake-icon.png"
+  },
+  {
+    "name": "EmailJS",
+    "shortname": "emailjs",
+    "url": "https://www.emailjs.com/",
+    "icon": "managed/logos/emailjs-icon.svg"
   }
 ]
