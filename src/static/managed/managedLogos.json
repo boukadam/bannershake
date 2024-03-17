@@ -160,5 +160,11 @@
     "shortname": "squash",
     "url": "https://www.squashtest.com/",
     "icon": "managed/logos/squash-icon.png"
+  },
+  {
+    "name": "Jira software",
+    "shortname": "jira-software",
+    "url": "https://www.atlassian.com/fr/software/jira",
+    "icon": "managed/logos/jira-software-icon.svg"
   }
 ]
