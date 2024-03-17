@@ -154,5 +154,11 @@
     "shortname": "emailjs",
     "url": "https://www.emailjs.com/",
     "icon": "managed/logos/emailjs-icon.svg"
+  },
+  {
+    "name": "Squash",
+    "shortname": "squash",
+    "url": "https://www.squashtest.com/",
+    "icon": "managed/logos/squash-icon.png"
   }
 ]
