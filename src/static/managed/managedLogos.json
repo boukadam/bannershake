@@ -166,5 +166,35 @@
     "shortname": "jira-software",
     "url": "https://www.atlassian.com/fr/software/jira",
     "icon": "managed/logos/jira-software-icon.svg"
+  },
+  {
+    "name": "ChatGPT",
+    "shortname": "chatgpt",
+    "url": "https://chat.openai.com/",
+    "icon": "managed/logos/chatgpt-icon.png"
+  },
+  {
+    "name": "Docker Compose",
+    "shortname": "docker-compose",
+    "url": "https://docs.docker.com/compose/",
+    "icon": "managed/logos/docker-compose-icon.png"
+  },
+  {
+    "name": "Keycloak",
+    "shortname": "keycloak",
+    "url": "https://www.keycloak.org/",
+    "icon": "managed/logos/keycloak-icon.png"
+  },
+  {
+    "name": "Project Lombok",
+    "shortname": "lombok",
+    "url": "https://projectlombok.org/",
+    "icon": "managed/logos/lombok-icon.png"
+  },
+  {
+    "name": "Vue i18n",
+    "shortname": "vue-i18n",
+    "url": "https://vue-i18n.intlify.dev/",
+    "icon": "managed/logos/vue-i18n-icon.png"
   }
 ]
