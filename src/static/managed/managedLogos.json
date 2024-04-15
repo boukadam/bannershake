@@ -196,5 +196,11 @@
     "shortname": "vue-i18n",
     "url": "https://vue-i18n.intlify.dev/",
     "icon": "managed/logos/vue-i18n-icon.png"
+  },
+  {
+    "name": "Sudo",
+    "shortname": "sudo",
+    "url": "https://www.sudo.ws/",
+    "icon": "managed/logos/sudo-icon.png"
   }
 ]
