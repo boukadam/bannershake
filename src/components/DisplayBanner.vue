@@ -1,292 +1,126 @@
 <template>
-  <div>
-    <v-card v-if="generatedImage" max-width="1200px" class="mx-auto my-12" tile color="#FAFAFAFF">
-      <v-card-text>
-        <v-alert v-if="logosOffscreen.length > 0"
-            text
-            color="orange darken-2"
-            prominent
-            icon="mdi-alert"
-        >
-          <p>{{ $t("logosOffscreenAlert1") }}</p>
-          <span v-html="$tc('logosOffscreenAlert2', logosOffscreen.length, {logosOffscreen: logosOffscreen.join(', ')})" />
-        </v-alert>
-        <v-img :src="generatedImage"></v-img>
-      </v-card-text>
-      <v-card-actions>
-        <v-text-field readonly outlined hide-details background-color="white" class="mr-2" v-model="url" />
-        <v-btn
-            color="blue-grey"
-            class="white--text"
-            :loading="generationBeingProcessed"
-            @click="copy"
-            :x-large="!$vuetify.breakpoint.xs"
-        >
-          {{ $t('copy') }}
-        </v-btn>
-        <v-divider vertical class="mx-2" />
-        <v-btn
-            color="success"
-            :loading="generationBeingProcessed"
-            @click="download"
-            :x-large="!$vuetify.breakpoint.xs"
-        >
-          {{ $t('download') }}
-        </v-btn>
-      </v-card-actions>
+  <v-container v-if="generationResponse">
+    <v-card v-if="generationResponse.offscreen.length > 0">
+      <v-alert
+          variant="text"
+          color="orange darken-2"
+          prominent
+          icon="mdi-alert"
+      >
+        <p>{{ t("logosOffscreenAlert1") }}</p>
+        <p v-html="t('logosOffscreenAlert2', {logosOffscreen: generationResponse.offscreen.join(', ')}, generationResponse.offscreen.length)"/>
+      </v-alert>
     </v-card>
-    <canvas id="myCanvas" :width="canvasWidth" :height="canvasHeight" hidden>
-      {{ $t('html5CanvasUnsupportedErrorMsg') }}
-    </canvas>
-  </div>
+    <v-card class="mt-4" elevation="0" border color="grey-lighten-5">
+      <div v-html="generationResponse.data"></div>
+      <v-row class="pa-2">
+        <v-col v-if="!mobile" cols="3"></v-col>
+        <v-col v-if="!mobile" cols="4"></v-col>
+        <v-col>
+          <v-row>
+            <v-col cols="6">
+              <v-menu location="bottom">
+                <template v-slot:activator="{ props }">
+                  <v-btn color="grey-lighten-3" elevation="1" variant="flat" append-icon="mdi-menu-down" v-bind="props" block>
+                    {{ t('copy-link') }}
+                  </v-btn>
+                </template>
+                <v-list>
+                  <v-list-item @click="copy('svg')" prepend-icon="mdi-svg">
+                    <v-list-item-title>{{ t('copy-link-to-svg') }}</v-list-item-title>
+                  </v-list-item>
+                  <v-list-item @click="copy('editor')" prepend-icon="mdi-link-edit">
+                    <v-list-item-title>{{ t('copy-link-to-editor') }}</v-list-item-title>
+                  </v-list-item>
+                </v-list>
+              </v-menu>
+            </v-col>
+            <v-col cols="6">
+              <v-menu location="bottom">
+                <template v-slot:activator="{ props }">
+                  <v-btn color="green-darken-4" elevation="1" variant="flat" append-icon="mdi-menu-down" v-bind="props" block>
+                    {{ t('download') }}
+                  </v-btn>
+                </template>
+                <v-list>
+                  <v-list-item @click="download('svg')" prepend-icon="mdi-svg">
+                    <v-list-item-title>SVG</v-list-item-title>
+                  </v-list-item>
+                  <v-list-item @click="download('png')" prepend-icon="mdi-file-png-box">
+                    <v-list-item-title>PNG</v-list-item-title>
+                  </v-list-item>
+                </v-list>
+              </v-menu>
+            </v-col>
+          </v-row>
+        </v-col>
+      </v-row>
+    </v-card>
+    <v-snackbar v-model="snackbar" timeout="8000">
+      {{ snackbarText }}
+
+      <template v-slot:actions>
+        <v-btn color="pink" variant="text" @click="snackbar = false">
+          {{ t('close') }}
+        </v-btn>
+      </template>
+    </v-snackbar>
+  </v-container>
 </template>
-<script>
-export default {
-  props: {
-    skills: {
-      type: Array,
-      default: () => []
-    },
-    brandImage: {
-      type: String,
-      default: () => null
-    },
-    logoSize: {
-      type: Number,
-      default: () => 40 * 4
-    },
-    backgroundColor: {
-      type: String,
-      default: () => "#FFFFEFFF"
-    }
-  },
-  data: () => ({
-    canvasWidth: 1500 * 2,
-    canvasHeight: 500 * 2,
-    logoMargin: 4 * 4,
-    logosAreaWidth: 1500 * 2,
-    generatedImage: null,
-    generationBeingProcessed: false,
-    maxBrandImageWidth: 100 * 4,
-    maxBrandImageHeight: 100 * 4,
-    logosToDraw: [],
-    logosOffscreen: []
-  }),
-  computed: {
-    logoArea() {
-      return this.logoSize + 2 * this.logoMargin;
-    },
-    nbLogoPerRow() {
-      return Math.floor(this.logosAreaWidth / this.logoArea);
-    },
-    nbLogoPerColumn() {
-      return Math.floor(this.canvasHeight / this.logoArea);
-    },
-    url() {
-      return "https://bannershake.com?skills=" + this.skills.map(s => s.shortname).join(',')
-    }
-  },
-  methods: {
-    generate() {
-      this.$emit("in-progress", true);
-      this.generationBeingProcessed = true;
-      this.logosOffscreen = [];
+<script setup lang="ts">
+import {useI18n} from "vue-i18n";
+import {ref} from "vue";
+import {useDisplay} from "vuetify";
 
-      // Init canvas
-      let canvas = document.createElement("canvas");
-      canvas.width = this.canvasWidth;
-      canvas.height = this.canvasHeight;
+const props = defineProps<{
+  generationResponse: BannerGenerationResponse
+}>()
 
-      // Color the canvas
-      let ctx = canvas.getContext("2d");
-      ctx.fillStyle = this.backgroundColor;
-      ctx.fillRect(0, 0, this.canvasWidth, this.canvasHeight);
+const snackbar = ref(false)
+const snackbarText = ref('')
 
-      // Append text
-      let font = 30;
-      ctx.font = font + "px small-caps bold Arial"
-      ctx.fillStyle = '#616161FF';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'bottom';
-      ctx.save();
-      let text = "Generated by bannershake.com"
-      let xText = font;
-      let yText = ctx.measureText(text).width + 120;
-      ctx.translate(xText, yText);
-      ctx.rotate(-Math.PI / 2);
-      ctx.fillText(text, 0, font / 4);
-      ctx.restore();
+const {t} = useI18n()
+const {mobile} = useDisplay()
 
-      // Append brand image
-      if (this.brandImage) {
-        let brand = new Image;
-        let _this = this;
-        brand.addEventListener("load", function () {
-          let width = this.naturalWidth;
-          let height = this.naturalHeight;
-          if (this.naturalWidth > _this.maxBrandImageWidth) {
-            width = _this.maxBrandImageWidth;
-            height = width * (this.naturalHeight / this.naturalWidth);
-            if (height > (_this.maxBrandImageHeight)) {
-              height = _this.maxBrandImageHeight;
-              width = height * (this.naturalWidth / this.naturalHeight);
-            }
-          } else if (this.naturalHeight > _this.maxBrandImageHeight) {
-            height = _this.maxBrandImageHeight;
-            width = height * (this.naturalWidth / this.naturalHeight);
-            if (width > _this.maxBrandImageWidth) {
-              width = _this.maxBrandImageWidth;
-              height = width * (this.naturalHeight / this.naturalWidth);
-            }
-          }
-          let x = _this.logoSize;
-          let y = (_this.canvasHeight / 2) - (height / 2);
-          ctx.drawImage(brand, x, y, width, height);
-
-          let xLine = (2 * x) + width;
-          let yLine = _this.canvasHeight / 8;
-          ctx.beginPath();
-          ctx.moveTo(xLine, yLine);
-          ctx.lineTo(xLine, 7 * yLine);
-          ctx.lineWidth = 4;
-          ctx.strokeStyle = '#616161FF';
-          ctx.stroke();
-
-          _this.logosAreaWidth = _this.canvasWidth - xLine;
-
-          _this.initLogos(canvas);
-        });
-        brand.src = this.brandImage;
-      } else {
-        this.initLogos(canvas);
+const download = (type: 'png' | 'svg'): void => {
+  const a = document.createElement("a")
+  const source = '<?xml version="1.0" standalone="no"?>\r\n' + props.generationResponse.data
+  const uriData = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(source)
+  if (type === 'svg') {
+    a.href = uriData
+    a.download = "skills-banner.svg"
+    a.click()
+    a.remove()
+  } else if (type === 'png') {
+    const img = new Image()
+    img.src = uriData
+    img.onload = () => {
+      const canvas = document.createElement("canvas");
+      [canvas.width, canvas.height] = [props.generationResponse.size.w, props.generationResponse.size.h]
+      const ctx = canvas.getContext("2d")
+      if (ctx) {
+        ctx.drawImage(img, 0, 0, props.generationResponse.size.w, props.generationResponse.size.h)
       }
-    },
-    initLogos(canvas) {
-      let _this = this;
-      this.skills.forEach((element, index) => {
-        let image = new Image();
-        image.addEventListener("load", function () {
-          const width = this.naturalWidth;
-          const height = this.naturalHeight;
-          const scale = height > width / 2 ? 1 : 2
-          _this.logosToDraw.splice(index, 0,{
-            name: element.name,
-            image: image,
-            width: width,
-            height: height,
-            scale: scale
-          })
-          if (_this.logosToDraw.length === _this.skills.length) {
-            _this.drawLogos(canvas)
-          }
-        });
-        image.src = require("../static/" + element.icon);
-      });
-    },
-    drawLogos(canvas) {
-      let drawnLogos = 0;
-      let ctx = canvas.getContext("2d");
-      let nextIndex = 0;
-      this.logosToDraw.forEach(element => {
-        let height = this.logoSize;
-        let width = this.logoSize * (element.width / element.height);
-        if (width > this.logoSize * element.scale) {
-          width = this.logoSize * element.scale;
-          height = this.logoSize * element.scale * (element.height / element.width);
-        }
-        let yShift = 0;
-        if (height < this.logoSize) {
-          yShift = (this.logoSize - height) / 2;
-        }
-        let xShift = 0;
-        if (width < this.logoSize) {
-          xShift = (this.logoSize - width) / 2;
-        }
-        let coordinate = this.computeCoordinate(nextIndex, element.scale);
-        if (coordinate.offscreen) {
-          this.logosOffscreen.push(element.name);
-        } else {
-          ctx.drawImage(
-              element.image,
-              coordinate.x + xShift,
-              coordinate.y + yShift,
-              width,
-              height
-          );
-        }
-        drawnLogos++;
-        if (drawnLogos === this.skills.length) {
-          this.generatedImage = canvas.toDataURL("image/png;base64");
-          this.generationBeingProcessed = false;
-          this.$emit("in-progress", false);
-          this.logosToDraw = [];
-        }
-        nextIndex = coordinate.nextIndex;
-      });
-    },
-    computeCoordinate(index, scale) {
-      let currentIndex = index + scale - 1;
-      let remains = currentIndex % this.nbLogoPerRow;
-      let shift = 1;
-      if (index > 0 && scale > 1 && remains === 0) {
-        remains += scale - 1;
-        shift++;
-      }
-      let x = remains + 1;
-      let y = Math.floor(currentIndex / this.nbLogoPerRow) + 1;
-      return {
-        offscreen: y > this.nbLogoPerColumn,
-        x: this.canvasWidth - x * this.logoArea,
-        y: this.canvasHeight - y * this.logoArea,
-        nextIndex: currentIndex + shift
-      };
-    },
-    download() {
-      let lnk = document.createElement("a"),
-          e;
-
-      /// the key here is to set the download attribute of the a tag
-      lnk.download = "skills-banner.png";
-
-      /// convert canvas content to data-uri for link. When download
-      /// attribute is set the content pointed to by link will be
-      /// pushed as "download" in HTML5 capable browsers
-      lnk.href = this.generatedImage;
-
-      /// create a "fake" click-event to trigger the download
-      if (document.createEvent) {
-        e = document.createEvent("MouseEvents");
-        e.initMouseEvent(
-            "click",
-            true,
-            true,
-            window,
-            0,
-            0,
-            0,
-            0,
-            0,
-            false,
-            false,
-            false,
-            false,
-            0,
-            null
-        );
-
-        lnk.dispatchEvent(e);
-      } else if (lnk.fireEvent) {
-        lnk.fireEvent("onclick");
-      }
-    },
-    copy() {
-      navigator.clipboard.writeText(this.url)
-      this.$notify({
-        title: this.$t('copyTitle'),
-        type: 'success',
-        text: this.$t('copyMsg')
-      })
+      const a = document.createElement("a")
+      const quality = 1.0
+      a.href = canvas.toDataURL("image/png", quality)
+      a.download = "skills-banner.png"
+      a.append(canvas)
+      a.click()
+      a.remove()
     }
   }
+}
+
+const copy = (type: 'svg'|'editor'): void => {
+  snackbarText.value = ''
+  if (type === 'svg') {
+    navigator.clipboard.writeText('https://bannershake.com/svg?' + props.generationResponse.query)
+    snackbarText.value = t('copy-to-svg-done')
+  } else if (type === 'editor') {
+    navigator.clipboard.writeText('https://bannershake.com/?' + props.generationResponse.query)
+    snackbarText.value = t('copy-to-editor-done')
+  }
+  snackbar.value = true
 }
 </script>

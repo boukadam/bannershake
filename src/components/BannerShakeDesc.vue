@@ -1,22 +1,21 @@
 <template>
   <v-row align="center">
-    <span :class="$vuetify.breakpoint.xs ? mobileStyle : defaultStyle">
-      <span v-html="$t('bannerShakeDesc', {count: skills})"></span>
-    </span>
+    <div :class="mobile ? mobileStyle : defaultStyle">
+      <div v-html="t('bannerShakeDesc')"></div>
+      <div v-html="t('bannerShakeDescCount', {count: skillsStore.count})" class="mt-3"></div>
+    </div>
   </v-row>
 </template>
-<script>
-import { mapState } from "vuex";
+<script setup lang="ts">
+import {useDisplay} from "vuetify";
+import {useI18n} from "vue-i18n";
+import {useSkillsStore} from "../store.ts";
 
-export default {
-  data: () => ({
-    defaultStyle: "py-4 ml-2 mb-4 font-weight-light text-justify text-md-h5 text-h6",
-    mobileStyle: "ml-2 mb-2 font-weight-light text-justify text-md-h5 text-h6"
-  }),
-  computed: {
-    ...mapState({
-      skills: (state) => state.skills.length
-    })
-  }
-}
+const {t} = useI18n()
+const {mobile} = useDisplay()
+const defaultStyle = "py-4 ml-2 mb-4 font-weight-light text-justify text-h5"
+const mobileStyle = "ml-2 mb-2 font-weight-light text-justify text-md-h5 text-h6"
+
+const skillsStore = useSkillsStore()
+
 </script>
