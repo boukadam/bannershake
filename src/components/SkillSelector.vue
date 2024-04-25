@@ -1,13 +1,13 @@
 <template>
   <v-text-field id="skills-container" readonly variant="outlined" :label="t('skills')"
-                persistent-placeholder
+                persistent-placeholder hide-details class="mb-2"
                 :append-inner-icon="model && model?.length > 0 ? 'mdi-close' : undefined"
-                @click:append-inner="clearSelection()" >
-    <template v-slot:append>
+                @click:append-inner="clearSelection()">
+    <template v-if="!mobile" v-slot:append>
       <v-btn variant="outlined" size="x-large" @click="open = true">{{ t('add') }}</v-btn>
     </template>
     <template v-slot:default>
-      <span v-if="model?.length === 0" class="text-grey-darken-2">{{  t('selectSkills') }}</span>
+      <span v-if="model?.length === 0" class="text-grey-darken-2">{{ t('selectSkills') }}</span>
       <draggable item-key="shortname" v-model="model" @start="dragging = true" @end="dragging = false" v-bind="dragOptions">
         <template #item="{ element }">
           <v-chip class="mr-2 my-1 py-4 text-subtitle-2" draggable @mousedown.stop
@@ -21,6 +21,8 @@
       </draggable>
     </template>
   </v-text-field>
+  <v-btn v-if="mobile" block variant="outlined" size="x-large" class="mb-4" @click="open = true">{{ t('add') }}</v-btn>
+
   <v-dialog v-model="open" scrollable max-width="800px" :fullscreen="mobile" persistent>
     <v-card max-height="700px">
       <div class="d-flex flex-row ma-4">
@@ -29,7 +31,19 @@
         <v-icon @click="closeDialog">mdi-close</v-icon>
       </div>
       <v-divider></v-divider>
-      <v-text-field variant="outlined" v-model="search" :label="t('filter')" :placeholder="t('searchSkills')" class="mx-4 mt-4"/>
+      <input v-model="search" type="text" class="mx-6 mt-4 border pa-3 rounded" :placeholder="t('searchSkills')" >
+<!--      <v-text-field-->
+<!--          variant="outlined"-->
+<!--          clearable-->
+<!--          v-model="search"-->
+<!--          hide-details="auto"-->
+<!--          append-icon="mdi-magnify"-->
+<!--          single-line-->
+<!--          :label="t('filter')"-->
+<!--          :placeholder="t('searchSkills')"-->
+<!--          class="mx-6 mt-4"-->
+<!--          @click:clear="clearFilter"-->
+<!--      />-->
       <v-card-text>
         <v-infinite-scroll @load="load">
           <v-row>
@@ -74,6 +88,11 @@ const {t} = useI18n()
 const closeDialog = () => {
   open.value = false
   reset()
+  clearFilter()
+}
+
+const clearFilter = () => {
+  search.value = ""
 }
 
 const handleSelect = (selected: Skill) => {
@@ -94,7 +113,7 @@ const clearSelection = () => {
   model.value = []
 }
 
-const visibleSkills = computed(() => props.skills?.filter(s => s.shortname.includes(search.value) || s.name.includes(search.value)))
+const visibleSkills = computed(() => props.skills?.filter(s => s.shortname.toLowerCase().includes(search.value.toLowerCase()) || s.name.toLowerCase().includes(search.value.toLowerCase())))
 
 const nextPage = () => {
   const subSkills: Skill[] = []
@@ -115,7 +134,7 @@ const pageSize = 20
 const pagedSkills: Ref<Skill[]> = ref([])
 pagedSkills.value.push(...nextPage())
 
-const load = ({done}: {done: (status: 'loading' | 'error' | 'empty' | 'ok') => void}) => {
+const load = ({done}: { done: (status: 'loading' | 'error' | 'empty' | 'ok') => void }) => {
   let skills = nextPage();
   if (skills.length === 0) {
     done('empty')

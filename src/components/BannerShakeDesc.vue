@@ -14,7 +14,7 @@ import {useSkillsStore} from "../store.ts";
 const {t} = useI18n()
 const {mobile} = useDisplay()
 const defaultStyle = "py-4 ml-2 mb-4 font-weight-light text-justify text-h5"
-const mobileStyle = "ml-2 mb-2 font-weight-light text-justify text-md-h5 text-h6"
+const mobileStyle = "mx-2 mb-2 font-weight-light text-justify text-md-h5 text-h6"
 
 const skillsStore = useSkillsStore()
 
