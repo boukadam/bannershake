@@ -30,7 +30,9 @@
     "vue-country-flag-next": "^2.3.2",
     "vue-debounce": "^5.0.0",
     "vue-github-button": "^3.1.0",
+    "vue-google-adsense": "^2.0.0",
     "vue-i18n": "9",
+    "vue-scriptx": "^0.2.5",
     "vuedraggable": "^4.1.0",
     "vuetify": "^3.6.0-beta.0.0"
   },

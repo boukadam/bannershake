@@ -65,6 +65,10 @@
     <!-- Skills banner display -->
     <v-container style="max-width: 1200px" class="mb-16">
       <DisplayBanner v-if="generationResponse" :generation-response="generationResponse"/>
+      <Adsense
+          data-ad-client="ca-pub-1141710729116590"
+          data-ad-slot="4082798700">
+      </Adsense>
       <div ref="banner"></div>
     </v-container>
     <Footer/>
@@ -72,6 +76,7 @@
 </template>
 
 <script setup lang="ts">
+import Adsense from "vue-google-adsense"
 import {Notifications} from "@kyvg/vue3-notification";
 import GithubCorner from "./components/GithubCorner.vue";
 import Header from "./components/Header.vue";

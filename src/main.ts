@@ -58,9 +58,18 @@ const vuetify = createVuetify({
 import { createPinia } from 'pinia'
 const pinia = createPinia()
 
+import ScriptX from 'vue-scriptx'
+import Adsense from 'vue-google-adsense/dist/Adsense.min.js'
+import InArticleAdsense from 'vue-google-adsense/dist/InArticleAdsense.min.js'
+import InFeedAdsense from 'vue-google-adsense/dist/InFeedAdsense.min.js'
+
 createApp(App)
     .use(i18n)
     .use(Notifications)
     .use(vuetify)
     .use(pinia)
+    .use(ScriptX)
+    .use(Adsense)
+    .use(InArticleAdsense)
+    .use(InFeedAdsense)
     .mount('#app')
