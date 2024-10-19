@@ -4,7 +4,7 @@
                 :append-inner-icon="model && model?.length > 0 ? 'mdi-close' : undefined"
                 @click:append-inner="clearSelection()">
     <template v-if="!mobile" v-slot:append>
-      <v-btn variant="outlined" size="x-large" @click="open = true">{{ t('add') }}</v-btn>
+      <v-btn variant="outlined" size="x-large" @click="open = true">{{ t('select') }}</v-btn>
     </template>
     <template v-slot:default>
       <span v-if="model?.length === 0" class="text-grey-darken-2">{{ t('selectSkills') }}</span>
@@ -21,7 +21,7 @@
       </draggable>
     </template>
   </v-text-field>
-  <v-btn v-if="mobile" block variant="outlined" size="x-large" class="mb-4" @click="open = true">{{ t('add') }}</v-btn>
+  <v-btn v-if="mobile" block variant="outlined" size="x-large" class="mb-4" @click="open = true">{{ t('select') }}</v-btn>
 
   <v-dialog v-model="open" scrollable max-width="800px" :fullscreen="mobile" persistent>
     <v-card max-height="700px">
@@ -32,18 +32,6 @@
       </div>
       <v-divider></v-divider>
       <input v-model="search" type="text" class="mx-6 mt-4 border pa-3 rounded" :placeholder="t('searchSkills')" >
-<!--      <v-text-field-->
-<!--          variant="outlined"-->
-<!--          clearable-->
-<!--          v-model="search"-->
-<!--          hide-details="auto"-->
-<!--          append-icon="mdi-magnify"-->
-<!--          single-line-->
-<!--          :label="t('filter')"-->
-<!--          :placeholder="t('searchSkills')"-->
-<!--          class="mx-6 mt-4"-->
-<!--          @click:clear="clearFilter"-->
-<!--      />-->
       <v-card-text>
         <v-infinite-scroll @load="load">
           <v-row>
@@ -56,7 +44,7 @@
       <v-divider></v-divider>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="success" variant="text" size="x-large" @click="closeDialog">{{ t('done') }}</v-btn>
+        <v-btn color="green-darken-4" class="mr-2" variant="text" size="x-large" @click="closeDialog">{{ t('add') }}</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>

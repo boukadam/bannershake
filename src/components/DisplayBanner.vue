@@ -1,5 +1,5 @@
 <template>
-  <v-container v-if="generationResponse">
+  <div v-if="generationResponse">
     <v-card v-if="generationResponse.offscreen.length > 0">
       <v-alert
           variant="text"
@@ -65,7 +65,7 @@
         </v-btn>
       </template>
     </v-snackbar>
-  </v-container>
+  </div>
 </template>
 <script setup lang="ts">
 import {useI18n} from "vue-i18n";
