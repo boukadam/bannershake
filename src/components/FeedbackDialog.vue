@@ -28,7 +28,7 @@
         <v-divider></v-divider>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="success" variant="text" x-large @click="postFeedback" :loading="feedbackSubmitLoading">{{ t('feedback.send') }}</v-btn>
+          <v-btn color="green-darken-4" variant="text" x-large @click="postFeedback" :loading="feedbackSubmitLoading">{{ t('feedback.send') }}</v-btn>
         </v-card-actions>
       </v-form>
     </v-card>

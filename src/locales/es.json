@@ -21,7 +21,9 @@
     "step3": "Luego, elige el tamaño del banner, el de los logos de las habilidades y el color de fondo. El número de habilidades mostradas depende del tamaño que elijas.",
     "example1": "Por ejemplo, un proyecto antiguo que hice, llamado Wafood, se hizo con",
     "example2": "Otro ejemplo, un banner personal",
-    "gotIt": "¡Entiendo!"
+    "gotIt": "¡Entiendo!",
+    "show": "Mostrar en el editor",
+    "learnMore": "Aprender más"
   },
   "selectSkills": "Haz clic en 'Seleccionar' y elig tus competencias",
   "skills": "Habilidades",

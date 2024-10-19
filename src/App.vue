@@ -115,6 +115,7 @@ const {t} = useI18n()
 const initSelection = (shortnames: string | null): Skill[] => {
   if (!!shortnames) {
     const skillsArrayFromQuery = shortnames?.split(',')
+    console.log(skillsArrayFromQuery)
     let selected = skillsStore.skills.filter(skill => skillsArrayFromQuery.includes(skill.shortname));
     selected.forEach(skill => {
       skill.selected = true

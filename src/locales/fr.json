@@ -21,7 +21,9 @@
     "step3": "En suite, choisissez la taille de la bannière, celle des logos et la couleur de l'arrière plan. Le nombre des compétences affichées dépend de la taille des logos que vous choisirez",
     "example1": "Par exemple, un ancien projet que j'ai réalisé, nommé Wafood, a été fait avec ",
     "example2": "Un autre exemple, une bannière personnelle",
-    "gotIt": "C'est compris!"
+    "gotIt": "C'est compris!",
+    "show": "Montrer dans l'éditeur",
+    "learnMore": "En savoirs plus"
   },
   "selectSkills": "Cliquez sur 'Sélectionner' et choisissez vos compétences",
   "skills": "Compétences",

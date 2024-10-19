@@ -21,7 +21,9 @@
     "step3": "Then, choose the size of the banner, that of the skills logos and the background color. The number of skills displayed depends on the size you choose.",
     "example1": "For example, an old project that I did, called Wafood, was done with",
     "example2": "Another example, a personal banner",
-    "gotIt": "Got it!"
+    "gotIt": "Got it!",
+    "show": "Show in editor",
+    "learnMore": "Learn more"
   },
   "selectSkills": "Click on 'Select' and choose your skills",
   "skills": "Skills",

@@ -11,7 +11,7 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="success" variant="text" large @click="colorPickerMenu = false">{{ t('close') }}</v-btn>
+          <v-btn color="green-darken-4" variant="text" large @click="colorPickerMenu = false">{{ t('close') }}</v-btn>
         </v-card-actions>
       </v-card>
     </v-menu>

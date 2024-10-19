@@ -19,6 +19,13 @@ interface BannerGenerationResponse {
     offscreen: any[],
 }
 
+interface Example {
+    title: string,
+    description: string,
+    website: string
+    query: string
+}
+
 declare module "*.json" {
     const value: any;
     export default value;
