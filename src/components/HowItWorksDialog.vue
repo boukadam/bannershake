@@ -1,62 +1,51 @@
 <template>
-  <v-dialog v-model="open" scrollable max-width="800px" :fullscreen="$vuetify.breakpoint.xs">
+  <v-dialog v-model="model" scrollable max-width="800px" :fullscreen="mobile">
     <v-card max-height="700px">
-      <v-card-title>
-        <span>{{ $t('howItWorks.title') }}</span>
+      <div class="d-flex flex-row ma-4">
+        <span class="text-h6">{{ t('howItWorks.title') }}</span>
         <v-spacer></v-spacer>
         <v-icon @click="closeDialog">mdi-close</v-icon>
-      </v-card-title>
+      </div>
       <v-divider></v-divider>
-      <v-card-text class="my-4 font-weight-light title text-justify">
+      <v-card-text class="my-4 font-weight-light text-h6 text-justify">
         <p>
-          {{ $t('howItWorks.step1') }}
+          {{ t('howItWorks.step1') }}
         </p>
         <p>
-          {{ $t('howItWorks.step2') }}
+          {{ t('howItWorks.step2') }}
         </p>
         <p>
-          {{ $t('howItWorks.step3') }}
+          {{ t('howItWorks.step3') }}
         </p>
         <p>
-          {{ $t('howItWorks.example1') }}
+          {{ t('howItWorks.example1') }}
         </p>
         <p>
-          <v-img :src="require('../static/examples/wafood-skills-banner.png')"/>
+          <v-img :src="wafoodBanner"/>
         </p>
         <p>
-          {{ $t('howItWorks.example2') }}
+          {{ t('howItWorks.example2') }}
         </p>
-        <v-img :src="require('../static/examples/boukadam-banner.png')"/>
+        <v-img :src="boukadamBanner"/>
       </v-card-text>
       <v-divider></v-divider>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="success" text x-large @click="closeDialog">{{ $t('howItWorks.gotIt') }}</v-btn>
+        <v-btn color="success" variant="text" x-large @click="closeDialog">{{ t('howItWorks.gotIt') }}</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
 </template>
-<script>
-export default {
-  props: {
-    value: {
-      type: Boolean,
-      default: () => false
-    }
-  },
-  data: () => ({
-    open: false
-  }),
-  watch: {
-    value(newVal) {
-      this.open = newVal
-    }
-  },
-  methods: {
-    closeDialog() {
-      this.open = false;
-      this.$emit('input', this.open);
-    }
-  }
+<script setup lang="ts">
+import wafoodBanner from '../static/examples/wafood-skills-banner.png'
+import boukadamBanner from '../static/examples/boukadam-banner.png'
+import {useDisplay} from "vuetify";
+import {useI18n} from "vue-i18n";
+
+const {t} = useI18n()
+const {mobile} = useDisplay()
+const model = defineModel<boolean>()
+const closeDialog = () => {
+  model.value = false
 }
 </script>

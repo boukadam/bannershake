@@ -1,133 +1,144 @@
 <template>
   <v-app>
-    <notifications position="bottom right"/>
-    <v-card color="indigo" flat tile dark>
-      <GithubCorner />
-      <v-card color="indigo" flat tile dark max-width="1200px" class="mx-auto">
-        <!-- Head banner -->
-        <Header />
-
+    <notifications/>
+    <v-card color="grey-lighten-4" flat tile dark>
+      <GithubCorner/>
+      <v-card color="grey-lighten-4" flat tile dark max-width="1200px" class="mx-auto">
+        <Header/>
         <!-- Form -->
         <v-card-text class="mt-6">
 
           <!-- Description -->
-          <BannerShakeDesc />
+          <BannerShakeDesc/>
 
           <!-- Skills selector -->
           <v-row class="px-3 pt-2">
-            <SkillSelector v-model="selected"></SkillSelector>
+            <SkillSelector v-model="selection" :skills="skillsStore.skills"/>
           </v-row>
+
+          <v-divider v-if="mobile" class="mt-2 mb-7" />
 
           <!-- Filter row -->
           <v-row align="center" justify="center">
-
-            <!-- Brand image -->
-            <v-col :cols="$vuetify.breakpoint.xs ? 12 : 4" class="py-0">
-              <BrandImageSelector v-model="brandImage"></BrandImageSelector>
+            <v-col :cols="mobile ? 12 : 3" class="py-0">
+              <BrandImageSelector v-model="brandImage"/>
             </v-col>
 
-            <!-- Logos size selector -->
-            <v-col :cols="$vuetify.breakpoint.xs ? 12 : 4">
-              <LogoSizeSelector v-model="logoSize"></LogoSizeSelector>
+            <v-col :cols="mobile ? 12 : 3" class="py-0">
+              <LogoSizeSelector v-model="logoSize"/>
             </v-col>
 
-            <!-- Banner background color picker -->
-            <v-col :cols="$vuetify.breakpoint.xs ? 12 : 4" :class="$vuetify.breakpoint.xs ? 'pb-0' : 'pb-5'">
-              <ColorPicker v-model="backgroundColor"></ColorPicker>
+            <v-col :cols="mobile ? 12 : 3" class="py-0">
+              <BannerSizeSelector v-model="bannerSize"/>
+            </v-col>
+
+            <v-col :cols="mobile ? 12 : 3" :class="mobile ? 'pb-0' : 'pb-5'">
+              <ColorPicker v-model="backgroundColor"/>
             </v-col>
           </v-row>
-        </v-card-text>
 
+        </v-card-text>
         <!-- Action row -->
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-col :cols="$vuetify.breakpoint.xs ? 12 : 4">
+          <v-col v-if="!mobile">
+            <v-img :src="getYourBanner" class="ma-0 pa-0"/>
+          </v-col>
+          <v-col :cols="mobile ? 12 : 3">
             <v-btn
-                color="success"
-                :disabled="selected.length === 0"
+                variant="flat"
+                size="x-large"
+                color="green-darken-4"
+                :disabled="selection.length === 0"
                 @click="generate"
-                :x-large="!$vuetify.breakpoint.xs"
+                :x-large="!mobile"
                 block
                 :loading="generationBeingProcessed"
             >
               {{ $t('generate') }}
             </v-btn>
+            <v-tooltip v-if="selection.length === 0" activator="parent" location="start">{{ t('selectSkills') }}</v-tooltip>
           </v-col>
         </v-card-actions>
       </v-card>
     </v-card>
-
     <!-- Skills banner display -->
-    <v-card tile height="100%">
-      <DisplayBanner
-          ref="displayBanner"
-          :skills="selected"
-          :logo-size="logoSize"
-          :brand-image="brandImage"
-          :background-color="backgroundColor"
-          @in-progress="generationBeingProcessed = $event"
-      >
-      </DisplayBanner>
-    </v-card>
-
-    <!-- Footer -->
-    <Footer />
+    <v-container style="max-width: 1200px" class="mb-16">
+      <DisplayBanner v-if="generationResponse" :generation-response="generationResponse"/>
+      <Adsense
+          data-ad-client="ca-pub-1141710729116590"
+          data-ad-slot="4082798700">
+      </Adsense>
+      <div ref="banner"></div>
+    </v-container>
+    <Footer/>
   </v-app>
 </template>
 
-<script>
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import DisplayBanner from "@/components/DisplayBanner";
-import SkillSelector from "@/components/SkillSelector";
-import ColorPicker from "@/components/ColorPicker";
-import BrandImageSelector from "@/components/BrandImageSelector";
-import LogoSizeSelector from "@/components/LogoSizeSelector";
-import BannerShakeDesc from "@/components/BannerShakeDesc";
-import { mapState } from "vuex";
-import GithubCorner from "@/components/GithubCorner.vue";
+<script setup lang="ts">
+import Adsense from "vue-google-adsense"
+import {Notifications} from "@kyvg/vue3-notification";
+import GithubCorner from "./components/GithubCorner.vue";
+import Header from "./components/Header.vue";
+import BannerShakeDesc from "./components/BannerShakeDesc.vue";
+import SkillSelector from "./components/SkillSelector.vue";
+import ColorPicker from "./components/ColorPicker.vue";
+import {useSkillsStore} from "./store.ts";
+import {useDisplay} from "vuetify";
+import {Ref, ref} from "vue";
+import BrandImageSelector from "./components/BrandImageSelector.vue";
+import LogoSizeSelector from "./components/LogoSizeSelector.vue";
+import BannerSizeSelector from "./components/BannerSizeSelector.vue";
+import {useI18n} from "vue-i18n";
+import DisplayBanner from "./components/DisplayBanner.vue";
+import {useApiClient} from "./composables/apiClient.ts";
+import getYourBanner from './static/get-your-banner.svg'
+import Footer from "./components/Footer.vue";
 
-export default {
-  name: "App",
-  metaInfo: {
-    title: "BannerShake - Skills Banner Generator"
-  },
-  components: {
-    GithubCorner,
-    BannerShakeDesc,
-    LogoSizeSelector,
-    BrandImageSelector,
-    ColorPicker,
-    SkillSelector,
-    DisplayBanner,
-    Footer,
-    Header
-  },
-  data: () => ({
-    selected: [],
-    logoSize: 40 * 4,
-    generationBeingProcessed: false,
-    backgroundColor: "#FFFFEFFF",
-    brandImage: null,
-  }),
-  created() {
-    const params = new Proxy(new URLSearchParams(window.location.search), {
-      get: (searchParams, prop) => searchParams.get(prop),
-    });
-    const skillsStr = params.skills
-    if (skillsStr) {
-      this.selected = skillsStr.split(',').map(s => this.skillsByShortname.get(s))
-    }
-  },
-  computed: {
-    ...mapState({
-      skillsByShortname: (state) => new Map(state.skills.map(s => [s.shortname, s]),)
+import {library} from '@fortawesome/fontawesome-svg-core'
+import {fas} from '@fortawesome/free-solid-svg-icons'
+import {faTwitter, faLinkedin, faSquareXTwitter} from '@fortawesome/free-brands-svg-icons'
+
+library.add(fas, faTwitter, faLinkedin, faSquareXTwitter)
+
+const urlParams = new URLSearchParams(window.location.search);
+const skillsFromQuery = urlParams.get('s')
+const brandFromQuery = urlParams.get('b')
+const colorFromQuery = urlParams.get('c')
+const logoSizeFromQuery = urlParams.get('ls')
+const bannerSizeFromQuery = urlParams.get('bs')
+
+const skillsStore = useSkillsStore()
+const {mobile} = useDisplay()
+const {t} = useI18n()
+
+const initSelection = (shortnames: string | null): Skill[] => {
+  if (!!shortnames) {
+    const skillsArrayFromQuery = shortnames?.split(',')
+    let selected = skillsStore.skills.filter(skill => skillsArrayFromQuery.includes(skill.shortname));
+    selected.forEach(skill => {
+      skill.selected = true
     })
-  },
-  methods: {
-    generate() {
-      this.$refs.displayBanner.generate();
-    }
+    return selected
   }
-};
+  return []
+}
+
+const banner = ref()
+const generationResponse: Ref<BannerGenerationResponse | undefined> = ref(undefined)
+const generationBeingProcessed = ref(false)
+const backgroundColor = ref(colorFromQuery ? colorFromQuery : "#FFFFEF")
+const brandImage = ref(brandFromQuery ? brandFromQuery : undefined)
+const logoSize = ref(logoSizeFromQuery ? logoSizeFromQuery : 'm')
+const bannerSize = ref(bannerSizeFromQuery ? bannerSizeFromQuery : 'l')
+const selection = ref(initSelection(skillsFromQuery))
+
+const apiClient = useApiClient()
+
+const generate = async () => {
+  generationBeingProcessed.value = true
+  generationResponse.value = await apiClient.generate(selection.value, brandImage.value, backgroundColor.value, logoSize.value, bannerSize.value)
+  generationBeingProcessed.value = false
+  setTimeout(() => banner.value.scrollIntoView({ behavior: "smooth" }), 150);
+}
 </script>

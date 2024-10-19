@@ -1,0 +1,8 @@
+FROM node:lts-alpine
+WORKDIR /app
+COPY package.json package.json
+RUN npm install
+COPY src/server.js ./src/server.js
+COPY src/static ./src/static
+EXPOSE 8080
+CMD [ "npm", "run", "server"]

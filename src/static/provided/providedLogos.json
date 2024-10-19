@@ -24,6 +24,12 @@
     "icon": "provided/logos/active-campaign-icon.svg"
   },
   {
+    "name": "Adobe",
+    "shortname": "adobe",
+    "url": "https://www.adobe.com/",
+    "icon": "provided/logos/adobe-icon.svg"
+  },
+  {
     "name": "Adobe After Effects",
     "shortname": "adobe-after-effects",
     "url": "https://www.adobe.com/products/aftereffects.html",
@@ -304,6 +310,12 @@
     "shortname": "apiary",
     "url": "https://apiary.io/",
     "icon": "provided/logos/apiary.svg"
+  },
+  {
+    "name": "Apidog",
+    "shortname": "apidog",
+    "url": "https://apidog.com/",
+    "icon": "provided/logos/apidog-icon.svg"
   },
   {
     "name": "Apollo",
@@ -1035,7 +1047,7 @@
     "name": "Biome",
     "shortname": "biomejs",
     "url": "https://biomejs.dev/",
-    "icon": "provided/logos/biomejs.svg"
+    "icon": "provided/logos/biomejs-icon.svg"
   },
   {
     "name": "BitBar",
@@ -1102,6 +1114,12 @@
     "shortname": "blueprint",
     "url": "http://blueprintjs.com/",
     "icon": "provided/logos/blueprint.svg"
+  },
+  {
+    "name": "Bluesky",
+    "shortname": "bluesky",
+    "url": "https://bsky.social/",
+    "icon": "provided/logos/bluesky.svg"
   },
   {
     "name": "Bluetooth",
@@ -1434,6 +1452,12 @@
     "icon": "provided/logos/chargebee-icon.svg"
   },
   {
+    "name": "Chart.js",
+    "shortname": "chartjs",
+    "url": "https://www.chartjs.org/",
+    "icon": "provided/logos/chartjs.svg"
+  },
+  {
     "name": "Chef",
     "shortname": "chef",
     "url": "https://www.chef.io/",
@@ -1492,6 +1516,12 @@
     "shortname": "cirrus-ci",
     "url": "https://cirrus-ci.org/",
     "icon": "provided/logos/cirrus-ci.svg"
+  },
+  {
+    "name": "Claude",
+    "shortname": "claude",
+    "url": "https://claude.ai/",
+    "icon": "provided/logos/claude-icon.svg"
   },
   {
     "name": "Clio",
@@ -1935,7 +1965,7 @@
     "name": "daisyUI",
     "shortname": "daisyui",
     "url": "https://daisyui.com/",
-    "icon": "provided/logos/daisyUI.svg"
+    "icon": "provided/logos/daisyUI-icon.svg"
   },
   {
     "name": "Danfo.js",
@@ -2538,6 +2568,12 @@
     "icon": "provided/logos/facebook.svg"
   },
   {
+    "name": "Faker",
+    "shortname": "faker",
+    "url": "https://fakerjs.dev/",
+    "icon": "provided/logos/faker.svg"
+  },
+  {
     "name": "Falcor",
     "shortname": "falcor",
     "url": "http://netflix.github.io/falcor/",
@@ -2702,7 +2738,7 @@
   {
     "name": "Flux",
     "shortname": "flux",
-    "url": "https://facebook.github.io/flux/",
+    "url": "https://facebookarchive.github.io/flux/",
     "icon": "provided/logos/flux.svg"
   },
   {
@@ -3594,6 +3630,12 @@
     "icon": "provided/logos/html5-boilerplate.svg"
   },
   {
+    "name": "htmx",
+    "shortname": "htmx",
+    "url": "https://htmx.org/",
+    "icon": "provided/logos/htmx-icon.svg"
+  },
+  {
     "name": "HTTPie",
     "shortname": "httpie",
     "url": "https://httpie.io/",
@@ -3760,6 +3802,12 @@
     "shortname": "intercom",
     "url": "https://www.intercom.io/",
     "icon": "provided/logos/intercom-icon.svg"
+  },
+  {
+    "name": "Internet Computer",
+    "shortname": "internetcomputer",
+    "url": "https://internetcomputer.org/",
+    "icon": "provided/logos/internet-computer-icon.svg"
   },
   {
     "name": "Internet Explorer",
@@ -3940,6 +3988,12 @@
     "shortname": "json",
     "url": "http://json.org/",
     "icon": "provided/logos/json.svg"
+  },
+  {
+    "name": "JSON Schema",
+    "shortname": "json-schema",
+    "url": "https://json-schema.org/",
+    "icon": "provided/logos/json-schema-icon.svg"
   },
   {
     "name": "JSON-LD",
@@ -4770,6 +4824,12 @@
     "icon": "provided/logos/mio.svg"
   },
   {
+    "name": "Miro",
+    "shortname": "miro",
+    "url": "https://miro.com/",
+    "icon": "provided/logos/miro-icon.svg"
+  },
+  {
     "name": "Mist.io",
     "shortname": "mist",
     "url": "https://mist.io/",
@@ -5018,7 +5078,7 @@
   {
     "name": "Next.js",
     "shortname": "nextjs",
-    "url": "https://zeit.co/next",
+    "url": "https://vercel.com/solutions/nextjs",
     "icon": "provided/logos/nextjs-icon.svg"
   },
   {
@@ -5508,6 +5568,12 @@
     "icon": "provided/logos/perl.svg"
   },
   {
+    "name": "perplexity",
+    "shortname": "perplexity",
+    "url": "https://www.perplexity.ai/",
+    "icon": "provided/logos/perplexity-icon.svg"
+  },
+  {
     "name": "Phalcon",
     "shortname": "phalcon",
     "url": "https://phalconphp.com/",
@@ -5721,7 +5787,7 @@
     "name": "PrestaShop",
     "shortname": "prestashop",
     "url": "https://www.prestashop.com/",
-    "icon": "provided/logos/prestashop.svg"
+    "icon": "provided/logos/prestashop-icon.svg"
   },
   {
     "name": "Presto",
@@ -6338,7 +6404,7 @@
   {
     "name": "RxDB",
     "shortname": "rxdb",
-    "url": "https://pubkey.github.io/rxdb/",
+    "url": "https://rxdb.info/",
     "icon": "provided/logos/rxdb.svg"
   },
   {
@@ -6494,7 +6560,7 @@
   {
     "name": "sensu",
     "shortname": "sensu",
-    "url": "https://sensuapp.org/",
+    "url": "https://sensu.io/",
     "icon": "provided/logos/sensu-icon.svg"
   },
   {
@@ -6506,7 +6572,7 @@
   {
     "name": "Sequelize",
     "shortname": "sequelize",
-    "url": "http://sequelizejs.com/",
+    "url": "https://sequelize.org/",
     "icon": "provided/logos/sequelize.svg"
   },
   {
@@ -6628,6 +6694,12 @@
     "shortname": "slides",
     "url": "https://slides.com/",
     "icon": "provided/logos/slides.svg"
+  },
+  {
+    "name": "Slidev",
+    "shortname": "slidev",
+    "url": "https://sli.dev/",
+    "icon": "provided/logos/slidev.svg"
   },
   {
     "name": "Slim",
@@ -7560,6 +7632,12 @@
     "icon": "provided/logos/unity.svg"
   },
   {
+    "name": "UnJS",
+    "shortname": "unjs",
+    "url": "https://unjs.io/",
+    "icon": "provided/logos/unjs.svg"
+  },
+  {
     "name": "unocss",
     "shortname": "unocss",
     "url": "https://unocss.antfu.me/",
@@ -7728,10 +7806,22 @@
     "icon": "provided/logos/vivaldi-icon.svg"
   },
   {
+    "name": "VMware",
+    "shortname": "vmware",
+    "url": "https://www.vmware.com/",
+    "icon": "provided/logos/vmware.svg"
+  },
+  {
     "name": "Void",
     "shortname": "void",
     "url": "https://voidlinux.org/",
     "icon": "provided/logos/void.svg"
+  },
+  {
+    "name": "Volar",
+    "shortname": "volar",
+    "url": "https://volarjs.dev/",
+    "icon": "provided/logos/volar.svg"
   },
   {
     "name": "Vue.js",
@@ -8056,6 +8146,12 @@
     "shortname": "wufoo",
     "url": "http://www.wufoo.com/",
     "icon": "provided/logos/wufoo.svg"
+  },
+  {
+    "name": "X",
+    "shortname": "x",
+    "url": "https://x.com",
+    "icon": "provided/logos/x.svg"
   },
   {
     "name": "X-Cart",

@@ -1,0 +1,32 @@
+<template>
+  <v-card
+      v-if="model"
+      :title="model.name"
+      hover
+      :color="model.selected ? 'grey-lighten-2' : 'grey-darken-4'"
+      :variant="model.selected ? 'flat' : 'outlined'"
+      class="text-grey-darken-4"
+      border
+      @click="selectIt()"
+  >
+    <template v-slot:prepend>
+      <img :alt="model.shortname" :src="getImageUrl(model.icon)" height="32" style="max-width: 72px"/>
+    </template>
+    <template v-slot:append>
+      <v-icon v-if="model.selected" color="grey-darken-4">mdi-check-circle</v-icon>
+    </template>
+  </v-card>
+</template>
+<script setup lang="ts">
+const model = defineModel<Skill>()
+const getImageUrl = (name: string): string => {
+  return new URL(`../static/${name}`, import.meta.url).href
+}
+const emit = defineEmits(['selected'])
+const selectIt = () => {
+  if (model.value) {
+    model.value.selected = !model.value.selected
+    emit('selected', model)
+  }
+}
+</script>
