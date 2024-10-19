@@ -29,7 +29,7 @@
           <template v-slot:prepend>
             <v-icon>mdi-github</v-icon>
           </template>
-          <v-list-item-title>{{ $t('lastUpdate') }}</v-list-item-title>
+          <v-list-item-title>{{ t('lastUpdate') }}</v-list-item-title>
           <v-list-item-subtitle>
             <span class="grey--text text--darken-2 font-italic mt-1">{{ lastCommitMessage }} </span>
             <small v-if="lastUpdate" class="pl-1 ">/ {{ lastUpdate }}</small>
@@ -40,14 +40,14 @@
           <template v-slot:prepend>
             <v-icon>mdi-information</v-icon>
           </template>
-          <v-list-item-title>{{ $t('howItWorks.title') }}</v-list-item-title>
+          <v-list-item-title>{{ t('howItWorks.title') }}</v-list-item-title>
         </v-list-item>
         <v-divider></v-divider>
         <v-list-item @click="feedbackDialog = true">
           <template v-slot:prepend>
             <v-icon>mdi-lightbulb-on</v-icon>
           </template>
-          <v-list-item-title>{{ $t('feedback.title') }}</v-list-item-title>
+          <v-list-item-title>{{ t('feedback.title') }}</v-list-item-title>
         </v-list-item>
       </v-list>
     </v-menu>
@@ -80,7 +80,7 @@ onMounted(() => {
 const changeLocale = (newLocale: string) => locale.value = newLocale
 
 const {mobile} = useDisplay()
-const {locale} = useI18n({ useScope: 'global' });
+const {t, locale} = useI18n({ useScope: 'global' });
 const howItWorksDialog = ref(false)
 const feedbackDialog = ref(false)
 

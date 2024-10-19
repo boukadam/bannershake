@@ -10,7 +10,8 @@ import fr from './locales/fr.json'
 import {createI18n} from "vue-i18n";
 
 const i18n = createI18n({
-    locale: 'en',
+    locale: navigator.language,
+    fallbackLocale: 'en',
     legacy: false,
     warnHtmlMessage: false,
     messages: {

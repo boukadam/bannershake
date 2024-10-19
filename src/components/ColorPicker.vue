@@ -1,5 +1,5 @@
 <template>
-  <v-text-field v-model="model" :label="$t('backgroundColor')" hide-details variant="outlined" class="ma-0 pa-0">
+  <v-text-field v-model="model" :label="t('backgroundColor')" hide-details variant="outlined" class="ma-0 pa-0">
   <template v-slot:append>
     <v-menu v-model="colorPickerMenu" top nudge-bottom="105" nudge-left="16" >
       <template v-slot:activator="{ props }">
@@ -11,7 +11,7 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="success" variant="text" large @click="colorPickerMenu = false">{{ $t('close') }}</v-btn>
+          <v-btn color="success" variant="text" large @click="colorPickerMenu = false">{{ t('close') }}</v-btn>
         </v-card-actions>
       </v-card>
     </v-menu>
@@ -21,6 +21,7 @@
 <script setup lang="ts">
 
 import {computed, ref} from "vue";
+import {useI18n} from "vue-i18n";
 
 const model = defineModel<string>({
   default: "#FFFFEF"
@@ -41,4 +42,6 @@ const swatchStyle = computed(() => {
     marginBottom: '4px'
   }
 })
+
+const {t} = useI18n()
 </script>

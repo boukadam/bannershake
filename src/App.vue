@@ -55,7 +55,7 @@
                 block
                 :loading="generationBeingProcessed"
             >
-              {{ $t('generate') }}
+              {{ t('generate') }}
             </v-btn>
             <v-tooltip v-if="selection.length === 0" activator="parent" location="start">{{ t('selectSkills') }}</v-tooltip>
           </v-col>
