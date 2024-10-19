@@ -23,3 +23,7 @@ declare module "*.json" {
     const value: any;
     export default value;
 }
+
+declare module 'vue-google-adsense/dist/Adsense.min.js'
+declare module 'vue-google-adsense/dist/InArticleAdsense.min.js'
+declare module 'vue-google-adsense/dist/InFeedAdsense.min.js'
