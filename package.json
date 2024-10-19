@@ -7,7 +7,8 @@
     "develop": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "server": "node --experimental-modules src/server.js"
+    "server": "node --experimental-modules src/server.js",
+    "svgo": "./node_modules/svgo-ll/bin/svgo.js -f src/static/provided/logos"
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
@@ -26,6 +27,7 @@
     "pinia": "^2.1.7",
     "sharp": "^0.33.3",
     "svgdom": "^0.1.19",
+    "svgo-ll": "^5.5.0",
     "vue": "^3.4.21",
     "vue-country-flag-next": "^2.3.2",
     "vue-debounce": "^5.0.0",
