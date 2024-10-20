@@ -1,5 +1,5 @@
-![](https://img.shields.io/badge/Vue.js-2.6.11-green.svg?style=flat-square&logo=vue%2Ejs)
-![](https://img.shields.io/badge/Vuetify-2.2.11-green.svg?style=flat-square&logo=vuetify)
+![](https://img.shields.io/badge/Vue.js-3.5.12-green.svg?style=flat-square&logo=vue%2Ejs)
+![](https://img.shields.io/badge/Vuetify-3.7.3-green.svg?style=flat-square&logo=vuetify)
 
 # BannerShake
 
@@ -21,8 +21,4 @@ RuleShake is a headless, high-performance and scalable calculation engine.
 
 ## Logos
 
-Logos are provided by [gilbarbara/logos](https://github.com/gilbarbara/logos) and optimized by [svg/svgo](https://github.com/svg/svgo). To import these logos, install go and run the following command :
-
-```bash
-./updateLogos.sh
-```
+Logos are provided by [gilbarbara/logos](https://github.com/gilbarbara/logos) and optimized by [svg/svgo](https://github.com/svg/svgo). 

@@ -39,8 +39,8 @@
 
         </v-card-text>
         <!-- Action row -->
-        <v-card-actions>
-          <v-spacer></v-spacer>
+        <v-card-actions class="pa-1">
+          <v-spacer v-if="!mobile"></v-spacer>
           <v-col v-if="!mobile">
             <v-img :src="getYourBanner" class="ma-0 pa-0"/>
           </v-col>
