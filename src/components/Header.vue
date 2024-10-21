@@ -1,7 +1,8 @@
 <template>
   <div class="d-flex flex-row ma-4">
     <v-img :src="logoBlack" :max-width="mobile ? 28 : 40"/>
-    <span class="ml-2 text-h4 font-weight-bold">BannerShake</span>
+    <span v-if="mobile" class="ml-2 text-h5 font-weight-bold">BannerShake</span>
+    <span v-else class="ml-2 text-h4 font-weight-bold">BannerShake</span>
     <v-spacer></v-spacer>
     <v-menu>
       <template v-slot:activator="{ props }">
