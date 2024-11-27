@@ -11,13 +11,9 @@ services:
       - ./cert.key:/etc/nginx/cert.key
 
   api:
-    build:
-      context: .
-      dockerfile: ApiDockerfile
+    image: ghcr.io/boukadam/bannershake-api:main
 
   app:
-    build:
-      context: .
-      dockerfile: AppDockerfile
+    image: ghcr.io/boukadam/bannershake-app:main
     environment:
       VITE_EMAILS_JS_KEY: "${EMAILS_JS_KEY}"
