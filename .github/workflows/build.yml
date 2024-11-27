@@ -37,7 +37,8 @@ jobs:
       - name: Build and push Docker image for API
         uses: docker/build-push-action@v5
         with:
-          context: ./ApiDockerfile
+          context: .
+          file: ApiDockerfile
           platforms: linux/amd64,linux/arm64
           push: true
           provenance: false
@@ -53,7 +54,8 @@ jobs:
       - name: Build and push Docker image for APP
         uses: docker/build-push-action@v5
         with:
-          context: ./AppDockerfile
+          context: .
+          file: AppDockerfile
           platforms: linux/amd64,linux/arm64
           push: true
           provenance: false
