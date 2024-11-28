@@ -10,7 +10,6 @@
       item-value="size"
   >
     <template v-slot:append>
-<!--      <v-icon :icon="appendIcon" size="x-large" class="pl-1 mr-2" />-->
       <FontAwesomeIcon :icon="icon" size="2xl" :class="mobile ? 'ml-1 mr-2': ''"/>
     </template>
   </v-select>
@@ -28,8 +27,10 @@ const model = defineModel<string>({
 const icon = computed(() => {
   if (model.value === 'l') {
     return 'fa-brands fa-linkedin'
-  } else {
+  } else if (model.value === 't') {
     return 'fa-brands fa-square-x-twitter'
+  } else {
+    return 'fa-brands fa-square-bluesky'
   }
 })
 
@@ -39,6 +40,10 @@ const bannerSizes = computed(() => [
   {
     title: t('linkedInBannerSize'),
     size: 'l'
+  },
+  {
+    title: t('blueskyBannerSize'),
+    size: 'b'
   },
   {
     title: t('twitterBannerSize'),

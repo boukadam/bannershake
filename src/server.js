@@ -193,6 +193,7 @@ function getBannerSize(size) {
                 h: 396
             }
         case 't':
+        case 'b':
             return {
                 w: 1500,
                 h: 500

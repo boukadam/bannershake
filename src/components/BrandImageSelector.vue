@@ -15,7 +15,7 @@
 <script setup lang="ts">
 import vueDebounce from 'vue-debounce'
 import {Ref, ref} from "vue";
-import logoBlack from '../assets/logo-black.png'
+import logoBlack from '../static/logo-black.png'
 import {useI18n} from "vue-i18n";
 
 const vDebounce = vueDebounce({ lock: true })

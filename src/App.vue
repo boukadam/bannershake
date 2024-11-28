@@ -96,9 +96,9 @@ import Footer from "./components/Footer.vue";
 
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {fas} from '@fortawesome/free-solid-svg-icons'
-import {faTwitter, faLinkedin, faSquareXTwitter} from '@fortawesome/free-brands-svg-icons'
+import {faLinkedin, faSquareXTwitter, faSquareBluesky} from '@fortawesome/free-brands-svg-icons'
 
-library.add(fas, faTwitter, faLinkedin, faSquareXTwitter)
+library.add(fas, faLinkedin, faSquareXTwitter, faSquareBluesky)
 
 const urlParams = new URLSearchParams(window.location.search);
 const skillsFromQuery = urlParams.get('s')
