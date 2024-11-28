@@ -5,7 +5,7 @@ import sharp from "sharp"
 import fetch from 'node-fetch'
 import {readFileSync} from 'fs'
 import path from 'path'
-import { fileURLToPath } from 'url';
+import {fileURLToPath} from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -28,6 +28,54 @@ provided.forEach((value, _) => availableSkills.set(value.shortname, value))
 let server = express();
 server.get('/svg', (req, res) => respond(req, res, 'svg'));
 server.get('/json', (req, res) => respond(req, res, 'json'));
+server.get('/img/:shortname', async (req, res) => getImage(req, res))
+server.get('/skills', (req, res) => search(req, res))
+server.get('/find', (req, res) => find(req, res))
+
+function find(req, res) {
+    const {name = []} = req.query;
+    const names = Array.isArray(name) ? name : [name]
+    let filteredSkills = names.map(n => availableSkills.get(n))
+    res.header('Content-Type', 'application/json')
+    res.send({
+        total: availableSkills.size,
+        data: filteredSkills,
+    });
+}
+
+function search(req, res) {
+    const {search = '', page = 1, size = 5} = req.query;
+    const filteredSkills = Array.from(availableSkills.values())
+        .filter(s => s.shortname.toLowerCase().includes(search.toLowerCase()) || s.name.toLowerCase().includes(search.toLowerCase()));
+    filteredSkills.sort((a, b) => a.shortname.localeCompare(b.shortname));
+    const pageNumber = parseInt(page, 10) || 1;
+    const pageSize = parseInt(size, 10) || 5;
+    const startIndex = (pageNumber - 1) * pageSize;
+    const endIndex = startIndex + pageSize;
+    const paginatedSkills = filteredSkills.slice(startIndex, endIndex);
+    res.header('Content-Type', 'application/json')
+    res.send({
+        total: filteredSkills.length,
+        page: pageNumber,
+        size: pageSize,
+        data: paginatedSkills,
+    });
+}
+
+async function getImage(req, res) {
+    const skill = availableSkills.get(req.params.shortname)
+    if (!!skill) {
+        res.header('Content-Type', 'image/png');
+        res.setHeader('Cache-Control', 'public, max-age=86400');
+        res.setHeader('Expires', new Date(Date.now() + 86400000).toUTCString());
+        let contents = readFileSync(__dirname + '/static/' + skill.icon);
+        let buffer = await sharp(contents).toBuffer()
+        res.send(buffer);
+    } else {
+        res.status(404)
+        res.send()
+    }
+}
 
 async function respond(req, res, type) {
     console.log("%s - Rendering %s banner for %s", new Date(), type, req.query)

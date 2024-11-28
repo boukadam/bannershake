@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <notifications/>
-    <v-card color="grey-lighten-4" flat tile dark>
+    <v-card v-if="skillsCount" color="grey-lighten-4" flat tile dark>
       <GithubCorner/>
       <v-card color="grey-lighten-4" flat tile dark max-width="1200px" class="mx-auto">
         <Header/>
@@ -9,14 +9,14 @@
         <v-card-text class="mt-6">
 
           <!-- Description -->
-          <BannerShakeDesc/>
+          <BannerShakeDesc :count="skillsCount" />
 
           <!-- Skills selector -->
           <v-row class="px-3 pt-2">
-            <SkillSelector v-model="selection" :skills="skillsStore.skills"/>
+            <SkillSelector v-model="selection"/>
           </v-row>
 
-          <v-divider v-if="mobile" class="mt-2 mb-7" />
+          <v-divider v-if="mobile" class="mt-2 mb-7"/>
 
           <!-- Filter row -->
           <v-row align="center" justify="center">
@@ -83,7 +83,6 @@ import Header from "./components/Header.vue";
 import BannerShakeDesc from "./components/BannerShakeDesc.vue";
 import SkillSelector from "./components/SkillSelector.vue";
 import ColorPicker from "./components/ColorPicker.vue";
-import {useSkillsStore} from "./store.ts";
 import {useDisplay} from "vuetify";
 import {Ref, ref} from "vue";
 import BrandImageSelector from "./components/BrandImageSelector.vue";
@@ -92,7 +91,7 @@ import BannerSizeSelector from "./components/BannerSizeSelector.vue";
 import {useI18n} from "vue-i18n";
 import DisplayBanner from "./components/DisplayBanner.vue";
 import {useApiClient} from "./composables/apiClient.ts";
-import getYourBanner from './static/get-your-banner.svg'
+import getYourBanner from './assets/get-your-banner.svg'
 import Footer from "./components/Footer.vue";
 
 import {library} from '@fortawesome/fontawesome-svg-core'
@@ -108,22 +107,9 @@ const colorFromQuery = urlParams.get('c')
 const logoSizeFromQuery = urlParams.get('ls')
 const bannerSizeFromQuery = urlParams.get('bs')
 
-const skillsStore = useSkillsStore()
 const {mobile} = useDisplay()
 const {t} = useI18n()
-
-const initSelection = (shortnames: string | null): Skill[] => {
-  if (!!shortnames) {
-    const skillsArrayFromQuery = shortnames?.split(',')
-    console.log(skillsArrayFromQuery)
-    let selected = skillsStore.skills.filter(skill => skillsArrayFromQuery.includes(skill.shortname));
-    selected.forEach(skill => {
-      skill.selected = true
-    })
-    return selected
-  }
-  return []
-}
+const apiClient = useApiClient()
 
 const banner = ref()
 const generationResponse: Ref<BannerGenerationResponse | undefined> = ref(undefined)
@@ -132,14 +118,19 @@ const backgroundColor = ref(colorFromQuery ? colorFromQuery : "#FFFFEF")
 const brandImage = ref(brandFromQuery ? brandFromQuery : undefined)
 const logoSize = ref(logoSizeFromQuery ? logoSizeFromQuery : 'm')
 const bannerSize = ref(bannerSizeFromQuery ? bannerSizeFromQuery : 'l')
-const selection = ref(initSelection(skillsFromQuery))
-
-const apiClient = useApiClient()
+const selection: Ref<Skill[]> = ref([])
+const skillsCount: Ref<Number> = ref(0)
+const skillsArrayFromQuery = skillsFromQuery ? skillsFromQuery.split(',') : []
+apiClient.find(skillsArrayFromQuery)
+    .then(response => {
+      selection.value = response.data
+      skillsCount.value = response.total
+    })
 
 const generate = async () => {
   generationBeingProcessed.value = true
   generationResponse.value = await apiClient.generate(selection.value, brandImage.value, backgroundColor.value, logoSize.value, bannerSize.value)
   generationBeingProcessed.value = false
-  setTimeout(() => banner.value.scrollIntoView({ behavior: "smooth" }), 150);
+  setTimeout(() => banner.value.scrollIntoView({behavior: "smooth"}), 150);
 }
 </script>

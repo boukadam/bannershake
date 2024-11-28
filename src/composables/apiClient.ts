@@ -20,6 +20,26 @@ export function useApiClient() {
                 }
             };
             return apiClient<BannerGenerationResponse>("/json", currentOptions);
+        },
+        search(search: string, page: number, size: number): Promise<SkillSearch> {
+            const currentOptions: FetchOptions<'json'> = {
+                method: 'GET',
+                query: {
+                    search: search,
+                    page: page,
+                    size: size
+                }
+            };
+            return apiClient<SkillSearch>('/skills', currentOptions);
+        },
+        find(names: string[]): Promise<SkillSearch> {
+            const currentOptions: FetchOptions<'json'> = {
+                method: 'GET',
+                query: {
+                    name: names
+                }
+            };
+            return apiClient<SkillSearch>('/find', currentOptions);
         }
     }
 }

@@ -24,7 +24,7 @@
   </v-footer>
 </template>
 <script setup lang="ts">
-import logoBlack from '../static/logo-black.png'
+import logoBlack from '../assets/logo-black.png'
 import {useDisplay} from "vuetify";
 import GithubButton from 'vue-github-button'
 

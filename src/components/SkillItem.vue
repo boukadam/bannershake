@@ -10,7 +10,7 @@
       @click="selectIt()"
   >
     <template v-slot:prepend>
-      <img :alt="model.shortname" :src="getImageUrl(model.icon)" height="32" style="max-width: 72px"/>
+      <img :alt="model.shortname" :src="`/img/${model.shortname}`" height="32" style="max-width: 72px"/>
     </template>
     <template v-slot:append>
       <v-icon v-if="model.selected" color="grey-darken-4">mdi-check-circle</v-icon>
@@ -19,9 +19,9 @@
 </template>
 <script setup lang="ts">
 const model = defineModel<Skill>()
-const getImageUrl = (name: string): string => {
-  return new URL(`../static/${name}`, import.meta.url).href
-}
+defineProps<{
+  selected: boolean
+}>()
 const emit = defineEmits(['selected'])
 const selectIt = () => {
   if (model.value) {

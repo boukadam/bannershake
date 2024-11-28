@@ -58,7 +58,7 @@
 </template>
 <script setup lang="ts">
 import {useDisplay} from "vuetify";
-import logoBlack from '../static/logo-black.png'
+import logoBlack from '../assets/logo-black.png'
 import CountryFlag from 'vue-country-flag-next'
 import {useI18n} from "vue-i18n";
 import supportedLocales from "../locales/index.ts"

@@ -36,7 +36,7 @@
         <v-infinite-scroll @load="load">
           <v-row>
             <v-col v-for="(_, i) in pagedSkills" :key="i" :cols="mobile ? 12 : 6">
-              <SkillItem v-model="pagedSkills[i]" @selected="handleSelect(pagedSkills[i])"/>
+              <SkillItem v-model="pagedSkills[i]" :selected="isSelected(pagedSkills[i])"  @selected="handleSelect(pagedSkills[i])"/>
             </v-col>
           </v-row>
         </v-infinite-scroll>
@@ -50,16 +50,16 @@
   </v-dialog>
 </template>
 <script setup lang="ts">
-import {computed, Ref, ref, watch} from "vue";
+import {reactive, Ref, ref, watch} from "vue";
 import {useDisplay} from "vuetify";
 import {useI18n} from "vue-i18n";
 import SkillItem from "./SkillItem.vue";
 import draggable from 'vuedraggable'
+import {useApiClient} from "../composables/apiClient.ts";
 
-const model = defineModel<Skill[]>()
-const props = defineProps<{
-  skills: Skill[]
-}>()
+const model = defineModel<Skill[]>({
+  default: () => reactive([])
+})
 const open = ref(false)
 const search = ref("")
 const dragging = ref(false)
@@ -72,6 +72,7 @@ const dragOptions = {
 
 const {mobile} = useDisplay()
 const {t} = useI18n()
+const apiClient = useApiClient()
 
 const closeDialog = () => {
   open.value = false
@@ -83,9 +84,13 @@ const clearFilter = () => {
   search.value = ""
 }
 
+const isSelected = (skill: Skill): boolean => {
+  return model.value.includes(skill)
+}
+
 const handleSelect = (selected: Skill) => {
   if (selected.selected) {
-    model.value?.push(selected)
+    model.value.push(selected)
   } else {
     removeFromSelection(selected)
   }
@@ -93,7 +98,7 @@ const handleSelect = (selected: Skill) => {
 
 const removeFromSelection = (skill: Skill) => {
   skill.selected = false
-  model.value = model.value?.filter(s => s.shortname !== skill.shortname)
+  model.value = model.value.filter(s => s.shortname !== skill.shortname)
 }
 
 const clearSelection = () => {
@@ -101,40 +106,45 @@ const clearSelection = () => {
   model.value = []
 }
 
-const visibleSkills = computed(() => props.skills?.filter(s => s.shortname.toLowerCase().includes(search.value.toLowerCase()) || s.name.toLowerCase().includes(search.value.toLowerCase())))
-
 const nextPage = () => {
-  const subSkills: Skill[] = []
-  if (visibleSkills.value && visibleSkills.value.length > currentPage.value * pageSize) {
-    if (visibleSkills.value.length < currentPage.value * pageSize + pageSize) {
-      subSkills.push(...visibleSkills.value.slice(currentPage.value * pageSize))
-    } else {
-      subSkills.push(...visibleSkills.value.slice(currentPage.value * pageSize, currentPage.value * pageSize + pageSize))
-    }
-  }
-  currentPage.value = currentPage.value + 1
-  return subSkills;
+  apiClient.search(search.value, currentPage.value + 1, pageSize)
+      .then(response => {
+        currentPage.value = currentPage.value + 1
+        updatePagedSkills(response.data)
+      })
+}
+
+const updatePagedSkills = (skills: Skill[]) => {
+  pagedSkills.value.push(...skills)
+  pagedSkills.value.filter(skill => model.value.filter(s => s.shortname === skill.shortname).length > 0)
+      .forEach(skill => {
+        skill.selected = true
+      })
 }
 
 const currentPage = ref(0)
 const pageSize = 20
 
 const pagedSkills: Ref<Skill[]> = ref([])
-pagedSkills.value.push(...nextPage())
+nextPage()
 
 const load = ({done}: { done: (status: 'loading' | 'error' | 'empty' | 'ok') => void }) => {
-  let skills = nextPage();
-  if (skills.length === 0) {
-    done('empty')
-  } else {
-    pagedSkills.value.push(...skills)
-    done('ok')
-  }
+  apiClient.search(search.value, currentPage.value + 1, pageSize)
+      .then(response => {
+        currentPage.value = currentPage.value + 1
+        if (response.data.length === 0) {
+          done('empty')
+        } else {
+          updatePagedSkills(response.data)
+          done('ok')
+        }
+      })
 }
 
 const reset = () => {
   currentPage.value = 0
-  pagedSkills.value = nextPage()
+  pagedSkills.value = []
+  nextPage()
 }
 
 watch(search, () => reset())

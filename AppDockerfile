@@ -6,6 +6,8 @@ RUN npm install
 
 # Build app
 COPY . .
+RUN rm -f src/server.js
+RUN rm -rf src/static
 RUN npm run build
 
 FROM nginx:stable-alpine AS production-stage

@@ -12,8 +12,10 @@ services:
 
   api:
     image: ghcr.io/boukadam/bannershake-api:main
+    pull_policy: always
 
   app:
     image: ghcr.io/boukadam/bannershake-app:main
+    pull_policy: always
     environment:
       VITE_EMAILS_JS_KEY: "${EMAILS_JS_KEY}"

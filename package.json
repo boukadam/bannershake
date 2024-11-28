@@ -26,7 +26,6 @@
     "node-fetch": "^3.3.2",
     "ofetch": "^1.4.1",
     "patch-package": "^8.0.0",
-    "pinia": "^2.2.4",
     "postinstall-postinstall": "^2.1.0",
     "sharp": "^0.33.5",
     "svgdom": "^0.1.19",

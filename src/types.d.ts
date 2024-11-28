@@ -1,3 +1,10 @@
+interface SkillSearch {
+    total: number;
+    page: number;
+    size: number;
+    data: Skill[];
+}
+
 interface Skill {
     name: string,
     shortname: string,
