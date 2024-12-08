@@ -1,0 +1,37 @@
+deploys:
+  - name: bannershake-app
+    image:
+      repository: ghcr.io/boukadam/bannershake-app
+      tag: main
+
+    replicaCount: 1 # Optional | default: 1
+
+    resources: # Optional
+      limits:
+        cpu: 0.5
+        memory: 128Mi
+      requests:
+        cpu: 0.2
+        memory: 128Mi
+
+    service:
+      ports:
+      - port: 80
+        protocol: TCP
+        name: http
+
+    ingress:
+      host: bannershake-app.mbcode.cloud
+      annotations:
+        external-dns.alpha.kubernetes.io/hostname: bannershake-app.mbcode.cloud
+        traefik.ingress.kubernetes.io/router.entrypoints: websecure
+        traefik.ingress.kubernetes.io/router.tls.certresolver: letsencrypt
+      paths:
+        - path: /
+          type: Prefix
+          port: http
+    env:
+      fromSecret:
+        VITE_EMAILS_JS_KEY:
+          secret: email-js
+          key: key

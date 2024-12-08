@@ -1,0 +1,32 @@
+deploys:
+  - name: bannershake-api
+    image:
+      repository: ghcr.io/boukadam/bannershake-api
+      tag: main
+
+    replicaCount: 1 # Optional | default: 1
+
+    resources: # Optional
+      limits:
+        cpu: 0.5
+        memory: 512Mi
+      requests:
+        cpu: 0.2
+        memory: 128Mi
+
+    service:
+      ports:
+      - port: 80
+        protocol: TCP
+        name: http
+
+    ingress:
+      host: bannershake-api.mbcode.cloud
+      annotations:
+        external-dns.alpha.kubernetes.io/hostname: bannershake-api.mbcode.cloud
+        traefik.ingress.kubernetes.io/router.entrypoints: websecure
+        traefik.ingress.kubernetes.io/router.tls.certresolver: letsencrypt
+      paths:
+        - path: /
+          type: Prefix
+          port: http

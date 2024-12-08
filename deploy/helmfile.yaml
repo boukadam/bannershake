@@ -1,0 +1,31 @@
+helmDefaults:
+  timeout: 600
+  force: false
+  createNamespace: false
+---
+
+environments:
+  default:
+    secrets:
+      - secrets.yaml
+
+---
+repositories:
+  - name: mbcaas
+    url: https://charts.mbcaas.com/
+
+releases:
+  - name: api
+    namespace: bannershake
+    chart: mbcaas/application
+    missingFileHandler: Warn
+    version: 0.9.0
+    values:
+      - modules/api.yaml
+  - name: app
+    namespace: bannershake
+    chart: mbcaas/application
+    missingFileHandler: Warn
+    version: 0.9.0
+    values:
+      - modules/app.yaml
