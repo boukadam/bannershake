@@ -10,7 +10,7 @@
       @click="selectIt()"
   >
     <template v-slot:prepend>
-      <img :alt="model.shortname" :src="`/img/${model.shortname}`" height="32" style="max-width: 72px"/>
+      <img :alt="model.shortname" :src="`${BANNERSHAKE_API_URL}/img/${model.shortname}`" height="32" style="max-width: 72px"/>
     </template>
     <template v-slot:append>
       <v-icon v-if="model.selected" color="grey-darken-4">mdi-check-circle</v-icon>
@@ -18,6 +18,7 @@
   </v-card>
 </template>
 <script setup lang="ts">
+const BANNERSHAKE_API_URL = import.meta.env.VITE_BANNERSHAKE_API_URL;
 const model = defineModel<Skill>()
 defineProps<{
   selected: boolean

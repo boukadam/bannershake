@@ -3,6 +3,7 @@ deploys:
     image:
       repository: ghcr.io/boukadam/bannershake-api
       tag: main
+      pullPolicy: Always
 
     replicaCount: 1 # Optional | default: 1
 

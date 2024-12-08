@@ -3,6 +3,7 @@ deploys:
     image:
       repository: ghcr.io/boukadam/bannershake-app
       tag: main
+      pullPolicy: Always
 
     replicaCount: 1 # Optional | default: 1
 
@@ -31,6 +32,8 @@ deploys:
           type: Prefix
           port: http
     env:
+      fromValue:
+        VITE_BANNERSHAKE_API_URL: http://bannershake-api-svc:8080
       fromSecret:
         VITE_EMAILS_JS_KEY:
           secret: email-js

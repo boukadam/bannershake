@@ -7,17 +7,9 @@ export default defineConfig({
     server: {
         port: 5173,
         proxy: {
-            '/json': {
-                target: process.env.VITE_API_BASE_URL || 'http://localhost:8080'
-            },
-            '/skills': {
-                target: process.env.VITE_API_BASE_URL || 'http://localhost:8080'
-            },
-            '/img': {
-                target: process.env.VITE_API_BASE_URL || 'http://localhost:8080'
-            },
-            '/find': {
-                target: process.env.VITE_API_BASE_URL || 'http://localhost:8080'
+            '/api': {
+                target: process.env.VITE_BANNERSHAKE_API_URL || 'http://localhost:8080',
+                rewrite: (path) => path.replace(/^\/api/, '/')
             }
         },
     },
