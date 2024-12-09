@@ -1,3 +1,8 @@
+secrets:
+  email-js:
+    stringData:
+      token: {{ .Values.secrets.emailjs.token }}
+
 deploys:
   - name: bannershake-app
     image:
@@ -37,4 +42,4 @@ deploys:
       fromSecret:
         VITE_EMAILS_JS_KEY:
           secret: email-js
-          key: key
+          key: token
