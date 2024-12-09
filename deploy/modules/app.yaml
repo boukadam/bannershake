@@ -33,7 +33,7 @@ deploys:
           port: http
     env:
       fromValue:
-        VITE_BANNERSHAKE_API_URL: http://bannershake-api-svc:8080
+        VITE_BANNERSHAKE_API_URL: https://bannershake-api.mbcode.cloud
       fromSecret:
         VITE_EMAILS_JS_KEY:
           secret: email-js

@@ -17,7 +17,7 @@ deploys:
 
     service:
       ports:
-      - port: 80
+      - port: 8080
         protocol: TCP
         name: http
 
@@ -31,3 +31,7 @@ deploys:
         - path: /
           type: Prefix
           port: http
+
+    env:
+      fromValue:
+        CORS_ORIGIN: "https://bannershake-app.mbcode.cloud,https://bannershake.com"

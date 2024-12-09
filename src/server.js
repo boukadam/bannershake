@@ -6,6 +6,7 @@ import fetch from 'node-fetch'
 import {readFileSync} from 'fs'
 import path from 'path'
 import {fileURLToPath} from 'url';
+import cors from 'cors'
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -25,7 +26,15 @@ const availableSkills = new Map()
 managed.forEach((value, _) => availableSkills.set(value.shortname, value))
 provided.forEach((value, _) => availableSkills.set(value.shortname, value))
 
+const corsOptions = {
+    origin: process.env.CORS_ORIGIN?.split(','),
+    optionsSuccessStatus: 200,
+    methods: ['GET', 'OPTIONS', 'HEAD'],
+    allowedHeaders: ['Content-Type', 'X-Requested-With', 'Accept', 'Origin', 'Access-Control-Request-Method', 'Access-Control-Request-Headers'],
+};
+
 let server = express();
+server.use(cors(corsOptions))
 server.get('/svg', (req, res) => respond(req, res, 'svg'));
 server.get('/json', (req, res) => respond(req, res, 'json'));
 server.get('/img/:shortname', async (req, res) => getImage(req, res))
