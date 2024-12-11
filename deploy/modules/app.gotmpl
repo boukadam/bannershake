@@ -27,9 +27,9 @@ deploys:
         name: http
 
     ingress:
-      host: bannershake-app.mbcode.cloud
+      host: bannershake.com
       annotations:
-        external-dns.alpha.kubernetes.io/hostname: bannershake-app.mbcode.cloud
+        external-dns.alpha.kubernetes.io/hostname: bannershake.com
         traefik.ingress.kubernetes.io/router.entrypoints: websecure
         traefik.ingress.kubernetes.io/router.tls.certresolver: letsencrypt
       paths:
@@ -38,7 +38,7 @@ deploys:
           port: http
     env:
       fromValue:
-        VITE_BANNERSHAKE_API_URL: https://bannershake-api.mbcode.cloud
+        VITE_BANNERSHAKE_API_URL: https://api.bannershake.com
       fromSecret:
         VITE_EMAILS_JS_KEY:
           secret: email-js

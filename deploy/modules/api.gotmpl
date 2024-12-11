@@ -9,10 +9,10 @@ deploys:
 
     resources: # Optional
       limits:
-        cpu: 0.5
+        cpu: 1
         memory: 512Mi
       requests:
-        cpu: 0.2
+        cpu: 0.5
         memory: 128Mi
 
     service:
@@ -22,9 +22,9 @@ deploys:
         name: http
 
     ingress:
-      host: bannershake-api.mbcode.cloud
+      host: api.bannershake.com
       annotations:
-        external-dns.alpha.kubernetes.io/hostname: bannershake-api.mbcode.cloud
+        external-dns.alpha.kubernetes.io/hostname: api.bannershake.com
         traefik.ingress.kubernetes.io/router.entrypoints: websecure
         traefik.ingress.kubernetes.io/router.tls.certresolver: letsencrypt
       paths:
@@ -34,4 +34,4 @@ deploys:
 
     env:
       fromValue:
-        CORS_ORIGIN: "https://bannershake-app.mbcode.cloud,https://bannershake.com"
+        CORS_ORIGIN: https://bannershake.com

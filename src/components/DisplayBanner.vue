@@ -112,10 +112,12 @@ const download = (type: 'png' | 'svg'): void => {
   }
 }
 
+const BANNERSHAKE_API_URL = import.meta.env.VITE_BANNERSHAKE_API_URL;
+
 const copy = (type: 'svg'|'editor'): void => {
   snackbarText.value = ''
   if (type === 'svg') {
-    navigator.clipboard.writeText('https://bannershake.com/svg?' + props.generationResponse.query)
+    navigator.clipboard.writeText(BANNERSHAKE_API_URL + '/svg?' + props.generationResponse.query)
     snackbarText.value = t('copy-to-svg-done')
   } else if (type === 'editor') {
     navigator.clipboard.writeText('https://bannershake.com/?' + props.generationResponse.query)
