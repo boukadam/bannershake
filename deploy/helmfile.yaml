@@ -1,7 +1,7 @@
 helmDefaults:
   timeout: 600
   force: false
-  createNamespace: false
+  createNamespace: true
 ---
 
 environments:
