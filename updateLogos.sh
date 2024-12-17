@@ -1,6 +1,6 @@
 #!/bin/sh
 
-GILBARBARA_LOGOS_DIR="./gilbarbara_logos"
+GILBARBARA_LOGOS_DIR="./logos"
 GILBARBARA_LOGOS_REPO="https://github.com/gilbarbara/logos.git"
 
 DO_UPDATE=false

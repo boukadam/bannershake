@@ -27,7 +27,7 @@ type Logos struct {
 const providedLogosBase = "src/static/provided/"
 const providedLogosDir = providedLogosBase + "logos/"
 const providedLogosPrefix = "provided/logos/"
-const logosRepo = "gilbarbara_logos"
+const logosRepo = "logos"
 
 var logosBlockedByAdblock = map[string]string{
 	"admob.svg":          "_admob.svg",
