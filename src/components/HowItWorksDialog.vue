@@ -19,7 +19,7 @@
         </p>
         <div class="text-h5 font-weight-bold my-4">Examples </div>
         <v-card class="mb-8" v-for="example in examples">
-          <v-img :src="'https://bannershake.com/svg?' + example.query"/>
+          <v-img :src="'https://api.bannershake.com/svg?' + example.query"/>
           <v-card-title>{{ example.title }}</v-card-title>
           <v-card-text>{{ example.description }}</v-card-text>
           <v-card-actions>
