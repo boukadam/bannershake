@@ -18,7 +18,7 @@
   </v-card>
 </template>
 <script setup lang="ts">
-const BANNERSHAKE_API_URL = import.meta.env.VITE_BANNERSHAKE_API_URL;
+const BANNERSHAKE_API_URL = import.meta.env.VITE_BANNERSHAKE_API_URL ?? '/api';
 const model = defineModel<Skill>()
 defineProps<{
   selected: boolean

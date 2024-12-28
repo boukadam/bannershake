@@ -112,7 +112,7 @@ const download = (type: 'png' | 'svg'): void => {
   }
 }
 
-const BANNERSHAKE_API_URL = import.meta.env.VITE_BANNERSHAKE_API_URL;
+const BANNERSHAKE_API_URL = import.meta.env.VITE_BANNERSHAKE_API_URL ?? '/api';
 
 const copy = (type: 'svg'|'editor'): void => {
   snackbarText.value = ''
