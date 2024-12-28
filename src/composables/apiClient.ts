@@ -1,7 +1,7 @@
 import {ofetch} from "ofetch";
 import type { FetchOptions } from 'ofetch';
 
-const BANNERSHAKE_API_URL = import.meta.env.VITE_BANNERSHAKE_API_URL;
+const BANNERSHAKE_API_URL = import.meta.env.VITE_BANNERSHAKE_API_URL ?? '/api';
 
 const apiClient = ofetch.create({
     baseURL: BANNERSHAKE_API_URL,
